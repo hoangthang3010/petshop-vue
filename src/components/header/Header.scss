@@ -1,0 +1,83 @@
+.header{
+    // height: 100px;
+    // position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    &__top{
+        // width: 100%;
+        z-index: 99;
+        align-items: center;
+        display: flex;
+        &__left{
+            // align-items: center;
+            padding: 5px;
+            &__image{
+                margin-left: 50px;
+                max-height: 90px;
+            }
+        }
+        &__mid{
+            align-items: center;
+            display: flex;
+            &__search{
+                align-items: center;
+                &__item{
+                    border-radius: 4px;
+                    height: 40px;
+                    width: 100%;
+                    border: 1px solid rgb(189, 189, 189);
+                }
+            }
+            &__clientcare{
+                display: flex;
+                align-items: center;
+                &__title{
+                    align-items: center;
+                    font-weight: 600;
+                    color: #FFA500;
+                    font-size: 15px;
+                    padding: 0px;
+                }
+            }
+        }
+        &__right{
+            align-items: center;
+            display: flex;
+            &__cart{
+                padding: 0px;
+                align-items: center;
+                display: flex;
+                &__title{
+                    margin: auto;
+                    font-size: 20px;
+                }
+            }
+            &__login{
+                display: flex;
+                align-items: center;
+                &__title{
+                    // margin: auto;
+                    font-size: 15px;
+                }
+            }
+        }
+    } 
+    &__bottom{
+        // position: fixed;
+        // position: fixed;
+        // display: none;
+        z-index: 98;
+        height: 50px;
+        background-color: orange;
+        // position: relative;
+        // animation: mymove 3s;
+        // animation-iteration-count: 1;
+    }
+
+    // @keyframes mymove {
+    //   from {top: -50px;}
+    //   to {top: 00px;}
+    // }
+    
+}

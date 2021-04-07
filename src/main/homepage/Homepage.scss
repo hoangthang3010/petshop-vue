@@ -1,0 +1,35 @@
+.homepage{
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    // background-color: #F5F8FD;
+    &__top{
+        display: flex;
+        &__left{
+            height: 200px;
+            background-color: red;
+        }
+        &__mid{
+            // height: 200px;
+            // background-color: green;
+        }
+        &__right{
+            height: 200px;
+            background-color: aqua;
+        }
+    }
+    &__product{
+        margin-top: 5px;
+        &__bestselling{
+            border-top: 4px solid #FF6C0B;
+            background-color: white;
+            align-items: center;
+            height: 50px;
+            padding: 12px;
+            &__title{
+                color: #FF6C0B;
+                font-size: 20px;
+            }
+        }
+    }
+}

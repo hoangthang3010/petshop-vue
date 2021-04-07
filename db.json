@@ -1,0 +1,1533 @@
+{
+  "slider": [
+    {
+      "id": "2",
+      "name": "Sen mê boss",
+      "image": "https://yolo.vn/wp-content/uploads/2020/07/sen-me-boss-phe-yolo-pet-shop-1024x390.png",
+      "link": "https://carole.info",
+      "title": "Giảm giá cực mạnh",
+      "active": "active"
+    },
+    {
+      "id": "3",
+      "name": "Sen mê boss",
+      "image": "https://yolo.vn/wp-content/uploads/2020/07/cham-soc-thu-cung-dung-cach-tot-nhat.png",
+      "link": "https://oscar.info",
+      "title": "Chăm số đúng cách",
+      "active": ""
+    }
+  ],
+  "category": [
+    {
+      "id": "1",
+      "name": "Chó"
+    },
+    {
+      "id": "2",
+      "name": "Mèo"
+    },
+    {
+      "id": "3",
+      "name": "Chim"
+    },
+    {
+      "id": "4",
+      "name": "Chuột"
+    }
+  ],
+  "bestselling": [
+    {
+      "id": "1f",
+      "name": "Mèo America",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 56,
+      "sale": 0,
+      "category": "2",
+      "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch."
+    },
+    {
+      "id": "f2",
+      "name": "Mèo gấu bông",
+      "image": "https://achocanh.com/wp-content/uploads/2018/07/nhung-giong-meo-dep-nhat-the-gioi-achocanh-2.jpg",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 76,
+      "sale": 20,
+      "category": "2",
+      "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch."
+    },
+    {
+      "id": "4k",
+      "name": "Mèo nhà",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Ragdoll_from_Gatil_Ragbelas.jpg",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 34,
+      "sale": 4,
+      "category": "2",
+      "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch."
+    },
+    {
+      "id": "k8",
+      "name": "Chó husky",
+      "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 86,
+      "sale": 10,
+      "category": "1",
+      "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch."
+    },
+    {
+      "name": "Chim vàng anh",
+      "image": "https://sudospaces.com/happyvet-com-vn/2019/05/chim-vang-anh-an-gi-3.jpg",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 45,
+      "sale": 0,
+      "category": "3",
+      "id": "SUfdfpE2VX",
+      "des": "Vàng anh là những loài chim biết hót rất giỏi, có kích cỡ trung bình. Chúng có mỏ tương đối khỏe và nhọn, các chân và các ngón tương đối ngắn nhưng khỏe.Các đại diện của họ này có dị hình giới tính rất mạnh:Chim trống có màu sắc lòe loẹt với các màu tương phản. Phần lớn các loài có màu vàng tươi với các vết đen sắc nét trên đầu, cánh hay đuôi.Chim trống của vài loài ở Đông Nam Á có màu đen hay đỏ."
+    },
+    {
+      "name": "Chó Shiba Inu",
+      "image": "https://kenh14cdn.com/thumb_w/660/2017/2373545713584488009515432111733942250897408n-1514196978625.jpg",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 45,
+      "sale": 10,
+      "category": "1",
+      "id": "37",
+      "des": "Thừa hưởng đặc điểm chắc khỏe nổi trội của tổ tiên, Bull Anh mang một vẻ ngoài oai vệ đặc trưng. Nếu có một chế độ tập luyện hợp lý, chúng có thể sở hữu 1 thân hình với cơ bắp lý tưởng.Đối ngược với vẻ ngoài trông khá dữ tợn, Bull Anh thuộc tuýp những loài chó hòa nhã, thân thiện. Chúng thích được mọi người quan tâm, vuốt ve, xoa đầu hay khen ngợi. Bull Anh được đánh giá là giống chó tình cảm, thích chơi đùa với trẻ nhỏ.Bull Anh rất trung thành và luôn bảo vệ chủ nhân. Chúng sở hữu các giác quan cực kỳ nhạy bén, luôn cảnh giác cao với người lạ hay bất cứ thứ khả nghi nào."
+    },
+    {
+      "id": "54",
+      "name": "Mèo Etoxic",
+      "image": "https://www.chotot.com/kinhnghiem/wp-content/uploads/2019/10/meo-munchkin-21-1024x856.jpg",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 56,
+      "sale": 10,
+      "category": "2",
+      "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch."
+    },
+    {
+      "id": "d6",
+      "name": "Mèo nidani",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Norskskogkatt_Evita_3.JPG",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "price": 76,
+      "sale": 10,
+      "category": "2",
+      "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch."
+    }
+  ],
+  "productAll": [
+    {
+      "id":1,
+      "name": "medicine",
+      "title": "Thuốc",
+      "display": "true",
+      "type":[
+        {
+          "id":1,
+          "name": "medicine_cat",
+          "title": "Thuốc cho mèo"
+          
+        },
+        {
+          "id":2,
+          "name": "medicine_dog",
+          "title": "Thuốc cho chó"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "name": "food",
+      "title": "Đồ ăn",
+      "display": "true",
+      "type":[
+        {
+          "id":1,
+          "name": "food_cat",
+          "title": "Đồ ăn cho mèo"
+        },
+        {
+          "id":1,
+          "name": "food_dog",
+          "title": "Đồ ăn cho chó"
+        }
+      ]
+    }
+  ],
+  "productDetail":[
+    {
+      "id": 1,
+      "type": "cat",
+      "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp chó mèo ngon miệng",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
+      "price": 225000,
+      "detail": "medicine_cat",
+      "product_amount": 100,
+      "function": "",
+      "quality_index": "",
+      "main_ingredient": ""
+    },
+    {
+      "id": 2,
+      "type": "cat",
+      "title": "Advocate Cat – 1 tuýp thuốc trị ve rận dành cho mèo dưới 4kg",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.52-400x400-1-300x300.jpg",
+      "price": 300000,
+      "detail": "medicine_cat",
+      "product_amount": 100,
+      "function": "",
+      "quality_index": "",
+      "main_ingredient": ""
+    },
+    {
+      "id": 3,
+      "type": "dog",
+      "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp chó mèo ngon miệng",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
+      "price": 225000,
+      "detail": "medicine_dog",
+      "product_amount": 100,
+      "function": "",
+      "quality_index": "",
+      "main_ingredient": ""
+    },
+    {
+      "id": 4,
+      "type": "dog",
+      "title": "Tuýp nhỏ rận cho chó dưới 10kg frontline",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Trị-ve-ran-cho-Frontline-400x400.jpg",
+      "price": 250000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 5,
+      "type": "dog",
+      "title": "My Beau – Gel dinh dưỡng bổ khớp 300ml cho cả chó và mèo",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656-1.jpg",
+      "price": 700000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 6,
+      "type": "dog",
+      "title": "Yuhan – Thuốc Promotion hỗ trợ xương khớp 30v",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-promotion-420-yuhan-30-vien--280x280.jpg",
+      "price": 750000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 7,
+      "type": "dog",
+      "title": "Quick stop – Thuốc cầm máu 14g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-cam-mau-quick-stop-14g-1-300x300.jpg",
+      "price": 600000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 8,
+      "type": "dog",
+      "title": "Day’s Paw – Thuốc bổ xương khớp 250g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/6911_l.jpg",
+      "price": 430000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 9,
+      "type": "dog",
+      "title": "My beau – Gel dinh dưỡng tổng hợp cho mèo 300ml cải thiện da và lông",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-cho-meo-300ml-cai-thien-da-va-long.jpg",
+      "price": 500000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 10,
+      "type": "dog",
+      "title": "My beau – Gel dinh dưỡng tổng hợp cho chó 300ml",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-300ml.jpg",
+      "price": 450000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 11,
+      "type": "dog",
+      "title": "Canxi Excel 8in1",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/excel-thuốc-bổ-sung-vitamin-cho-chó-trưởng-thành-8in1-70-viên.jpg",
+      "price": 350000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 12,
+      "type": "dog",
+      "title": "My Beau – Gel dinh dưỡng bổ khớp cho chó và mèo 300ml",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656.jpg",
+      "price": 700000,
+      "detail": "medicine_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 13,
+      "type": "cat",
+      "title": "Nutri Plan – Tuna & Anchovy (Cá ngừ & cá cơm)",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/06c83afef08e09d0509f.jpg",
+      "price": 45000,
+      "detail": "food_cat",
+      "product_amount": 100,
+      "product_detail": {
+        "describe" :[
+          {
+            "name": "function",
+            "title": "Công dụng",
+            "info": ""
+          },
+          {
+            "name": "quality_index",
+            "title": "Chỉ tiêu chất lượng",
+            "info": ""
+          },
+          {
+            "name": "main_ingredient",
+            "title": "Thành phần chính",
+            "info": ""
+          },
+          {
+            "name":"user_manual",
+            "title": "Hướng dẫn sử dụng",
+            "info": ""
+          },
+          {
+            "name": "TCCS",
+            "title": "TCCS số",
+            "info": ""
+          },
+          {
+            "name": "date_of_manufacture",
+            "title": "Số lô, ngày sản xuất",
+            "info": ""
+          },
+          {
+            "name": "expiration_date",
+            "title": "Hán sử dụng",
+            "info": ""
+          },
+          {
+            "name":"net_weight",
+            "title": "Khối lượng tịnh",
+            "info": ""
+          },
+          {
+            "name": "origin",
+            "title": "Xuất xứ",
+            "info": ""
+          },
+          {
+            "name": "producer",
+            "title": "Nhà sản xuất",
+            "info": ""
+          },
+          {
+            "name": "address",
+            "title": "Địa chỉ",
+            "info": ""
+          }
+        ],
+        "tutorial": {
+          "purchase": "Quý khách truy cập website của chúng tôi xem sản phẩm và lựa chọn sản phẩm cần mua. - Nhấn nút \"Thêm vào giỏ hàng\" để đưa sản phẩm vào giỏ hàng. - Sau khi đã hoàn tất việc chọn hàng, quý khách vào giỏ hàng để xem (biểu tượng giỏ hàng ngoài cùng bên phải topbar). - Chuyển tới trang thanh toán. - Nhập đầy đủ thông tin cá nhân và thông tin thanh toán vào biểu mẫu. -Kết thúc đơn hàng, quý khách vui lòng chờ nhân viên của chúng tôi điện thoại lại để chốt đơn.",
+          "pay": "Hiện tại, chúng tôi mới chỉ cung cấp 2 hình thức thanh toán: (1). nhận hàng thanh toán và (2). thanh toán chuyển khoản. - 1. Quý khách đặt hàng và được nhân viên xác nhận qua cuộc gọi trực tiếp. Qua đó, chúng tôi gửi hàng về cho quý khách thông qua dịch vụ ship COD. Quý khách nhận hàng, kiểm tra hàng và thanh toán trực tiếp cho nhân viên bưu phát. - 2: Quý khách chuyển khoản trước cho chúng tôi qua tài khoản nhân hàng, và chúng tôi sẽ gửi chuyển phát nhanh cho quý khách"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "type": "cat",
+      "title": "Nutri Plan – Tuna & Chicken (Cá ngừ & Thịt ức gà)",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/9159fc6f361fcf41960e.jpg",
+      "price": 45000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 15,
+      "type": "cat",
+      "title": "Ofresh Cat",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Ofresh-Cat-400x400.jpg",
+      "price": 280000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 16,
+      "type": "cat",
+      "title": "Sheba – Thịt hộp cá ngừ & tôm 85g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.28.jpg",
+      "price": 50000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 17,
+      "type": "cat",
+      "title": "Fancy Feast – Thịt hộp vị cá ngừ 85g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.22.jpg",
+      "price": 60000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 18,
+      "type": "cat",
+      "title": "Súp Cá Ciao",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Sup-Ca-Siao-300x300.jpg",
+      "price": 70000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 19,
+      "type": "cat",
+      "title": "Greenies – Kẹo gum sạch răng vị cá hồi 85g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.20-300x300.jpg",
+      "price": 200000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 20,
+      "type": "cat",
+      "title": "Lamer- Thịt cá ngừ Fucoidan và thịt dê 120g – chó mè",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.13-2-200x300.jpg",
+      "price": 180000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 21,
+      "type": "cat",
+      "title": "Pet Morning – Thịt cá ngừ vằn cắt miếng cho mèo 22",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/12840_l-300x300.jpg",
+      "price": 40000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 22,
+      "type": "cat",
+      "title": "Pet Morning – Thịt cá ngừ vằn cho mèo vị tự nhiên 22",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/12842_l-300x300.jpg",
+      "price": 40000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 23,
+      "type": "cat",
+      "title": "Thức ăn hỗn hợp hoàn chỉnh cho mèo Catsme 5kg",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/CatsMe-5.jpg",
+      "price": 440000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 24,
+      "type": "cat",
+      "title": "Thức ăn hỗn hợp hoàn chỉnh cho mèo Catsme 2kg",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/CatsMe_2.jpg",
+      "price": 240000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 25,
+      "type": "cat",
+      "title": "Thức ăn hạt mềm cho mèo ZENITH CAT HAIRBALL",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HẠT-MỀM-CHO-MÈO-ZENITH-CAT-HAIRBALL-280x280.jpg",
+      "price": 270000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 26,
+      "type": "cat",
+      "title": "Thức ăn hữu cơ NATURAL CORE giàu đạm cho mèo" ,
+      "image":"https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-GIÀU-ĐẠM-CHO-MÈO-100x100.jpg",
+      "price": 320000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    {
+      "id": 27,
+      "type": "cat",
+      "title": "Ofresh Kitten",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Ofresh-Kitten-280x280.jpg",
+      "price": 280000,
+      "detail": "food_cat",
+      "product_amount": 100
+    },
+    
+    {
+      "id": 28,
+      "type": "dog",
+      "title": "PATE MONGE THỊT HEO VÀ TRÁI THƠM 100G",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-THỊT-HEO-VÀ-TRÁI-THƠM-100G-300x300.jpg",
+      "price": 40000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 29,
+      "type": "dog",
+      "title": "PATE MONGE VỊ CÁ HỒI VÀ QUẢ LÊ",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-VỊ-CÁ-HỒI-VÀ-QUẢ-LÊ-280x280.jpg",
+      "price": 40000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 30,
+      "type": "dog",
+      "title": "Cesar – Thức ăn hộp cho chó vị gà & bò 100g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/118_l-300x300.jpg",
+      "price": 50000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 31,
+      "type": "dog",
+      "title": "Cesar – Thức ăn hộp cho chó vị bò phô mai 100g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/121_l.jpg",
+      "price": 50000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 32,
+      "type": "dog",
+      "title": "Puppy Friend – Thịt vịt đóng hộp 100g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thit-vit-dong-hop-puppy-friend-100g.jpg",
+      "price": 30000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 33,
+      "type": "dog",
+      "title": "Good Friend – Kẹo gum vị sữa 5p",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/stick-xuong-sua-good-friend-5-thanh-.jpg",
+      "price": 60000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 34,
+      "type": "dog",
+      "title": "Good Friend – Kẹo gum vị sữa 2p",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/stick-xuong-vi-sua-good-friend-2p--100x100.jpg",
+      "price": 60000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 35,
+      "type": "dog",
+      "title": "Doggy Man – Phomat miếng hello 100g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/phomat-mieng-doggy-man-hello-100g-280x280.jpg",
+      "price": 140000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 36,
+      "type": "dog",
+      "title": "Bow wow yogurt drops ( strawberry flavor ) 75g",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/banh-sua-chua-bow-wow-vi-dau-75g.jpg",
+      "price": 80000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 37,
+      "type": "dog",
+      "title": "Good Friend – Stick xương bò 5 chiếc",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/good-friend-stick-xương-bò-5p.jpg",
+      "price": 60000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 38,
+      "type": "dog",
+      "title": "Thức ăn hỗn hợp hoàn chỉnh cho chó We’ll be star Gold",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/We’ll-be-star-Gold-4.jpg",
+      "price": 380000,
+      "detail": "food_dog",
+      "product_amount": 100,
+      "product_detail": {
+        "describe" :[
+          {
+            "name": "function",
+            "title": "Công dụng",
+            "info": "Thức ăn hỗn hợp hoàn chỉnh cho chó trưởng thành"
+          },
+          {
+            "name": "quality_index",
+            "title": "Chỉ tiêu chất lượng",
+            "info": "Protein thô ≥ 26%; Béo thô  ≥ 14%; canxi: 0.5% – 2%; Photpho: 0.5% – 2%; xơ thô  ≤ 6%;  tro thô  ≤ 10%; độ ẩm ≤14%"
+          },
+          {
+            "name": "main_ingredient",
+            "title": "Thành phần chính",
+            "info": "Bột ngũ cốc nguyên hạt (ngô), thịt gia cầm, dầu động vận và chất béo, bột đậu nành, bột củ cải đường, thịt gà sấy khô, Caco3, canxi photphat, muối, khoáng chất, vitamin, lecithin, lysin, choline, chất chống ô xy hóa tự nhiên (chiết xuất hương thảo), chlorella"
+          },
+          {
+            "name":"user_manual",
+            "title": "Hướng dẫn sử dụng",
+            "info": "Cho ăn theo bảng hướng dẫn cho ăn in trên bao bì, Bảo quản sản phẩm nơi khô ráo và thoáng mát, tránh ánh sáng trực tiếp."
+          },
+          {
+            "name": "TCCS",
+            "title": "TCCS số",
+            "info": "23:2019/JPVN"
+          },
+          {
+            "name": "date_of_manufacture",
+            "title": "Số lô, ngày sản xuất",
+            "info": "in trên bao bì (năm/tháng/ngày)"
+          },
+          {
+            "name": "expiration_date",
+            "title": "Hạn sử dụng",
+            "info": "18 tháng kể từ ngày sản xuất"
+          },
+          {
+            "name":"net_weight",
+            "title": "Khối lượng tịnh",
+            "info": "2kg"
+          },
+          {
+            "name": "origin",
+            "title": "Xuất xứ",
+            "info": "Hàn Quốc"
+          },
+          {
+            "name": "producer",
+            "title": "Nhà sản xuất",
+            "info": "Farmsco Corporation"
+          },
+          {
+            "name": "address",
+            "title": "Địa chỉ",
+            "info": "31, Gongdan 1-gil, Jeongeup-si, Jeollabuk-do, Korea"
+          }
+        ],
+        "tutorial": {
+          "purchase": "Quý khách truy cập website của chúng tôi xem sản phẩm và lựa chọn sản phẩm cần mua. - Nhấn nút \"Thêm vào giỏ hàng\" để đưa sản phẩm vào giỏ hàng. - Sau khi đã hoàn tất việc chọn hàng, quý khách vào giỏ hàng để xem (biểu tượng giỏ hàng ngoài cùng bên phải topbar). - Chuyển tới trang thanh toán. - Nhập đầy đủ thông tin cá nhân và thông tin thanh toán vào biểu mẫu. -Kết thúc đơn hàng, quý khách vui lòng chờ nhân viên của chúng tôi điện thoại lại để chốt đơn.",
+          "pay": "Hiện tại, chúng tôi mới chỉ cung cấp 2 hình thức thanh toán: (1). nhận hàng thanh toán và (2). thanh toán chuyển khoản. - 1. Quý khách đặt hàng và được nhân viên xác nhận qua cuộc gọi trực tiếp. Qua đó, chúng tôi gửi hàng về cho quý khách thông qua dịch vụ ship COD. Quý khách nhận hàng, kiểm tra hàng và thanh toán trực tiếp cho nhân viên bưu phát. - 2: Quý khách chuyển khoản trước cho chúng tôi qua tài khoản nhân hàng, và chúng tôi sẽ gửi chuyển phát nhanh cho quý khách"
+        }
+      }
+    },
+    {
+      "id": 39,
+      "type": "dog",
+      "title": "Thức ăn hữu cơ NATURAL CORE cho chó nhạy cảm cá hồi",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-CHO-CHÓ-NHẠY-CẢM-CÁ-Hồi-100x100.jpg",
+      "price": 300000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 40,
+      "type": "dog",
+      "title": "Thức ăn hữu cơ NATURAL CORE cho chó thịt cừu",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-CHO-CHÓ-THỊT-CỪU-280x280.png",
+      "price": 260000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 41,
+      "type": "dog",
+      "title": "PATE MONGE VỊ THỊT BÒ",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-VỊ-THỊT-BÒ-100x100.jpg",
+      "price": 40000,
+      "detail": "food_dog",
+      "product_amount": 100
+    },
+    {
+      "id": 42,
+      "type": "dog",
+      "title": "Thức ăn hạt mềm cho chó Dr.Soft IGY",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Thức-ăn-hạt-mềm-cho-chó-Dr.Soft-IGY-280x280.jpg",
+      "price": 270000,
+      "detail": "food_dog",
+      "product_amount": 100
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "position": 3,
+      "image": "https://ict-imgs.vgcloud.vn/2020/09/01/19/huong-dan-tao-facebook-avatar.jpg",
+      "fullName": "Nguyen Van A",
+      "age": "12",
+      "phone": "0954535255",
+      "email": "nguyendangduc2231999@gmail.com",
+      "userName": "nguyendangduc",
+      "password": "1",
+      "createAt": "2020-05-06T18:48:45.884Z",
+      "updateAt": "2020-05-06T18:48:45",
+      "receivingInfo": {}
+    }
+  ],
+  "purchase": [
+    {
+      "state": 2,
+      "idUser": 1,
+      "idStaff": -1,
+      "cart": {
+        "SUfdfpE2VX": {
+          "name": "Chim vàng anh",
+          "image": "https://sudospaces.com/happyvet-com-vn/2019/05/chim-vang-anh-an-gi-3.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 45,
+          "sale": 0,
+          "category": "Chim",
+          "id": "SUfdfpE2VX",
+          "des": "Vàng anh là những loài chim biết hót rất giỏi, có kích cỡ trung bình. Chúng có mỏ tương đối khỏe và nhọn, các chân và các ngón tương đối ngắn nhưng khỏe.Các đại diện của họ này có dị hình giới tính rất mạnh:Chim trống có màu sắc lòe loẹt với các màu tương phản. Phần lớn các loài có màu vàng tươi với các vết đen sắc nét trên đầu, cánh hay đuôi.Chim trống của vài loài ở Đông Nam Á có màu đen hay đỏ.",
+          "quantity": 3,
+          "total": 135
+        },
+        "f2": {
+          "id": "f2",
+          "name": "Mèo gấu bông",
+          "image": "https://achocanh.com/wp-content/uploads/2018/07/nhung-giong-meo-dep-nhat-the-gioi-achocanh-2.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 76,
+          "sale": 20,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 60.8
+        }
+      },
+      "totalPrice": 45,
+      "date": "17-10-2020",
+      "booking": {
+        "Name": "1",
+        "Phone": "1",
+        "Address": "1"
+      },
+      "id": 2
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "",
+        "phone": "",
+        "address": ""
+      },
+      "date": "22-11-2020",
+      "state": 5,
+      "idStaff": -1,
+      "id": 324
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 3,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "fdf",
+        "phone": "0956432422",
+        "address": "1"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 325
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1323fd",
+        "phone": "0975453433",
+        "address": "1"
+      },
+      "date": "22-11-2020",
+      "state": 5,
+      "idStaff": -1,
+      "id": 326
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "21",
+        "phone": "0986424333",
+        "address": "44"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 327
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0986456455",
+        "address": "3"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 328
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1323fd",
+        "phone": "0975464555",
+        "address": "1"
+      },
+      "date": "22-11-2020",
+      "state": 5,
+      "idStaff": -1,
+      "id": 329
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0985848544",
+        "address": "1"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 330
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0985635355",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 331
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 3,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0956454644",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 332
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0966464222",
+        "address": "2"
+      },
+      "date": "22-11-2020",
+      "state": 5,
+      "idStaff": -1,
+      "id": 333
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0985434355",
+        "address": "1"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 334
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "1",
+        "phone": "0986974644",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 335
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 13,
+          "total": 728
+        }
+      },
+      "totalPrice": 728,
+      "booking": {
+        "name": "1",
+        "phone": "0975634333",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 336
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "2",
+        "phone": "0975664524",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 337
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 3,
+          "total": 112
+        }
+      },
+      "totalPrice": 112,
+      "booking": {
+        "name": "1",
+        "phone": "0987958584",
+        "address": "1"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 338
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "37": {
+          "name": "Chó Shiba Inu",
+          "image": "https://kenh14cdn.com/thumb_w/660/2017/2373545713584488009515432111733942250897408n-1514196978625.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 45,
+          "sale": 10,
+          "category": "Chó",
+          "id": "37",
+          "des": "Thừa hưởng đặc điểm chắc khỏe nổi trội của tổ tiên, Bull Anh mang một vẻ ngoài oai vệ đặc trưng. Nếu có một chế độ tập luyện hợp lý, chúng có thể sở hữu 1 thân hình với cơ bắp lý tưởng.Đối ngược với vẻ ngoài trông khá dữ tợn, Bull Anh thuộc tuýp những loài chó hòa nhã, thân thiện. Chúng thích được mọi người quan tâm, vuốt ve, xoa đầu hay khen ngợi. Bull Anh được đánh giá là giống chó tình cảm, thích chơi đùa với trẻ nhỏ.Bull Anh rất trung thành và luôn bảo vệ chủ nhân. Chúng sở hữu các giác quan cực kỳ nhạy bén, luôn cảnh giác cao với người lạ hay bất cứ thứ khả nghi nào.",
+          "quantity": 3,
+          "total": 81
+        },
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 2,
+          "total": 56
+        },
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 2,
+          "total": 77.4
+        }
+      },
+      "totalPrice": 214.4,
+      "booking": {
+        "name": "1323fd",
+        "phone": "0976454333",
+        "address": "3"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 339
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 77.4
+        }
+      },
+      "totalPrice": 77.4,
+      "booking": {
+        "name": "1",
+        "phone": "0974837473",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 340
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 3,
+          "total": 232.2
+        }
+      },
+      "totalPrice": 232.2,
+      "booking": {
+        "name": "3",
+        "phone": "0947487374",
+        "address": "y"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 341
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 77.4
+        }
+      },
+      "totalPrice": 77.4,
+      "booking": {
+        "name": "2",
+        "phone": "0984434333",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 342
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 77.4
+        }
+      },
+      "totalPrice": 77.4,
+      "booking": {
+        "name": "1",
+        "phone": "0954535255",
+        "address": "5"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 343
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 77.4
+        }
+      },
+      "totalPrice": 77.4,
+      "booking": {
+        "name": "1323fd",
+        "phone": "0956353633",
+        "address": "4"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 344
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 4,
+          "total": 309.6
+        }
+      },
+      "totalPrice": 309.6,
+      "booking": {
+        "name": "1",
+        "phone": "0964453243",
+        "address": "5"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 345
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 2,
+          "total": 154.8
+        }
+      },
+      "totalPrice": 154.8,
+      "booking": {
+        "name": "1",
+        "phone": "0953424234",
+        "address": "44"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 346
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "k8": {
+          "id": "k8",
+          "name": "Chó husky",
+          "image": "https://petmaster.vn/petroom/wp-content/uploads/2020/03/thanh-bieu-cam-cho-husky.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 86,
+          "sale": 10,
+          "category": "Chó",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 77.4
+        }
+      },
+      "totalPrice": 77.4,
+      "booking": {
+        "name": "1",
+        "phone": "0964435334",
+        "address": "5"
+      },
+      "date": "22-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 347
+    },
+    {
+      "idUser": 1,
+      "cart": {
+        "SUfdfpE2VX": {
+          "name": "Chim vàng anh",
+          "image": "https://sudospaces.com/happyvet-com-vn/2019/05/chim-vang-anh-an-gi-3.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 45,
+          "sale": 0,
+          "category": "Chim",
+          "id": "SUfdfpE2VX",
+          "des": "Vàng anh là những loài chim biết hót rất giỏi, có kích cỡ trung bình. Chúng có mỏ tương đối khỏe và nhọn, các chân và các ngón tương đối ngắn nhưng khỏe.Các đại diện của họ này có dị hình giới tính rất mạnh:Chim trống có màu sắc lòe loẹt với các màu tương phản. Phần lớn các loài có màu vàng tươi với các vết đen sắc nét trên đầu, cánh hay đuôi.Chim trống của vài loài ở Đông Nam Á có màu đen hay đỏ.",
+          "quantity": 1,
+          "total": 45
+        },
+        "1d0": {
+          "id": "1d0",
+          "name": "Chó sad",
+          "image": "https://sieupet.com/sites/default/files/pictures/images/cho-bull-gia-re.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 20,
+          "category": "Chó",
+          "des": "Thừa hưởng đặc điểm chắc khỏe nổi trội của tổ tiên, Bull Anh mang một vẻ ngoài oai vệ đặc trưng. Nếu có một chế độ tập luyện hợp lý, chúng có thể sở hữu 1 thân hình với cơ bắp lý tưởng.Đối ngược với vẻ ngoài trông khá dữ tợn, Bull Anh thuộc tuýp những loài chó hòa nhã, thân thiện. Chúng thích được mọi người quan tâm, vuốt ve, xoa đầu hay khen ngợi. Bull Anh được đánh giá là giống chó tình cảm, thích chơi đùa với trẻ nhỏ.Bull Anh rất trung thành và luôn bảo vệ chủ nhân. Chúng sở hữu các giác quan cực kỳ nhạy bén, luôn cảnh giác cao với người lạ hay bất cứ thứ khả nghi nào.",
+          "quantity": 1,
+          "total": 44.8
+        }
+      },
+      "totalPrice": 89.8,
+      "booking": {
+        "name": "1",
+        "phone": "0986453522",
+        "address": "343"
+      },
+      "date": "24-11-2020",
+      "state": 1,
+      "idStaff": -1,
+      "id": 348
+    },
+    {
+      "idUser": 100,
+      "cart": {
+        "54": {
+          "id": "54",
+          "name": "Mèo Etoxic",
+          "image": "https://www.chotot.com/kinhnghiem/wp-content/uploads/2019/10/meo-munchkin-21-1024x856.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 10,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 2,
+          "total": 100.8
+        },
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 11,
+          "total": 560
+        },
+        "SUfdfpE2VX": {
+          "name": "Chim vàng anh",
+          "image": "https://sudospaces.com/happyvet-com-vn/2019/05/chim-vang-anh-an-gi-3.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 45,
+          "sale": 0,
+          "category": "Chim",
+          "id": "SUfdfpE2VX",
+          "des": "Vàng anh là những loài chim biết hót rất giỏi, có kích cỡ trung bình. Chúng có mỏ tương đối khỏe và nhọn, các chân và các ngón tương đối ngắn nhưng khỏe.Các đại diện của họ này có dị hình giới tính rất mạnh:Chim trống có màu sắc lòe loẹt với các màu tương phản. Phần lớn các loài có màu vàng tươi với các vết đen sắc nét trên đầu, cánh hay đuôi.Chim trống của vài loài ở Đông Nam Á có màu đen hay đỏ.",
+          "quantity": 1,
+          "total": 45
+        },
+        "f2": {
+          "id": "f2",
+          "name": "Mèo gấu bông",
+          "image": "https://achocanh.com/wp-content/uploads/2018/07/nhung-giong-meo-dep-nhat-the-gioi-achocanh-2.jpg",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 76,
+          "sale": 20,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 60.8
+        }
+      },
+      "totalPrice": 766.6,
+      "booking": {
+        "name": "fdf",
+        "phone": "0987653543",
+        "address": "43"
+      },
+      "date": "11-12-2020",
+      "state": 5,
+      "idStaff": -1,
+      "id": 349
+    },
+    {
+      "idUser": 100,
+      "cart": {
+        "1f": {
+          "id": "1f",
+          "name": "Mèo America",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROOlC_P1KvzgyiCRS-xGfUAivTxf_tsWvpmg&usqp=CAU",
+          "createAt": "2020-05-06T18:48:45.884Z",
+          "price": 56,
+          "sale": 0,
+          "category": "Mèo",
+          "des": "Mèo vàng là một trong ba giống mèo ta phổ biến ở Việt Nam. Đây cũng là loài mèo phổ biến ở châu Á. Đa phần chúng có bộ lông màu vàng, óng mượt và ngắn. Giống mèo này vốn sở hữu gen rất đa dạng. Do đó, chúng ít bị bệnh về di truyền hơn các giống mèo thuần chủng khác. Mèo vàng thường được nuôi trong nhà và được đánh giá là có bản tính tự lập cao. Dáng đi nhanh nhẹn, uyển chuyển. Chúng có tố chất rất thông minh và tinh nghịch.",
+          "quantity": 1,
+          "total": 56
+        }
+      },
+      "totalPrice": 56,
+      "booking": {
+        "name": "2",
+        "phone": "0986565644",
+        "address": "5"
+      },
+      "date": "11-12-2020",
+      "state": 5,
+      "idStaff": -1,
+      "id": 350
+    }
+  ]
+}
