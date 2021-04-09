@@ -128,7 +128,7 @@
 </template>
 <script>
 import { mapMutations, mapGetters } from 'vuex'
-import './ProductDetail.scss' 
+import '../scss/ProductDetail.scss'
 import axios from 'axios'
 export default {
     name: "ProductDetail",

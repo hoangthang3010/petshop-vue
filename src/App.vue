@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Header from './components/header/Header.vue'
-import './App.scss'
+import Header from './components/Header.vue'
+import '../src/scss/App.scss'
 export default {
   name: 'App',
   components: {

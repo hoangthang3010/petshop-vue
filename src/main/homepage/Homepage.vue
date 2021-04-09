@@ -30,10 +30,10 @@
 <script>
 
 // import { ref } from 'vue'
-import './Homepage.scss';
+import '../../scss/Homepage.scss'
 import axios from 'axios'
-import Product from '../../components/product/Product.vue'
-import SliderHomepage from '../../components/sliderHompage/SliderHomepage.vue'
+import Product from '../../components/Product.vue'
+import SliderHomepage from '../../components/SliderHomepage.vue'
 export default {
     name: 'Homepage',
     components: {Product, SliderHomepage},

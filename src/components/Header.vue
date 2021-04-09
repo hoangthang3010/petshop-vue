@@ -41,7 +41,7 @@
   </div>
 </template>
 <script>
-import './Header.scss'
+import '../scss/Header.scss'
 // import { Button } from 'ant-design-vue';
 export default {
   methods:{

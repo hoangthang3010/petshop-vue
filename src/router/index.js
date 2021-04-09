@@ -1,5 +1,5 @@
 import Hompage from '../main/homepage/Homepage.vue'
-import ProductDetail from '../components/productDetail/ProductDetail.vue'
+import ProductDetail from '../components/ProductDetail.vue'
 
 export const routes = [
     { path: '/', name: 'homepage', component: Hompage },
