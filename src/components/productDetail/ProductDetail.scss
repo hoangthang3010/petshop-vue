@@ -4,6 +4,9 @@
     margin: auto;
     &__left{
         border-right: 1px solid rgb(209, 209, 209);
+        .md-tabs {
+            margin-bottom: 24px;
+          }
         &__top{
             border-bottom: 1px solid rgb(209, 209, 209);
             display: flex;
@@ -37,6 +40,7 @@
                             border: 1px solid rgb(209, 209, 209);
                         }
                         &--num{
+                            text-align: center;
                             width: 60px;
                             border: 1px solid rgb(209, 209, 209);
                         }

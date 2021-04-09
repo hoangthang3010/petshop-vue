@@ -7,6 +7,7 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import store from './store'
 
 Vue.use(Antd);
 
@@ -20,4 +21,5 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
+	store
 })  

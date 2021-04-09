@@ -4,7 +4,7 @@
             <div class="col-9 productD__left">
                 <div class="productD__left__top">
                     <div class="col-6 productD__left__top__image">
-                        <img :src="productDetail && productDetail[$route.params.id].image"/>  
+                        <img :src="productDetail && productDetail[id].image"/>  
                     </div>
                     <div class="col-6 productD__left__top__info">
                         <h3 class="productD__left__top__info__title">
@@ -17,12 +17,31 @@
                             </span>
                         </div>
                         <div class="productD__left__top__info__order">
-                            <div class="productD__left__top__info__order__count">
-                                <input class="productD__left__top__info__order__count--change" type="button" value="-">
-                                <input class="productD__left__top__info__order__count--num" type="text"/>
-                                <input class="productD__left__top__info__order__count--change" type="button" value="+">
+                            <div class="productD__left__top__info__order__count"
+                            >
+                                <input 
+                                    class="productD__left__top__info__order__count--change" 
+                                    type="button" 
+                                    value="-"
+                                    @click="countDown()"
+                                >
+                                <input 
+                                    class="productD__left__top__info__order__count--num" 
+                                    type="text"
+                                    v-model="count"
+                                    @change="handleCount"
+                                >
+                                <input 
+                                    class="productD__left__top__info__order__count--change" 
+                                    type="button" 
+                                    value="+"
+                                    @click="countUp()"
+                                >
                             </div>
-                            <div class="productD__left__top__info__order__add">Thêm vào giỏ hàng</div>
+                            <div 
+                                class="productD__left__top__info__order__add"
+                                @click="ADD_TO_CARD({id : productDetail[id].id, title: productDetail[id].title, price: productDetail[id].price ,count :count})"
+                            >Thêm vào giỏ hàng</div>
                         </div>
                         <!-- <div class="productD__left__top__info__capacity">
                             <h1>Công dụng: </h1>
@@ -31,8 +50,8 @@
                 </div>
                 <md-tabs  class="productD__left__tab">
                     <md-tab id="tab-home" md-label="Mô tả">
-                        <div v-if="productDetail[$route.params.id].product_detail">
-                            <div v-for="(item, key) in productDetail[$route.params.id].product_detail && productDetail[$route.params.id].product_detail.describe" :key="key">
+                        <div v-if="productDetail[id].product_detail">
+                            <div v-for="(item, key) in productDetail[id].product_detail && productDetail[id].product_detail.describe" :key="key">
                                 <span style="font-size: 15px; font-weight: 600; color: black">{{item.title}}:</span>
                                 <p>{{item.info}}</p>
                             </div>
@@ -45,9 +64,9 @@
                             md-label="Hướng dẫn mua hàng và thanh toán"
                     >
                         <p style="font-size: 15px; font-weight: 600; color: black">Hướng dẫn mua hàng</p>
-                        <p>{{productDetail[$route.params.id].product_detail && productDetail[$route.params.id].product_detail.tutorial.purchase}}</p>
+                        <p>{{productDetail[id].product_detail && productDetail[id].product_detail.tutorial.purchase}}</p>
                         <p style="font-size: 15px; font-weight: 600; color: black">Hướng dẫn thanh toán</p>
-                        <p>{{productDetail[$route.params.id].product_detail && productDetail[$route.params.id].product_detail.tutorial.pay}}</p>
+                        <p>{{productDetail[id].product_detail && productDetail[id].product_detail.tutorial.pay}}</p>
                     </md-tab>
                 </md-tabs>
                 <div class="productD__left__rate">
@@ -108,6 +127,7 @@
     </div>
 </template>
 <script>
+import { mapMutations, mapGetters } from 'vuex'
 import './ProductDetail.scss' 
 import axios from 'axios'
 export default {
@@ -115,14 +135,19 @@ export default {
     data() {
         return{
             productDetail: [],
-            showRate: false
+            showRate: false,
+            count: 0,
+            id: this.$route.params.id
         }
     },
-    mounted(){
+    computed: mapGetters(['product']),
+    created(){
+        // if (!this.count) return(this.count = 0, console.log(this.count)),
         axios.get('http://localhost:3005/productDetail')
             .then(response => {
                 this.productDetail = response.data,
-                console.log(response.data);
+                this.count = response.data[this.id].count
+                console.log(this.productDetail);
             })
             .catch(error => {
                 console.log(error)
@@ -133,6 +158,32 @@ export default {
         filterPrice : function(data) {
             return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
             // toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }
+    },
+    methods: {
+        ...mapMutations(['ADD_TO_CARD']),
+        // ADD_TO_CARD(id, title, price, count){
+        //     let detail = Object.assign({id},{title}, {price}, {count});
+        //     console.log(detail);
+        // },
+        handleCount(){
+            if (!this.count || this.count == 0 || this.count % 1 !== 0) 
+                return(
+                    this.count = 1
+                    // console.log(this.count)
+                )
+            else 
+                return(
+                    this.count = Number(this.count)
+                    // console.log(this.count)
+                )
+        },
+        countUp(){
+            this.count = this.count + 1;
+            // console.log(this.count);
+        },
+        countDown(){
+            this.count === 1 ? this.count : this.count-=1
         }
     }
 }

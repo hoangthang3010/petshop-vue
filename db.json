@@ -165,6 +165,7 @@
       "price": 225000,
       "detail": "medicine_cat",
       "product_amount": 100,
+      "count": 1,
       "function": "",
       "quality_index": "",
       "main_ingredient": ""
@@ -177,6 +178,7 @@
       "price": 300000,
       "detail": "medicine_cat",
       "product_amount": 100,
+      "count": 1,
       "function": "",
       "quality_index": "",
       "main_ingredient": ""
@@ -189,6 +191,7 @@
       "price": 225000,
       "detail": "medicine_dog",
       "product_amount": 100,
+      "count": 1,
       "function": "",
       "quality_index": "",
       "main_ingredient": ""
@@ -200,7 +203,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Trị-ve-ran-cho-Frontline-400x400.jpg",
       "price": 250000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 5,
@@ -209,7 +213,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656-1.jpg",
       "price": 700000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 6,
@@ -218,7 +223,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-promotion-420-yuhan-30-vien--280x280.jpg",
       "price": 750000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 7,
@@ -227,7 +233,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-cam-mau-quick-stop-14g-1-300x300.jpg",
       "price": 600000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 8,
@@ -236,7 +243,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/6911_l.jpg",
       "price": 430000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 9,
@@ -245,7 +253,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-cho-meo-300ml-cai-thien-da-va-long.jpg",
       "price": 500000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 10,
@@ -254,7 +263,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-300ml.jpg",
       "price": 450000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 11,
@@ -263,7 +273,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/excel-thuốc-bổ-sung-vitamin-cho-chó-trưởng-thành-8in1-70-viên.jpg",
       "price": 350000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 12,
@@ -272,7 +283,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656.jpg",
       "price": 700000,
       "detail": "medicine_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 13,
@@ -282,6 +294,7 @@
       "price": 45000,
       "detail": "food_cat",
       "product_amount": 100,
+      "count": 1,
       "product_detail": {
         "describe" :[
           {
@@ -353,7 +366,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/9159fc6f361fcf41960e.jpg",
       "price": 45000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 15,
@@ -362,7 +376,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Ofresh-Cat-400x400.jpg",
       "price": 280000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 16,
@@ -371,7 +386,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.28.jpg",
       "price": 50000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 17,
@@ -380,7 +396,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.22.jpg",
       "price": 60000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 18,
@@ -389,7 +406,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Sup-Ca-Siao-300x300.jpg",
       "price": 70000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 19,
@@ -398,7 +416,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.20-300x300.jpg",
       "price": 200000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 20,
@@ -407,7 +426,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.13-2-200x300.jpg",
       "price": 180000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 21,
@@ -416,7 +436,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/12840_l-300x300.jpg",
       "price": 40000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 22,
@@ -425,7 +446,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/12842_l-300x300.jpg",
       "price": 40000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 23,
@@ -434,7 +456,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/CatsMe-5.jpg",
       "price": 440000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 24,
@@ -443,7 +466,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/CatsMe_2.jpg",
       "price": 240000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 25,
@@ -452,7 +476,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HẠT-MỀM-CHO-MÈO-ZENITH-CAT-HAIRBALL-280x280.jpg",
       "price": 270000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 26,
@@ -461,7 +486,8 @@
       "image":"https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-GIÀU-ĐẠM-CHO-MÈO-100x100.jpg",
       "price": 320000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 27,
@@ -470,7 +496,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Ofresh-Kitten-280x280.jpg",
       "price": 280000,
       "detail": "food_cat",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     
     {
@@ -480,7 +507,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-THỊT-HEO-VÀ-TRÁI-THƠM-100G-300x300.jpg",
       "price": 40000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 29,
@@ -489,7 +517,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-VỊ-CÁ-HỒI-VÀ-QUẢ-LÊ-280x280.jpg",
       "price": 40000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 30,
@@ -498,7 +527,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/118_l-300x300.jpg",
       "price": 50000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 31,
@@ -507,7 +537,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/121_l.jpg",
       "price": 50000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 32,
@@ -516,7 +547,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thit-vit-dong-hop-puppy-friend-100g.jpg",
       "price": 30000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 33,
@@ -525,7 +557,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/stick-xuong-sua-good-friend-5-thanh-.jpg",
       "price": 60000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 34,
@@ -534,7 +567,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/stick-xuong-vi-sua-good-friend-2p--100x100.jpg",
       "price": 60000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 35,
@@ -543,7 +577,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/phomat-mieng-doggy-man-hello-100g-280x280.jpg",
       "price": 140000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 36,
@@ -552,7 +587,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/banh-sua-chua-bow-wow-vi-dau-75g.jpg",
       "price": 80000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 37,
@@ -561,7 +597,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/good-friend-stick-xương-bò-5p.jpg",
       "price": 60000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 38,
@@ -571,6 +608,7 @@
       "price": 380000,
       "detail": "food_dog",
       "product_amount": 100,
+      "count": 1,
       "product_detail": {
         "describe" :[
           {
@@ -642,7 +680,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-CHO-CHÓ-NHẠY-CẢM-CÁ-Hồi-100x100.jpg",
       "price": 300000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 40,
@@ -651,7 +690,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-CHO-CHÓ-THỊT-CỪU-280x280.png",
       "price": 260000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 41,
@@ -660,7 +700,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-VỊ-THỊT-BÒ-100x100.jpg",
       "price": 40000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     },
     {
       "id": 42,
@@ -669,7 +710,8 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Thức-ăn-hạt-mềm-cho-chó-Dr.Soft-IGY-280x280.jpg",
       "price": 270000,
       "detail": "food_dog",
-      "product_amount": 100
+      "product_amount": 100,
+      "count": 1
     }
   ],
   "user": [

@@ -18,11 +18,17 @@
         </div>
       </div>
       <div class="header__top__right col-3">
-        <div class="header__top__right__cart col-6">
-          <a-icon style="fontSize: 30px; margin: auto" type="shopping-cart" />
-          <span class="header__top__right__cart__title">&nbsp;Giỏ hàng()</span>
-          <!-- <md-button class="md-primary">Primary</md-button> -->
-        </div>
+        <router-link  
+          class="header__top__right__cart col-6" 
+          to="/card"
+          style="text-decoration: none; color: black;"
+        >
+          <!-- <div> -->
+            <a-icon class="header__top__right__cart__icon" type="shopping-cart" />
+            <span class="header__top__right__cart__title">&nbsp;Giỏ hàng()</span>
+            <!-- <md-button class="md-primary">Primary</md-button> -->
+          <!-- </div> -->
+        </router-link>
         <div class="header__top__right__login col-6">
           <a-icon style="fontSize: 30px"  type="user" />
           <span class="header__top__right__login__title">Đăng nhập</span>
