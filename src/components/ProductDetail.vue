@@ -40,7 +40,17 @@
                             </div>
                             <div 
                                 class="productD__left__top__info__order__add"
-                                @click="ADD_TO_CARD({id : productDetail[id].id, title: productDetail[id].title, price: productDetail[id].price ,count :count})"
+                                @click="ADD_TO_CART({
+                                    id : id, 
+                                    title: productDetail[id].title, 
+                                    price: productDetail[id].price,
+                                    image: productDetail[id].image,
+                                    count: count,
+                                    name: $route.params.name,
+                                    name1: $route.params.name1,
+                                    name2: $route.params.name2,
+
+                                })"
                             >Thêm vào giỏ hàng</div>
                         </div>
                         <!-- <div class="productD__left__top__info__capacity">
@@ -162,7 +172,7 @@ export default {
         }
     },
     methods: {
-        ...mapMutations(['ADD_TO_CARD']),
+        ...mapMutations(['ADD_TO_CART']),
         // ADD_TO_CARD(id, title, price, count){
         //     let detail = Object.assign({id},{title}, {price}, {count});
         //     console.log(detail);

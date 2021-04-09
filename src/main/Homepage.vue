@@ -59,8 +59,8 @@ export default {
     mounted () {
         axios.get(API_URL)
             .then(response => {
-                this.bestselling = response.data,
-                console.log(response.data);
+                this.bestselling = response.data
+                // console.log(response.data);
             })
             .catch(error => {
                 console.log(error)
@@ -68,8 +68,8 @@ export default {
             })
         axios.get(`${API_URL}/ProductAll`)
             .then(response => {
-                this.product = response.data,
-                console.log(response.data);
+                this.product = response.data
+                // console.log(response.data);
             })
             .catch(error => {
                 console.log(error)
@@ -77,8 +77,8 @@ export default {
             })
         axios.get(`${API_URL}/productDetail`)
             .then(response => {
-                this.productDetail = response.data,
-                console.log(response.data);
+                this.productDetail = response.data
+                // console.log(response.data);
             })
             .catch(error => {
                 console.log(error)

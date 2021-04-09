@@ -20,12 +20,12 @@
       <div class="header__top__right col-3">
         <router-link  
           class="header__top__right__cart col-6" 
-          to="/card"
+          to="/cart"
           style="text-decoration: none; color: black;"
         >
           <!-- <div> -->
             <a-icon class="header__top__right__cart__icon" type="shopping-cart" />
-            <span class="header__top__right__cart__title">&nbsp;Giỏ hàng()</span>
+            <span class="header__top__right__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
             <!-- <md-button class="md-primary">Primary</md-button> -->
           <!-- </div> -->
         </router-link>
@@ -42,8 +42,10 @@
 </template>
 <script>
 import '../scss/Header.scss'
+import { mapGetters } from 'vuex'
 // import { Button } from 'ant-design-vue';
 export default {
+  computed: mapGetters(['product']),
   methods:{
     // let mybutton = document.getElementById("header1");
     // window.onscroll = function() {scrollFunction()};

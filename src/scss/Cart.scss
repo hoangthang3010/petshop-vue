@@ -1,0 +1,108 @@
+.cart{
+    // margin-top: 20px;
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    &__left{
+        padding: 20px;
+        &__item{
+            &__table{
+                width: 100%;
+                &__title{
+                    margin: auto;
+                    width: 100%;
+                    border-bottom: 3px solid rgb(220, 220, 220);
+                    &__th{
+                        padding: 5px 0px;
+                        font-size: 15px;
+                    }
+                }
+                &__content{
+                    margin: auto;
+                    width: 100%;
+                    &__tr{
+                        padding: 5px 0px;
+                        border-bottom: 1px solid rgb(220, 220, 220);
+                        &__link{
+                            display: flex;
+                            &__title{
+                                font-size: 15px;
+                                margin: auto;
+                            }
+                        }
+                    }
+                }
+            }
+            &__back{
+                margin-top: 20px;
+                &--click{
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 13px;
+                    color: #ff6600;
+                    padding: 6px 10px;
+                    border: 3px solid #ff6600;
+                    &:hover{
+                        color: white;
+                        background-color: #ff6600;
+                    }
+                }
+            }
+        }
+    }
+    &__right{
+        padding: 20px;
+        &__title{
+            padding: 5px 0px;
+            border-bottom: 3px solid rgb(220, 220, 220);
+            font-size: 15px;
+            font-weight: 600;
+        }
+        &__money{
+            margin-top: 20px;
+            border-bottom: 3px solid rgb(220, 220, 220);
+            &__provisional{
+                display: flex;
+                padding-bottom: 5px;
+                border-bottom: 1px solid rgb(220, 220, 220);
+                &__left{
+                    margin: auto;
+                    padding: 0px;
+                }
+                &__right{
+                    margin: auto;
+                    padding: 0px;
+                    font-size: 20px;
+                    color: red;
+                    text-align: right;
+                }
+            }
+            &__total{
+                display: flex;
+                padding: 5px 0px;
+                &__left{
+                    margin: auto;
+                    padding: 0px;
+                }
+                &__right{
+                    margin: auto;
+                    padding: 0px;
+                    font-size: 20px;
+                    color: red;
+                    text-align: right;
+                }
+            }
+        }
+        &__pay{
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+            border: none;
+            padding: 8px;
+            background-color: #ff6600;
+            &:hover{
+                background-color:rgb(150, 60, 0);
+            }
+        }
+    }
+}
