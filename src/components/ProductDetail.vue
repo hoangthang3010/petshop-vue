@@ -129,6 +129,7 @@
 <script>
 import { mapMutations, mapGetters } from 'vuex'
 import '../scss/ProductDetail.scss'
+import {API_URL} from '../.env.js'
 import axios from 'axios'
 export default {
     name: "ProductDetail",
@@ -143,7 +144,7 @@ export default {
     computed: mapGetters(['product']),
     created(){
         // if (!this.count) return(this.count = 0, console.log(this.count)),
-        axios.get('http://localhost:3005/productDetail')
+        axios.get(`${API_URL}/productDetail`)
             .then(response => {
                 this.productDetail = response.data,
                 this.count = response.data[this.id].count

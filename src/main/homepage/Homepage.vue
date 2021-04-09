@@ -32,6 +32,7 @@
 // import { ref } from 'vue'
 import '../../scss/Homepage.scss'
 import axios from 'axios'
+import {API_URL} from '../../.env.js'
 import Product from '../../components/Product.vue'
 import SliderHomepage from '../../components/SliderHomepage.vue'
 export default {
@@ -56,7 +57,7 @@ export default {
         }
     },
     mounted () {
-        axios.get('http://localhost:3005/bestselling')
+        axios.get(API_URL)
             .then(response => {
                 this.bestselling = response.data,
                 console.log(response.data);
@@ -65,7 +66,7 @@ export default {
                 console.log(error)
                 this.errored = true
             })
-        axios.get('http://localhost:3005/ProductAll')
+        axios.get(`${API_URL}/ProductAll`)
             .then(response => {
                 this.product = response.data,
                 console.log(response.data);
@@ -74,7 +75,7 @@ export default {
                 console.log(error)
                 this.errored = true
             })
-        axios.get('http://localhost:3005/productDetail')
+        axios.get(`${API_URL}/productDetail`)
             .then(response => {
                 this.productDetail = response.data,
                 console.log(response.data);
