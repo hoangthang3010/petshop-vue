@@ -1,4 +1,4 @@
-import Hompage from '../main/homepage/Homepage.vue'
+import Hompage from '../main/Homepage.vue'
 import ProductDetail from '../components/ProductDetail.vue'
 
 export const routes = [
