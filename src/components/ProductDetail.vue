@@ -126,7 +126,8 @@
                     <!-- <div> -->
                     <span class="productD__right__product__title">Sản phẩm</span>
                     <!-- </div> -->
-                    <div  class="productD__right__product__body">hgjhkgh
+                    <div  class="productD__right__product__body">
+                        <DropProduct/>
                     </div>
                 </div>
                 <div class="productD__right">
@@ -138,11 +139,13 @@
 </template>
 <script>
 import { mapMutations, mapGetters } from 'vuex'
+import DropProduct from '../components/DropProduct.vue'
 import '../scss/ProductDetail.scss'
 import {API_URL} from '../.env.js'
 import axios from 'axios'
 export default {
     name: "ProductDetail",
+    components: {DropProduct},
     data() {
         return{
             productDetail: [],

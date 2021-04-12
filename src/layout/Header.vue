@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="header__top__right col-3">
-          <router-link  
+          <router-link 
             class="header__top__right__cart col-6" 
             to="/cart"
             style="text-decoration: none; color: black;"

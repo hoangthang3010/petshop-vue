@@ -2,13 +2,13 @@
     <div style="background-color: #F5F8FD">
             <div class='homepage'>
                 <div class="homepage__top">
-                    <div class="homepage__top__left col-3">
-                        
+                    <div class="homepage__top__left col-2">
+                        <DropProduct/>
                     </div>
-                    <div class="homepage__top__mid col-6">
-                        <SliderHomepage :sliderImage ="sliderImage"/>
+                    <div class="homepage__top__mid col-8">
+                        <SliderHomepage/>
                     </div>
-                    <div class="homepage__top__right col-3">
+                    <div class="homepage__top__right col-2">
                         
                     </div>
                 </div>
@@ -34,26 +34,16 @@ import '../scss/Homepage.scss'
 import axios from 'axios'
 import {API_URL} from '../.env.js'
 import Product from '../components/Product.vue'
+import DropProduct from '../components/DropProduct.vue'
 import SliderHomepage from '../components/SliderHomepage.vue'
 export default {
     name: 'Homepage',
-    components: {Product, SliderHomepage},
+    components: {Product, SliderHomepage, DropProduct},
     data() {
         return{
             product: [],
             productDetail: [],
             bestselling: [],
-            sliderImage: [
-                {
-                    image: "https://dogily.vn/wp-content/uploads/2019/11/Slider-02.jpg"
-                },
-                {
-                    image: "https://dogily.vn/wp-content/uploads/2019/11/Slider-03.jpg"
-                },
-                {
-                    image: "https://dogily.vn/wp-content/uploads/2019/11/Slider-01.jpg"
-                }
-            ]
         }
     },
     mounted () {

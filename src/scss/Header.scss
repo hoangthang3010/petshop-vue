@@ -96,13 +96,10 @@
         // position: sticky;
         // top: 0;
         // position: relative;
-        // animation: mymove 3s;
-        // animation-iteration-count: 1;
+        // animation: move 3s;
     }
-
-    // @keyframes mymove {
-    //   from {top: -50px;}
-    //   to {top: 00px;}
+    // @keyframes move {
+    //     from { top: 0}
+    //     to   { top: 200px}
     // }
-    
 }

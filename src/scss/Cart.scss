@@ -24,6 +24,27 @@
                     &__tr{
                         margin: auto;
                         padding: 5px 0px;
+                        &--change{
+                            width: 33.3333%;
+                            padding: 5px 0px;
+                            border: 1px solid rgb(209, 209, 209);
+                        }
+                        &--num{
+                            text-align: center;
+                            padding: 5px 0px;
+                            width: 33.33%;
+                            border-left: none;
+                            border-right: none;
+                            border: 1px solid rgb(209, 209, 209);
+                        }
+                        &--remove{
+                            cursor: pointer;
+                            margin-bottom: 0px;
+                            margin-top: 5px;
+                            &:hover{
+                                color: red;
+                            }
+                        }
                         &__link{
                             display: flex;
                             &__title{
@@ -105,5 +126,17 @@
                 background-color:rgb(150, 60, 0);
             }
         }
+    }
+}
+.cartNone{
+    margin:auto;
+    padding: 40px 0px;
+    text-align: center;
+    width: 80%;
+    &__title{
+        margin-top: 30px;
+        display: block;
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 }

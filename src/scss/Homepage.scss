@@ -1,21 +1,23 @@
 .homepage{
-    padding: 20px;
+    padding: 10px;
     width: 90%;
     margin: auto;
     // background-color: #F5F8FD;
     &__top{
         display: flex;
         &__left{
-            height: 200px;
-            background-color: red;
+            // height: 200px;
+            // background-color: red;
         }
         &__mid{
-            // height: 200px;
+            aspect-ratio: 1.857 / 1;
+            // width: 100%;
+            // height: 100%;
             // background-color: green;
         }
         &__right{
-            height: 200px;
-            background-color: aqua;
+            // height: 200px;
+            // background-color: aqua;
         }
     }
     &__product{

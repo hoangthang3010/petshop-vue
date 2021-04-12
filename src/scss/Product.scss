@@ -17,9 +17,11 @@
         display: flex;
         padding: 10px;
         &__left{
+            // border-right: 1px solid black;
             padding: 0px;
             li{
                 padding: 5px;
+                border-bottom: 2px solid orangered;
             }
         }
         &__right{
@@ -51,9 +53,9 @@
                         aspect-ratio: 1 / 1;
                         width: 100%;
                     }
-                    a:active, a:hover{
-                        text-decoration: none;
-                    }
+                    // a:active, a:hover{
+                    //     text-decoration: none;
+                    // }
                     &__name{ 
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
@@ -62,6 +64,7 @@
                         margin-top: 10px;
                         font-size: 12px;
                         font-weight: 600;
+                        color: black;
                     }
                     &__price{
                         margin-top: 10px;

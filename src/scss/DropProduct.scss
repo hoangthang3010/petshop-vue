@@ -1,0 +1,10 @@
+.dropproduct{
+    &__item{
+        border: 1px solid rgb(216, 216, 216);
+        border-top: none;
+        padding: 10px 10px;
+        &:hover{
+            background-color: rgb(221, 221, 221);
+        }
+    }
+}

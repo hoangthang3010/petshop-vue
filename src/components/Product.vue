@@ -29,11 +29,12 @@
                         v-for="(item1,key) in productDetail.filter(item1 =>item1.detail  === item.name)" 
                         :key="key"
                     >
-                        <router-link  style="text-decoration: none" :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`"> 
-                            <img :src="item1.image" alt="">
+                        <img :src="item1.image" alt="">
+                        <router-link :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`"> 
                             <p class="product__item__right__top__detail__name" :title="item1.title">{{item1.title}}{{item1.title.length > 60 ? '...' : ''}}</p>
-                            <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
                         </router-link>
+                        <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
+                        
                     </div>
                 </VueSlickCarousel>
                 <!-- <div class="product__item__right__top">

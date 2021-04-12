@@ -15,6 +15,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueSplide from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
+
+Vue.use( VueSplide );
 library.add(fab, fas, far)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
