@@ -1,8 +1,6 @@
 .header{
-    // height: 100px;
-    // position: fixed;
     width: 100%;
-    z-index: 100;
+    // z-index: 100;
     background-color: white;
     &__top{
         // width: 100%;
@@ -57,7 +55,7 @@
                 }
                 &__title{
                     // margin: auto; 
-                    font-size: 20px;
+                    font-size: 17px;
                 }
             }
             &__login{
@@ -72,11 +70,31 @@
     } 
     &__bottom{
         // position: fixed;
-        // position: fixed;
-        // display: none;
+        display: flex;
         z-index: 98;
         height: 50px;
         background-color: orange;
+        &__menu{
+            margin: auto;
+            &__ul{
+                display: flex;
+                margin: 0px;
+                // background-color: orange;
+                &__li{
+                    cursor: pointer;
+                    background-color: orange;
+                    padding: 16px 20px;
+                    color: white;
+                    font-weight: 600;
+                    &:hover{
+                        background-color: #e49502;
+                    }
+                }
+            }
+        }
+        // position: -webkit-sticky;
+        // position: sticky;
+        // top: 0;
         // position: relative;
         // animation: mymove 3s;
         // animation-iteration-count: 1;

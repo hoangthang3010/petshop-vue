@@ -23,7 +23,20 @@
             </div>
             <hr />
             <div class="product__item__right col-10">
-                <div class="product__item__right__top">
+                <VueSlickCarousel v-bind="settings" v-if="productDetail.length > 0">
+                    <div    
+                        class="product__item__right__top__detail"
+                        v-for="(item1,key) in productDetail.filter(item1 =>item1.detail  === item.name)" 
+                        :key="key"
+                    >
+                        <router-link  style="text-decoration: none" :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`"> 
+                            <img :src="item1.image" alt="">
+                            <p class="product__item__right__top__detail__name" :title="item1.title">{{item1.title}}{{item1.title.length > 60 ? '...' : ''}}</p>
+                            <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
+                        </router-link>
+                    </div>
+                </VueSlickCarousel>
+                <!-- <div class="product__item__right__top">
                     <div    
                         class="product__item__right__top__detail col-2"
                         v-for="(item1,key) in productDetail.filter(item1 =>item1.detail  === item.name)" 
@@ -35,7 +48,7 @@
                             <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
                         </router-link>
                     </div>
-                </div>
+                </div> -->
                 <!-- <paginate
                     v-model="page"
                     class="product__item__right__pani"
@@ -65,12 +78,34 @@
 </template>
 <script>
 import '../scss/Product.scss'
-import Paginate from 'vuejs-paginate'
-import Vue from 'vue'
-Vue.component('paginate', Paginate)
+// import Paginate from 'vuejs-paginate'
+// import Vue from 'vue'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// Vue.component('paginate', Paginate)
 export default {
     name: "Product",
     props:['product', 'productDetail'],
+    components: { VueSlickCarousel },
+    data() {
+        return {
+            settings: {
+                // "centerMode": true,
+                // "centerPadding": "20px",
+                "focusOnSelect": true,
+                "infinite": true,
+                "slidesToShow": 5,
+                "speed": 500,
+                "autoplay": true,
+                "autoplaySpeed": 2000,
+                "pauseOnDotsHover": true,
+                "pauseOnFocus": true,
+                "pauseOnHover": true,
+                "touchMove": true
+            }
+        }
+    },
     // data(){
         // display
     // },

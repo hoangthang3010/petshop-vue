@@ -1,5 +1,5 @@
 <template>
-    <div class="cart row">
+    <div class="cart">
         <div class="cart__left col-8">
             <div class="cart__left__item">
                 <table class="cart__left__item__table">
@@ -24,9 +24,9 @@
                                 <p class="cart__left__item__table__content__tr__link__title col-8">{{item.title}}</p>
                             </router-link>
                         </td>
-                        <td class="cart__left__item__table__content__tr col-2">{{item.price | filterPrice}}</td>
+                        <td class="cart__left__item__table__content__tr col-2">{{item.price | filterPrice}}đ</td>
                         <td class="cart__left__item__table__content__tr col-2">{{item.count}}</td>
-                        <td class="cart__left__item__table__content__tr col-2">12</td>
+                        <td class="cart__left__item__table__content__tr col-2">{{item.count * item.price | filterPrice}}đ</td>
                     </tr>
                 </table>
                 <router-link style="text-decoration: none" to="/">
@@ -58,11 +58,26 @@ import { mapGetters } from 'vuex'
 export default {
     name: "Cart",
     computed: mapGetters(['product']),
+    data() {
+        return{
+            total: 0
+        }
+    },
     filters : {
         filterPrice : function(data) {
             return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
             // toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         }
+    },
+    watch:{
+        // getTotal() {
+        //     const res = product1.reduce((prev,item) =>{
+        //         return prev + (item.price * item.count)
+        //     },0)
+        //     this.total = res
+        // }
     }
+    
+    
 }
 </script>

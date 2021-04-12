@@ -1,59 +1,86 @@
 <template>
-  <div class="header">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div class="header__top" id="header1">
-      <div class="header__top__left col-3">
-        <router-link :to="'/'">
-          <img class="header__top__left__image" src="https://dogily.vn/wp-content/uploads/2020/07/dogily-logo.png"/>  
-        </router-link> 
-      </div>
-      <div class="header__top__mid col-6">
-        <div class="header__top__mid__search col-8">
-          <input class="header__top__mid__search__item" type="text"/>
+  <div style="position: fixed; z-index: 100; width:100%;">
+    <div id="app" class="header">
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+      <div class="header__top" id="header1" v-show="!visible">
+        <div class="header__top__left col-3">
+          <router-link :to="'/'">
+            <img class="header__top__left__image" src="https://dogily.vn/wp-content/uploads/2020/07/dogily-logo.png"/>  
+          </router-link> 
         </div>
-        <div class="header__top__mid__clientcare col-4">
-          <a-icon class="col-5" style="fontSize: 60px; margin: auto" type="customer-service"  theme="twoTone" two-tone-color="#FFA500"/>
-          <span class="header__top__mid__clientcare__title col-7">Hỗ trợ 
-            khách hàng</span>
+        <div class="header__top__mid col-6">
+          <div class="header__top__mid__search col-8">
+            <input class="header__top__mid__search__item" type="text"/>
+          </div>
+          <div class="header__top__mid__clientcare col-4">
+            <font-awesome-icon :icon="['fas', 'headset']" size="4x" color="orange"/>
+            <!-- <a-icon class="col-5" style="fontSize: 60px; margin: auto" type="customer-service"  theme="twoTone" two-tone-color="#FFA500"/> -->
+            <span class="header__top__mid__clientcare__title col-8">Hỗ trợ 
+              khách hàng</span>
+          </div>
+        </div>
+        <div class="header__top__right col-3">
+          <router-link  
+            class="header__top__right__cart col-6" 
+            to="/cart"
+            style="text-decoration: none; color: black;"
+          >
+            <!-- <div> -->
+              <font-awesome-icon :icon="['fas', 'shopping-cart']" size="2x" />
+              <!-- <i class="fas fa-cart-plus"></i> -->
+              <!-- <a-icon class="header__top__right__cart__icon" type="shopping-cart" /> -->
+              <span class="header__top__right__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
+              <!-- <md-button class="md-primary">Primary</md-button> -->
+            <!-- </div> -->
+          </router-link>
+          <div class="header__top__right__login col-6">
+            <!-- <i class="far fa-user"></i> -->
+            <font-awesome-icon :icon="['fas', 'user']" size="2x" />
+            <!-- <a-icon style="fontSize: 30px"  type="user" /> -->
+            <span class="header__top__right__login__title">Đăng nhập</span>
+          </div>
         </div>
       </div>
-      <div class="header__top__right col-3">
-        <router-link  
-          class="header__top__right__cart col-6" 
-          to="/cart"
-          style="text-decoration: none; color: black;"
-        >
-          <!-- <div> -->
-            <a-icon class="header__top__right__cart__icon" type="shopping-cart" />
-            <span class="header__top__right__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
-            <!-- <md-button class="md-primary">Primary</md-button> -->
-          <!-- </div> -->
-        </router-link>
-        <div class="header__top__right__login col-6">
-          <a-icon style="fontSize: 30px"  type="user" />
-          <span class="header__top__right__login__title">Đăng nhập</span>
+      <div class="header__bottom">
+        <!-- <div class="header__bottom__"></div> -->
+        <div class="header__bottom__menu">
+          <ul class="header__bottom__menu__ul">
+            <li class="header__bottom__menu__ul__li">GIỚI THIỆU</li>
+            <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
+            <li class="header__bottom__menu__ul__li">TIN TỨC</li>
+            <li class="header__bottom__menu__ul__li">LIÊN HỆ</li>
+            <li class="header__bottom__menu__ul__li">VIDEO</li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="header__bottom" v-on:scroll.passive="handleScroll">
-      
-    </div>
+    <!-- <div class="headerhide" v-show="visible">
+    
+    </div> -->
   </div>
 </template>
 <script>
 import '../scss/Header.scss'
+// import Vue from 'vue'
 import { mapGetters } from 'vuex'
-// import { Button } from 'ant-design-vue';
 export default {
-  computed: mapGetters(['product']),
-  methods:{
-    // let mybutton = document.getElementById("header1");
-    // window.onscroll = function() {scrollFunction()};
-    handleScroll: function(e) {
-      if ((e.target.scrollHeight-300) <= e.target.scrollTop) {
-      alert('hihi');
-      }
+  name: 'Header',
+  data () {
+    return {
+      visible: false
     }
+  },
+  computed: mapGetters(['product']),
+  methods: {
+    scrollListener: function () {
+      this.visible = window.scrollY > 0
+    }
+  },
+  mounted: function () {
+    window.addEventListener('scroll', this.scrollListener)
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('scroll', this.scrollListener)
   }
 }
 </script>

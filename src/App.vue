@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <Header/>
-    <router-view/>
+    <Header style="margin-top: -150px"/>
+    <BackToTop/>
+    <router-view style="margin-top: 150px"/>
   </div>
 </template>
 
 <script>
 import Header from './layout/Header.vue'
 import '../src/scss/App.scss'
+import BackToTop from './components/BackToTop.vue'
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    BackToTop
   }
-}</script>
+}
+</script>
 
 <style>
 </style>

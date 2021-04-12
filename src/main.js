@@ -7,7 +7,16 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import store from './store'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(fab, fas, far)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(Antd);
 
