@@ -46,13 +46,14 @@
                                     price: productDetail[id].price,
                                     image: productDetail[id].image,
                                     count: count,
-                                    name: $route.params.name,
                                     name1: $route.params.name1,
                                     name2: $route.params.name2,
 
                                 })"
+                                
                             >Thêm vào giỏ hàng</div>
                         </div>
+                                    <!-- name: $route.params.name, -->
                         <!-- <div class="productD__left__top__info__capacity">
                             <h1>Công dụng: </h1>
                         </div> -->

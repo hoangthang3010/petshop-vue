@@ -75,10 +75,13 @@
         height: 50px;
         background-color: orange;
         &__menu{
+            background-color: orange;
+            align-items: center;
+            display: flex;
             margin: auto;
             &__ul{
                 display: flex;
-                margin: 0px;
+                margin: 0px 150px;
                 // background-color: orange;
                 &__li{
                     cursor: pointer;
@@ -89,6 +92,12 @@
                     &:hover{
                         background-color: #e49502;
                     }
+                }
+            }
+            &__cart{
+                &__title{
+                    background-color: orange;
+                    color: white;
                 }
             }
         }

@@ -5,9 +5,9 @@
                     <div class="homepage__top__left col-2">
                         <DropProduct/>
                     </div>
-                    <div class="homepage__top__mid col-8">
-                        <SliderHomepage/>
-                    </div>
+                    <!-- <div class="homepage__top__mid col-8"> -->
+                        <SliderHomepage1/>
+                    <!-- </div> -->
                     <div class="homepage__top__right col-2">
                         
                     </div>
@@ -17,7 +17,7 @@
                     <div class='homepage__product__bestselling'>
                         <span class="homepage__product__bestselling__title">SẢN PHẨM BÁN CHẠY</span>
                     </div>
-                    <Product 
+                    <ItemProduct 
                         v-for="product in product"
                         :key='product.id'
                         :product ="product"
@@ -33,12 +33,14 @@
 import '../scss/Homepage.scss'
 import axios from 'axios'
 import {API_URL} from '../.env.js'
-import Product from '../components/Product.vue'
+import ItemProduct from '../components/ItemProduct.vue'
 import DropProduct from '../components/DropProduct.vue'
-import SliderHomepage from '../components/SliderHomepage.vue'
+// import SliderHomepage from '../components/SliderHomepage.vue'
+import SliderHomepage1 from '../components/SliderHomepage1.vue'
+
 export default {
     name: 'Homepage',
-    components: {Product, SliderHomepage, DropProduct},
+    components: {ItemProduct, SliderHomepage1, DropProduct},
     data() {
         return{
             product: [],

@@ -27,14 +27,12 @@
           >
             <!-- <div> -->
               <font-awesome-icon :icon="['fas', 'shopping-cart']" size="2x" />
-              <!-- <i class="fas fa-cart-plus"></i> -->
               <!-- <a-icon class="header__top__right__cart__icon" type="shopping-cart" /> -->
               <span class="header__top__right__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
               <!-- <md-button class="md-primary">Primary</md-button> -->
             <!-- </div> -->
           </router-link>
           <div class="header__top__right__login col-6">
-            <!-- <i class="far fa-user"></i> -->
             <font-awesome-icon :icon="['fas', 'user']" size="2x" />
             <!-- <a-icon style="fontSize: 30px"  type="user" /> -->
             <span class="header__top__right__login__title">Đăng nhập</span>
@@ -44,13 +42,29 @@
       <div class="header__bottom">
         <!-- <div class="header__bottom__"></div> -->
         <div class="header__bottom__menu">
+          <router-link style="background-color: orange" :to="'/'" v-show="visible">
+             <font-awesome-icon :icon="['fas', 'home']" style="color: white; background-color: orange" size="3x" />
+          </router-link> 
           <ul class="header__bottom__menu__ul">
             <li class="header__bottom__menu__ul__li">GIỚI THIỆU</li>
-            <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
+            <router-link style="text-decoration: none" to="/product">
+              <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
+            </router-link>
+            <router-link style="text-decoration: none" to="/panigation">
             <li class="header__bottom__menu__ul__li">TIN TỨC</li>
+            </router-link>
             <li class="header__bottom__menu__ul__li">LIÊN HỆ</li>
             <li class="header__bottom__menu__ul__li">VIDEO</li>
           </ul>
+          <router-link
+            class="header__bottom__menu__cart"
+            v-show="visible"  
+            to="/cart"
+            style="text-decoration: none;"
+          >
+              <font-awesome-icon :icon="['fas', 'shopping-cart']" color="white" size="3x" />
+              <span class="header__bottom__menu__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
+          </router-link>
         </div>
       </div>
     </div>

@@ -1,16 +1,16 @@
 <template>
-    <div class="product">
-        <div class="product__title"
+    <div class="itemproduct">
+        <div class="itemproduct__title"
             @click="product.display=!product.display">
             <span class="product__title__name">{{product.title}}</span>
         </div>
         <div 
-            class="product__item" 
+            class="itemproduct__item" 
             v-for="(item, key) in product.type"
             :key="key"
             v-show="product.display"
         >
-            <div class="product__item__left col-2">
+            <div class="itemproduct__item__left col-2">
                 <ul>
                     <li>{{item.title}}</li>
                     
@@ -22,18 +22,22 @@
                 </ul>
             </div>
             <hr />
-            <div class="product__item__right col-10">
-                <VueSlickCarousel v-bind="settings" v-if="productDetail.length > 0">
+            <div class="itemproduct__item__right col-10">
+                <VueSlickCarousel 
+                    v-bind="settings" 
+                    v-if="productDetail.length > 0"
+                    style="width: 98%; margin: auto"
+                >
                     <div    
-                        class="product__item__right__top__detail"
+                        class="itemproduct__item__right__top__detail"
                         v-for="(item1,key) in productDetail.filter(item1 =>item1.detail  === item.name)" 
                         :key="key"
                     >
                         <img :src="item1.image" alt="">
-                        <router-link :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`"> 
-                            <p class="product__item__right__top__detail__name" :title="item1.title">{{item1.title}}{{item1.title.length > 60 ? '...' : ''}}</p>
+                        <router-link :to="`/purchase/${item1.type}/${item1.detail}/${item1.id-1}`"> 
+                            <p class="itemproduct__item__right__top__detail__name" :title="item1.title">{{item1.title}}</p>
                         </router-link>
-                        <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
+                        <p class="itemproduct__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
                         
                     </div>
                 </VueSlickCarousel>
@@ -78,7 +82,7 @@
     </div>
 </template>
 <script>
-import '../scss/Product.scss'
+import '../scss/ItemProduct.scss'
 // import Paginate from 'vuejs-paginate'
 // import Vue from 'vue'
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -86,7 +90,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 // Vue.component('paginate', Paginate)
 export default {
-    name: "Product",
+    name: "ItemProduct",
     props:['product', 'productDetail'],
     components: { VueSlickCarousel },
     data() {

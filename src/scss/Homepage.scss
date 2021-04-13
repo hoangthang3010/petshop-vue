@@ -26,11 +26,14 @@
             border-top: 4px solid #FF6C0B;
             background-color: white;
             align-items: center;
-            height: 50px;
-            padding: 12px;
+            // height: 50px;
+            padding: 10px 0px;
             &__title{
-                color: #FF6C0B;
-                font-size: 20px;
+               background-color: #FF6C0B;
+               color: white;
+               padding: 15px;
+               font-weight: 600;
+                font-size: 16px;
             }
         }
     }

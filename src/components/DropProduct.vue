@@ -1,12 +1,42 @@
 <template>
-    <div class="dropproduct">
-        <div 
-            class="dropproduct__item"
-            v-for="(item, key) in product" 
-            :key="key"
-            @mouseenter="onHandleShowDrop(key)"
-        >
-            {{item.title}}
+    <div 
+        class="dropproduct"
+        @mouseleave="onHandleDisShowDrop()"
+    >
+        <div class="dropproduct__drop">
+            <div 
+                class="dropproduct__drop__item" 
+                style="min-width: 168px"
+            >
+                <div
+                    :style="`background-color: ${id===key ? '#eaedf3' : ''}`"
+                    class="dropproduct__drop__item__box  dropright"
+                    v-for="(item, key) in product" 
+                    :key="key"
+                    @mouseenter="onHandleShowDrop1(key)"
+                    @mouseleave="onHandleDisShowDrop1(key)"
+                >
+                        {{item.title}}
+                        <p 
+                            class="dropproduct__drop__item__box__icon" 
+                            v-if="item.type.length>1"
+                            :style="`background-color: ${id===key ? '#eaedf3' : ''}`"
+                        >&rsaquo;</p>
+                </div>
+            </div>
+            <div
+                    :style="`boxShadow: ${id1 !== null ?  '-1px 0px 3px #888888' : 'none'}`"
+                    class="dropproduct__drop__right" v-if="id !==null"
+            >
+                <div
+                    class="dropproduct__drop__right__box  dropright"
+                    v-for="(item, key) in product[id].type" 
+                    :key="key"
+                    @mouseenter="onHandleShowDrop2(key)"
+                >
+                        {{item.title}}
+                </div>
+            </div>
         </div>
     </div> 
 </template>
@@ -18,14 +48,29 @@ export default {
     name: "DropProduct",
     data() {
         return{
+            showDrop: null,
+            showDrop1: null,
+            id: null,
+            id1: null,
             product: [],
             productDetail: [],
             bestselling: [],
         }
     },
     methods:{
-        onHandleShowDrop(){
-            console.log(1);
+        onHandleShowDrop1(index){
+            this.showDrop = index
+            this.id = index
+        },
+        onHandleShowDrop2(index){
+            this.id1 = index
+            console.log(index);
+        },
+        onHandleDisShowDrop(){
+            this.id = null
+        },
+        onHandleDisShowDrop1(){
+            // this.id = key
         }
     },
     mounted () {
