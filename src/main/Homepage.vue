@@ -2,15 +2,15 @@
     <div style="background-color: #F5F8FD">
             <div class='homepage'>
                 <div class="homepage__top">
-                    <div class="homepage__top__left col-2">
+                    <div class="homepage__top__left col-3">
                         <DropProduct/>
                     </div>
                     <!-- <div class="homepage__top__mid col-8"> -->
                         <SliderHomepage1/>
                     <!-- </div> -->
-                    <div class="homepage__top__right col-2">
+                    <!-- <div class="homepage__top__right col-2">
                         
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <br/> -->
                 <div class='homepage__product'>

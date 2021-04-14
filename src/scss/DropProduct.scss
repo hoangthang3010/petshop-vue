@@ -9,6 +9,7 @@
         // min-width: 170px;
         display: flex;
         &__item{
+            min-width: 100% !important;
             border: 1px solid #eaedf3;
             &__box{
                 font-weight: 600;

@@ -6,6 +6,9 @@
         border-top: 4px solid #FF6699;
         padding: 12px;
         border-bottom: 1px solid #ECECEC;
+        &:hover{
+            background-color: #f8f8f8;
+        }
         &__name{
             color: #ff8534;
             font-size: 20px;
@@ -21,6 +24,7 @@
             padding: 0px;
             li{
                 padding: 5px;
+                border-bottom: 1px solid #ECECEC;
                 border-left: 2px solid orangered;
             }
         }
@@ -50,6 +54,7 @@
                     border: 1px solid white;
                     padding: 10px;
                     img{
+                        border: 2px solid orange;
                         aspect-ratio: 1 / 1;
                         width: 100%;
                     }

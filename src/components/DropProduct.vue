@@ -1,9 +1,9 @@
 <template>
-    <div 
-        class="dropproduct"
-        @mouseleave="onHandleDisShowDrop()"
-    >
-        <div class="dropproduct__drop">
+    <div class="dropproduct">
+        <div 
+        class="dropproduct__drop" 
+            @mouseleave="onHandleDisShowDrop()"
+        >
             <div 
                 class="dropproduct__drop__item" 
                 style="min-width: 168px"

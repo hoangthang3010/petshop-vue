@@ -5,7 +5,7 @@
       <div class="header__top" id="header1" v-show="!visible">
         <div class="header__top__left col-3">
           <router-link :to="'/'">
-            <img class="header__top__left__image" src="https://dogily.vn/wp-content/uploads/2020/07/dogily-logo.png"/>  
+            <img class="header__top__left__image" src="https://jandpet.com.vn/wp-content/uploads/2018/07/JPet-logo-01.png"/>  
           </router-link> 
         </div>
         <div class="header__top__mid col-6">
@@ -13,7 +13,12 @@
             <input class="header__top__mid__search__item" type="text"/>
           </div>
           <div class="header__top__mid__clientcare col-4">
-            <font-awesome-icon :icon="['fas', 'headset']" size="4x" color="orange"/>
+            <font-awesome-icon 
+              class="header__top__mid__clientcare__icon"
+              :icon="['fas', 'headset']" 
+              size="4x" 
+              color="orange"
+            />
             <!-- <a-icon class="col-5" style="fontSize: 60px; margin: auto" type="customer-service"  theme="twoTone" two-tone-color="#FFA500"/> -->
             <span class="header__top__mid__clientcare__title col-8">Hỗ trợ 
               khách hàng</span>

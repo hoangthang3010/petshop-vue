@@ -1,8 +1,9 @@
 <template>
     <div class="product">
         <div class="product__left col-3">
-            <p @click="filterAll('')">Tất cả</p>
-            <p @click="filterType('food_cat')">Đồ ăn cho mèo</p>
+            <!-- <p @click="filterAll('')">Tất cả</p>
+            <p @click="filterType('food_cat')">Đồ ăn cho mèo</p> -->
+            <MultiLevelMenu @type="typeFilter" @/>
         </div>
         <div class="product__right col-9 row" v-if="productAll.length>0">
             <div 
@@ -37,29 +38,38 @@
             </div>
             <!-- <Panigation :productAll ="productDetail"/> -->
         </div>
+
     </div>
 </template>
 <script>
 import '../scss/Product.scss'
 import axios from 'axios'
 import {API_URL} from '../.env.js'
+import MultiLevelMenu from '../components/MultiLevelMenu.vue'
 export default {
     name: "Product",
+    components: {MultiLevelMenu},
     data() {
         return{
             product: [],
             productDetail: [],
-            productAll: []
+            productAll: [],
+            name: null
         }
     },
     methods:{
-        filterAll(){
-            this.productAll = this.productDetail
+        typeFilter: function(type){
+            console.log(type);
+            this.name = type
+            this.productAll = this.productDetail.filter((item) => item.detail === type || item.type === type)
         },
-        filterType(index){
-            console.log(index);
-            this.productAll = this.productDetail.filter((item) => item.detail === index)
-        }
+        // filterAll(){
+        //     this.productAll = this.productDetail
+        // },
+        // filterType(index){
+        //     console.log(index);
+        //     this.productAll = this.productDetail.filter((item) => item.detail === index)
+        // }
     },
     mounted () {
         axios.get(`${API_URL}/ProductAll`)

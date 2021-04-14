@@ -5,7 +5,7 @@
     @mouseleave ="onHandleDisShow()"
 >  
   <div class="slider">
-    <ul class="slider__slides" :style="{left:-width*current+'px', width: slides.length*800+'px'}">
+    <ul class="slider__slides" :style="{left:-width*current+'px', width: slides.length*790+'px'}">
       <li class="slider__slides__li" v-for="(slide,i) in slides" :key="i">
         <img class="slider__slides__li__image" :src="slide" alt="">
       </li>
@@ -33,7 +33,7 @@
 import '../scss/SliderHomepage1.scss'
 export default {
     name: "SliderHomepage1",
-    el:'#slider',
+    // el:'#slider',
     data() {
         return{       
         slides: [
@@ -42,7 +42,7 @@ export default {
         'https://jandpet.com.vn/wp-content/uploads/2018/06/shop-da-nang-02-02-1400x755.jpg'
         ],
         current: 0,
-        width: 800,
+        width: 790,
         timer: 0,
         visible: false
         }

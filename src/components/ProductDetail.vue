@@ -125,10 +125,10 @@
             <div class="col-3 productD__right">
                 <div class="productD__right__product">
                     <!-- <div> -->
-                    <span class="productD__right__product__title">Sản phẩm</span>
+                    <!-- <span class="productD__right__product__title">Sản phẩm</span> -->
                     <!-- </div> -->
                     <div  class="productD__right__product__body">
-                        <DropProduct/>
+                        <MultiLevelMenu/>
                     </div>
                 </div>
                 <div class="productD__right">
@@ -140,13 +140,13 @@
 </template>
 <script>
 import { mapMutations, mapGetters } from 'vuex'
-import DropProduct from '../components/DropProduct.vue'
+import MultiLevelMenu from '../components/MultiLevelMenu.vue'
 import '../scss/ProductDetail.scss'
 import {API_URL} from '../.env.js'
 import axios from 'axios'
 export default {
     name: "ProductDetail",
-    components: {DropProduct},
+    components: {MultiLevelMenu},
     data() {
         return{
             productDetail: [],

@@ -10,6 +10,7 @@
             border: 1px solid white;
             // padding: 10px;
             img{
+                border: 1px solid orange;
                 aspect-ratio: 1 / 1;
                 width: 100%;
             }
@@ -18,7 +19,8 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 display: -webkit-box;
-                margin-top: 10px;
+                margin-top: 5px;
+                margin-bottom: 0px;
                 font-size: 12px;
                 font-weight: 600;
                 color: black;
@@ -27,7 +29,6 @@
                 }
             }
             &__price{
-                margin-top: 10px;
                 color: red;
                 font-size: 15px;
             }

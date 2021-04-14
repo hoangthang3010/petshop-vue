@@ -30,6 +30,11 @@
             &__clientcare{
                 display: flex;
                 align-items: center;
+                &__icon{
+                    padding: 8px;
+                    border-radius: 50px;
+                    border: 2px solid orange;
+                }
                 &__title{
                     align-items: center;
                     font-weight: 600;
@@ -55,7 +60,8 @@
                 }
                 &__title{
                     // margin: auto; 
-                    font-size: 17px;
+                    margin-left: 5px;
+                    font-size: 15px;
                 }
             }
             &__login{
@@ -63,6 +69,7 @@
                 align-items: center;
                 &__title{
                     // margin: auto;
+                    margin-left: 5px;
                     font-size: 15px;
                 }
             }

@@ -19,7 +19,7 @@
                                 <router-link 
                                     style="text-decoration: none; color: black"
                                     class="cart__left__item__table__content__tr__link" 
-                                    :to="`/purchase/${item.name}/${item.name1}/${item.name2}/${item.id}`"
+                                    :to="`/purchase/${item.name1}/${item.name2}/${item.id}`"
                                 >
                                     <img class="col-4" :src="item.image" alt="">
                                     <p class="cart__left__item__table__content__tr__link__title col-8">{{item.title}}</p>
