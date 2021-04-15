@@ -4,10 +4,10 @@
     @mouseenter ="onHandleShow()"
     @mouseleave ="onHandleDisShow()"
 >  
-  <div class="slider">
-    <ul class="slider__slides" :style="{left:-width*current+'px', width: slides.length*790+'px'}">
-      <li class="slider__slides__li" v-for="(slide,i) in slides" :key="i">
-        <img class="slider__slides__li__image" :src="slide" alt="">
+  <div class="sliderhomepage">
+    <ul class="sliderhomepage__slides" :style="{left:-width*current+'px', width: slides.length*790+'px'}">
+      <li class="sliderhomepage__slides__li" v-for="(slide,i) in slides" :key="i">
+        <img class="sliderhomepage__slides__li__image" :src="slide" alt="">
       </li>
     </ul>
     <!-- <ul class="bullets">

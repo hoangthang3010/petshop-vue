@@ -45,8 +45,9 @@
                     <li 
                         class="mutimenu__ul__li__ul1__li1"
                         @click="showBorderli1(key,key1,item1.name)"
-                        :style="`border-left:3px solid ${idli1 == key1 ? 'orange' : 'white'};;
-                                 background-color: ${idli1 == key1 ? '#ECECEC' : 'white'}
+                        :style="`border-left:3px solid ${idli1 == key1 ? 'orange' : 'white'};
+                                 background-color: ${idli1 == key1 ? '#ECECEC' : 'white'};
+                                 border-top:1px solid ${idli1 == key1 ? '#00000026' : 'white'}
                                `"
                     > 
                         {{item1.title}}
@@ -71,7 +72,18 @@ export default {
                 {
                     title: "Tất cả",  
                     name: "",
-                    type: []
+                    type: [
+                        {
+                            title: "Đồ cho Chó",
+                            name: "dog",
+                            type: []
+                        },
+                        {
+                            title: "Đồ cho Mèo",
+                            name: "cat",
+                            type: []
+                        },
+                    ]
                 },
                 {
                     title: "Đồ ăn",
@@ -100,17 +112,7 @@ export default {
                             name: "medicine_dog",
                         },
                     ]
-                },
-                {
-                    title: "Chó",
-                    name: "dog",
-                    type: []
-                },
-                {
-                    title: "Mèo",
-                    name: "cat",
-                    type: []
-                },
+                }
             ]
         }
     },

@@ -3,7 +3,30 @@
     display: flex;
     margin: auto;
     padding: 10px 0px;
+    &__left{
+        &__filterprice{
+            &__title{
+                font-size: 15px;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            &__price{
+                margin: 5px;
+            }
+            &--submit{
+                padding: 5px 8px;
+                border: none;
+                color: white;
+                border-radius: 3px;
+                background-color: orange;
+                &:hover{
+                    background-color: rgb(220, 143, 0);
+                }
+            }
+        }
+    }
     &__right{
+        display: block;
         &__item{
             text-align: center;
             // padding:0px 6px;

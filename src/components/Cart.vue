@@ -56,7 +56,7 @@
                     </table>
                     <div class="cart__left__item__back">
                         <router-link style="text-decoration: none" to="/">
-                            <span class="cart__left__item__back--click">&larr;	TIẾP TỤC XEM SẢN PHẨM</span>
+                            <span class="cart__left__item__back--click"> &nbsp;	TIẾP TỤC XEM SẢN PHẨM</span>
                         </router-link>
                     </div>
                 </div>

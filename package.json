@@ -22,6 +22,7 @@
     "vue": "^2.6.11",
     "vue-displacement-slideshow": "^3.0.1",
     "vue-material": "^1.0.0-beta-15",
+    "vue-range-component": "^1.0.3",
     "vue-router": "^3.5.1",
     "vue-slick-carousel": "^1.0.6",
     "vuejs-paginate": "^2.1.0",
