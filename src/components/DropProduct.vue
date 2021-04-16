@@ -16,7 +16,7 @@
                     @mouseenter="onHandleShowDrop1(key)"
                     @mouseleave="onHandleDisShowDrop1(key)"
                 >
-                    <router-link :to ="`/product/${item.name}`">
+                    <router-link style="color: black" :to ="`/product/${item.name}`">
                         {{item.title}}
                         <p 
                             class="dropproduct__drop__item__box__icon" 
@@ -36,7 +36,7 @@
                     :key="key"
                     @mouseenter="onHandleShowDrop2(key)"
                 >
-                    <router-link :to ="`/product/${item.name}`">
+                    <router-link style="color: black;" :to ="`/product/${item.name}`">
                         {{item.title}}
                     </router-link>
                 </div>

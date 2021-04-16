@@ -5,6 +5,7 @@
         // border: 1px solid black;
         // height: 100%;
         z-index: 100;
+        // height: 100%;
         // width: 202px;
         // min-width: 170px;
         display: flex;
@@ -36,12 +37,13 @@
         &:hover &__right{
                 border: 1px solid #eaedf3;
                 border-left: none;
-                height: 100%;
+                // height: 100%;
                 display: block;
                 will-change: transform;
                 min-width: 200px;
                 font-weight: 600;
                 &__box{
+                    height: 49px;
                     border-bottom: 1px solid #eaedf3;
                     padding: 15px;
                     &:hover{

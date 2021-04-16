@@ -214,14 +214,10 @@ export default {
             this.productAll = this.productAll.sort(this.sortTypes[this.sort].fn)
         }
     },
-    created(){
-        this.productAllP = this.productDetail.filter((item)=>{
-            item.detaill === `${this.$route.params.id}` || item.type === `${this.$route.params.id}`
-        })
-        this.productAll === this.productAllP
-        console.log(this.productAllP);
-        // this.productAll = this.productDetail
-    },
+    // beforeUpdate(){
+    //     this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id)
+    //     this.productAll1 = this.productAll
+    // },
     mounted () {
         axios.get(`${API_URL}/ProductAll`)
             .then(response => {
@@ -235,20 +231,41 @@ export default {
         axios.get(`${API_URL}/productDetail`)
             .then(response => {
                 this.productDetail = response.data
-                this.productAll =response.data
-                this.productAll1= response.data
-                let min = this.productDetail[0].price
-                let max = 0
-                for (let i = 1; i < this.productDetail.length; i++){
-                    if (max < this.productDetail[i].price)
-                        max = this.productDetail[i].price;
+                // this.productAll =response.data
+                if (this.$route.params.id === 'all'){
+                    this.productAll = response.data
+                    this.productAll1= response.data
+                    let min = this.productDetail[0].price
+                    let max = 0
+                    for (let i = 1; i < this.productDetail.length; i++){
+                        if (max < this.productDetail[i].price)
+                            max = this.productDetail[i].price;
+                    }
+                    for (let i = 1; i < this.productDetail.length; i++){
+                        if (min > this.productDetail[i].price)
+                            min = this.productDetail[i].price;
+                    }
+                    this.repriceMin = min
+                    this.repriceMax = max
                 }
-                for (let i = 1; i < this.productDetail.length; i++){
-                    if (min > this.productDetail[i].price)
-                        min = this.productDetail[i].price;
+                else{
+                    this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id)
+                    this.productAll1= this.productAll
+                    let min = this.productAll[0].price
+                    let max = 0
+                    for (let i = 1; i < this.productAll.length; i++){
+                        if (max < this.productAll[i].price)
+                            max = this.productAll[i].price;
+                    }
+                    for (let i = 1; i < this.productAll.length; i++){
+                        if (min > this.productAll[i].price)
+                            min = this.productAll[i].price;
+                    }
+                    console.log(min);
+                    this.repriceMin = min
+                    this.repriceMax = max
                 }
-                this.repriceMin = min
-                this.repriceMax = max
+                
                 // console.log(response.data);
             })
             .catch(error => {

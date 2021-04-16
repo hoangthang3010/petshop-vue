@@ -11,7 +11,7 @@
                 :style="`border-left:3px solid ${idli == key ? 'orange' : 'white'}`"
             >
                 <!-- :style="`border-bottom:1px solid ${idli1 == key1 ? 'white' : '#ECECEC'}`" -->
-                <router-link :to ="`/product/${item.name}`">
+                <router-link style="color: black; text-decoration: none"  :to ="`/product/${item.name}`">
                     <p 
                         class="mutimenu__ul__li__title"
                         @click="showBorderli(key, item.name)"
@@ -43,7 +43,7 @@
                     :key="key1" 
                     :style="`display: ${displayul == key ? '' : 'none'}`"
                 >
-                    <router-link :to ="`/product/${item1.name}`">
+                    <router-link style="color: black; text-decoration: none" :to ="`/product/${item1.name}`">
                         <li 
                             class="mutimenu__ul__li__ul1__li1"
                             @click="showBorderli1(key,key1,item1.name)"
