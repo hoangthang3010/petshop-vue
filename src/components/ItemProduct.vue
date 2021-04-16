@@ -96,6 +96,8 @@ export default {
     data() {
         return {
             settings: {
+                // "arrows": true,
+                // "dots": true,
                 // "centerMode": true,
                 // "centerPadding": "20px",
                 "focusOnSelect": true,

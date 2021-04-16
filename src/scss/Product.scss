@@ -6,9 +6,14 @@
     &__left{
         &__filterprice{
             &__title{
-                font-size: 15px;
-                font-weight: 600;
-                margin-bottom: 5px;
+                margin-bottom: 10px;
+                &__label{
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding-bottom: 3px;
+                    border-bottom: 2px solid orange;
+
+                }
             }
             &__price{
                 margin: 5px;

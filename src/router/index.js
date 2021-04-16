@@ -10,6 +10,7 @@ export const routes = [
     { path: '/purchase/:name1/:name2/:id', component: ProductDetail},
     { path: '/cart', name: 'cart', component: Cart },
     { path: '/product', name: 'product', component: Product },
+    { path: '/product/:id', name: 'product', component: Product },
     { path: '/slide', name: 'slide', component: SlideHomepage1 },
     // { path: '/panigation', name: 'panigation', component: Pagination }
 ]

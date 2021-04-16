@@ -1,6 +1,5 @@
 <template>
     <div class="mutimenu">
-        <p class="mutimenu__title">SẢN PHẨM</p>
         <ul
             class="mutimenu__ul"
             v-for="(item, key) in menu" 
@@ -12,13 +11,15 @@
                 :style="`border-left:3px solid ${idli == key ? 'orange' : 'white'}`"
             >
                 <!-- :style="`border-bottom:1px solid ${idli1 == key1 ? 'white' : '#ECECEC'}`" -->
-                <p 
-                    class="mutimenu__ul__li__title"
-                    @click="showBorderli(key, item.name)"
-                    :style="`background-color: ${idli == key ? '#ECECEC' : 'white'}`"
-                >
-                    {{item.title}}
-                </p>
+                <router-link :to ="`/product/${item.name}`">
+                    <p 
+                        class="mutimenu__ul__li__title"
+                        @click="showBorderli(key, item.name)"
+                        :style="`background-color: ${idli == key ? '#ECECEC' : 'white'}`"
+                    >
+                        {{item.title}}
+                    </p>
+                </router-link>
                 <!-- <span
                     class="mutimenu__ul__li__icon"
                     v-if="item.type.length > 1"
@@ -42,16 +43,18 @@
                     :key="key1" 
                     :style="`display: ${displayul == key ? '' : 'none'}`"
                 >
-                    <li 
-                        class="mutimenu__ul__li__ul1__li1"
-                        @click="showBorderli1(key,key1,item1.name)"
-                        :style="`border-left:3px solid ${idli1 == key1 ? 'orange' : 'white'};
-                                 background-color: ${idli1 == key1 ? '#ECECEC' : 'white'};
-                                 border-top:1px solid ${idli1 == key1 ? '#00000026' : 'white'}
-                               `"
-                    > 
-                        {{item1.title}}
-                    </li>
+                    <router-link :to ="`/product/${item1.name}`">
+                        <li 
+                            class="mutimenu__ul__li__ul1__li1"
+                            @click="showBorderli1(key,key1,item1.name)"
+                            :style="`border-left:3px solid ${idli1 == key1 ? 'orange' : 'white'};
+                                    background-color: ${idli1 == key1 ? '#ECECEC' : 'white'};
+                                    border-top:1px solid ${idli1 == key1 ? '#00000026' : 'white'}
+                                `"
+                        > 
+                            {{item1.title}}
+                        </li>
+                     </router-link>
                 </ul>
             </li>
         </ul>
@@ -71,7 +74,7 @@ export default {
             menu: [
                 {
                     title: "Tất cả",  
-                    name: "",
+                    name: "all",
                     type: [
                         {
                             title: "Đồ cho Chó",

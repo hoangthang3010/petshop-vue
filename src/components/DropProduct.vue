@@ -16,12 +16,14 @@
                     @mouseenter="onHandleShowDrop1(key)"
                     @mouseleave="onHandleDisShowDrop1(key)"
                 >
+                    <router-link :to ="`/product/${item.name}`">
                         {{item.title}}
                         <p 
                             class="dropproduct__drop__item__box__icon" 
                             v-if="item.type.length>1"
                             :style="`background-color: ${id===key ? '#eaedf3' : ''}`"
                         >&rsaquo;</p>
+                    </router-link>
                 </div>
             </div>
             <div
@@ -34,7 +36,9 @@
                     :key="key"
                     @mouseenter="onHandleShowDrop2(key)"
                 >
+                    <router-link :to ="`/product/${item.name}`">
                         {{item.title}}
+                    </router-link>
                 </div>
             </div>
         </div>

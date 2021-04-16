@@ -52,7 +52,7 @@
           </router-link> 
           <ul class="header__bottom__menu__ul">
             <li class="header__bottom__menu__ul__li">GIỚI THIỆU</li>
-            <router-link style="text-decoration: none" to="/product">
+            <router-link style="text-decoration: none" to="/product/all">
               <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
             </router-link>
             <router-link style="text-decoration: none" to="/panigation">
