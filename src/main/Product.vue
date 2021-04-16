@@ -3,18 +3,29 @@
         <div class="product__left col-3">
             <!-- <p @click="filterAll('')">Tất cả</p>
             <p @click="filterType('food_cat')">Đồ ăn cho mèo</p> -->
-            <MultiLevelMenu @type="typeFilter" />
+            <div class="product__left__filterprice">
+                <div class="product__left__filterprice__title">
+                    <span class="product__left__filterprice__title__label">SẢN PHẨM</span>
+                </div>
+                <MultiLevelMenu @type="typeFilter" />
+            </div>
             <hr />
             <div class="product__left__filterprice">
-                <p class="product__left__filterprice__title">LỌC THEO GIÁ</p>
+                <div class="product__left__filterprice__title">
+                    <span class="product__left__filterprice__title__label">LỌC THEO GIÁ</span>
+                </div>
                     <!-- style="margin-top: 50px; margin-bottom: 20px" -->
                 <SliderRange 
+                    style="margin-top: 50px;"
                     :priceMax ="priceMax" 
                     :priceMin ="priceMin" 
                     piecewise: false
                     @rePriceMax ="rePriceMax"
                     @rePriceMin ="rePriceMin"
                 />
+        <!-- <p class="product__left__filterprice__price">
+            Giá từ: {{value[0] | filterPrice}}đ - {{value[1] | filterPrice}}đ
+        </p> -->
                 <!-- <p class="product__left__filterprice__price">
                     Giá từ: {{repriceMin | filterPrice}}đ - {{repriceMax | filterPrice}}đ
                 </p> -->
@@ -26,12 +37,22 @@
                     Lọc
                 </button><br/><br/>
             </div>
-            <div class="product__left__filterprice__sort">
-                <p class="product__left__filterprice__title">SẮP XẾP</p>
+            <hr />
+            <div class="product__left__filterprice">
+                <div class="product__left__filterprice__title">
+                    <span class="product__left__filterprice__title__label">SẮP XẾP</span>
+                </div>
+                <SortProduct 
+                    @onHandleSortAZ="onHandleSortAZ"
+                    @onHandleSortZA="onHandleSortZA"
+                    @onHandleSortUp ="onHandleSortUp"
+                    @onHandleSortDown ="onHandleSortDown"
+                />
+                <!-- <p>Có {{productAll.length}} sản phẩm</p> -->
             </div>
+            <hr />
         </div>
-        <div class="product__right col-9 row" v-if="productAll.length>0">
-            <!-- <p>{{name}}</p> --> 
+        <div class="product__right col-9 row" v-if="productAll.length !=0">
             <div 
                 class="product__right__item col-3"
                 v-for="(item, key) in productAll" 
@@ -47,24 +68,7 @@
                 <p class="product__right__item__price" :title="item.price">{{item.price | filterPrice}}đ</p>
             </div>
         </div>
-        <div class="product__right col-9 row" v-else>
-            <div 
-                class="product__right__item col-3"
-                v-for="(item, key) in productDetail" 
-                :key="key"
-            >
-                <img :src="item.image"/>
-                <router-link 
-                    :to="`/purchase/${item.type}/${item.detail}/${key}`"
-                    style="text-decoration: none"
-                > 
-                    <p class="product__right__item__name" :title="item.title">{{item.title}}</p>
-                </router-link>
-                <p class="product__right__item__price" :title="item.price">{{item.price | filterPrice}}đ</p>
-            </div>
-            <!-- <Panigation :productAll ="productDetail"/> -->
-        </div>
-
+        <div v-else>Không có sản phẩm tương ứng</div>
     </div>
 </template>
 <script>
@@ -73,26 +77,66 @@ import axios from 'axios'
 import {API_URL} from '../.env.js'
 import MultiLevelMenu from '../components/MultiLevelMenu.vue'
 import SliderRange from '../components/SliderRange.vue'
+import SortProduct from '../components/SortProduct.vue'
+// import Vue from 'vue'
 export default {
     name: "Product",
-    components: {MultiLevelMenu, SliderRange},
+    components: {MultiLevelMenu, SliderRange, SortProduct},
     data() {
         return{
             product: [],
             productDetail: [],
             productAll: [],
-            name: null,
+            productAll1: [],
+            name: this.$route.params.id,
             repriceMax: 0,
-            repriceMin: 0
+            repriceMin: 0,
+            sort: 'default',
+            productAllP: [],
+            sortTypes:{
+                    // tăng
+                increase: {
+                    fn: (a, b) => a.price - b.price
+                },
+                // giảm
+                reduction: {
+                    fn: (a, b) => b.price - a.price
+                },
+                az:{
+                    fn: (a, b) =>   { 
+                                        var n1 = a.title.toLowerCase();
+                                        var n2 = b.title.toLowerCase();
+                                        if (n1 < n2)
+                                        {return -1}
+                                        if (n1 > n2)
+                                        {return 1}
+                                        return 0
+                                    }
+                },
+                za:{
+                    fn: (a, b) =>   { 
+                                        var n1 = a.title.toLowerCase();
+                                        var n2 = b.title.toLowerCase();
+                                        if (n1 < n2)
+                                        {return 1}
+                                        if (n1 > n2)
+                                        {return -1}
+                                        return 0
+                                    }
+                },
+                default: {
+                    fn: (a) => a
+                }
+            }
         }
     },
     computed: {
         priceMax: function () {
             let max = 0
-            if (this.productAll.length !== 0 ){
-                for (let i = 1; i < this.productAll.length; i++){
-                    if (max < this.productAll[i].price)
-                        max = this.productAll[i].price;
+            if (this.productAll1.length !== 0 ){
+                for (let i = 1; i < this.productAll1.length; i++){
+                    if (max < this.productAll1[i].price)
+                        max = this.productAll1[i].price;
                     }
                 return max
             }
@@ -105,11 +149,11 @@ export default {
             }
         },
         priceMin: function () {
-            if (this.productAll.length !== 0 ){
-                let min = this.productAll[0].price
-                for (let i = 1; i < this.productAll.length; i++){
-                    if (min > this.productAll[i].price)
-                        min = this.productAll[i].price;}
+            if (this.productAll1.length !== 0 ){
+                let min = this.productAll1[0].price
+                for (let i = 1; i < this.productAll1.length; i++){
+                    if (min > this.productAll1[i].price)
+                        min = this.productAll1[i].price;}
                 return min
             }
             else{
@@ -123,9 +167,19 @@ export default {
     },
     methods:{
         typeFilter: function(type){
-            console.log(type);
+            // console.log(type);
             this.name = type
-            this.productAll = this.productDetail.filter((item) => item.detail === type || item.type === type)
+            // console.log(type);
+            if (this.name == 'all'){
+                this.productAll = this.productDetail
+            }
+            else{
+                this.productAll = this.productDetail.filter((item) => item.detail === type || item.type === type)
+            }
+            this.productAll1 = this.productAll
+            // console.log(this.priceMax)
+            this.repriceMax= this.priceMax
+            this.repriceMin= this.priceMin
         },
         rePriceMax: function(rePriceMax){
             this.repriceMax = rePriceMax
@@ -135,8 +189,38 @@ export default {
             this.repriceMin = rePriceMin
         },
         filterPrice(){
-            this.productAll = this.productDetail.filter((item) => item.price >= this.repriceMin && item.price <= this.repriceMax && (item.detail === this.name || item.type === this.name) )
+            console.log(this.repriceMin);
+            console.log(this.repriceMax);
+            this.productAll = this.productAll1.filter((item) => item.price >= this.repriceMin && item.price <= this.repriceMax)
+        },
+        onHandleSortAZ(type){
+            this.sort = type
+            // console.log(type);
+            this.productAll = this.productAll.sort(this.sortTypes[this.sort].fn)
+        },
+        onHandleSortZA(type){
+            this.sort = type
+            // console.log(type);
+            this.productAll = this.productAll.sort(this.sortTypes[this.sort].fn)
+        },
+        onHandleSortUp(type){
+            this.sort = type
+            // console.log(type);
+            this.productAll = this.productAll.sort(this.sortTypes[this.sort].fn)
+        },
+        onHandleSortDown(type){
+            this.sort = type
+            // console.log(type);
+            this.productAll = this.productAll.sort(this.sortTypes[this.sort].fn)
         }
+    },
+    created(){
+        this.productAllP = this.productDetail.filter((item)=>{
+            item.detaill === `${this.$route.params.id}` || item.type === `${this.$route.params.id}`
+        })
+        this.productAll === this.productAllP
+        console.log(this.productAllP);
+        // this.productAll = this.productDetail
     },
     mounted () {
         axios.get(`${API_URL}/ProductAll`)
@@ -151,6 +235,20 @@ export default {
         axios.get(`${API_URL}/productDetail`)
             .then(response => {
                 this.productDetail = response.data
+                this.productAll =response.data
+                this.productAll1= response.data
+                let min = this.productDetail[0].price
+                let max = 0
+                for (let i = 1; i < this.productDetail.length; i++){
+                    if (max < this.productDetail[i].price)
+                        max = this.productDetail[i].price;
+                }
+                for (let i = 1; i < this.productDetail.length; i++){
+                    if (min > this.productDetail[i].price)
+                        min = this.productDetail[i].price;
+                }
+                this.repriceMin = min
+                this.repriceMax = max
                 // console.log(response.data);
             })
             .catch(error => {
