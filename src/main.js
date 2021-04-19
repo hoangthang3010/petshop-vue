@@ -18,6 +18,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
 
+import VueSlider from 'vue-slider-component'
+import 'vue-slider-component/theme/default.css'
+
+Vue.component('VueSlider', VueSlider)
+import JwPagination from 'jw-vue-pagination';
+Vue.component('jw-pagination', JwPagination);
+
 Vue.use( VueSplide );
 library.add(fab, fas, far)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

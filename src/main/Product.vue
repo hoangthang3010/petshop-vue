@@ -15,14 +15,15 @@
                     <span class="product__left__filterprice__title__label">LỌC THEO GIÁ</span>
                 </div>
                     <!-- style="margin-top: 50px; margin-bottom: 20px" -->
-                <SliderRange 
-                    style="margin-top: 50px;"
+                <SliderRange1
+                    style="margin-top: 50px; width: 90%"
                     :priceMax ="priceMax" 
                     :priceMin ="priceMin" 
                     piecewise: false
                     @rePriceMax ="rePriceMax"
                     @rePriceMin ="rePriceMin"
                 />
+                <!-- <SliderRange1/> -->
         <!-- <p class="product__left__filterprice__price">
             Giá từ: {{value[0] | filterPrice}}đ - {{value[1] | filterPrice}}đ
         </p> -->
@@ -52,8 +53,8 @@
             </div>
             <hr />
         </div>
-        <div class="product__right col-9 row" v-if="productAll.length !=0">
-            <div 
+        <div class="product__right col-9" v-if="productAll.length !=0">
+            <!-- <div 
                 class="product__right__item col-3"
                 v-for="(item, key) in productAll" 
                 :key="key"
@@ -66,7 +67,9 @@
                     <p class="product__right__item__name" :title="item.title">{{item.title}}</p>
                 </router-link>
                 <p class="product__right__item__price" :title="item.price">{{item.price | filterPrice}}đ</p>
-            </div>
+            </div> -->
+            <!-- <Panigation :productAll ="productAll"/> -->
+            <Pagination :productAll ="productAll"/>
         </div>
         <div v-else>Không có sản phẩm tương ứng</div>
     </div>
@@ -76,12 +79,15 @@ import '../scss/Product.scss'
 import axios from 'axios'
 import {API_URL} from '../.env.js'
 import MultiLevelMenu from '../components/MultiLevelMenu.vue'
-import SliderRange from '../components/SliderRange.vue'
+// import SliderRange from '../components/SliderRange.vue'
+import SliderRange1 from '../components/SliderRange1.vue'
 import SortProduct from '../components/SortProduct.vue'
+import Pagination from '../components/Pagination.vue'
+// import Panigation from '../components/Pagination.vue'
 // import Vue from 'vue'
 export default {
     name: "Product",
-    components: {MultiLevelMenu, SliderRange, SortProduct},
+    components: {MultiLevelMenu,  SortProduct, Pagination, SliderRange1},
     data() {
         return{
             product: [],
@@ -134,14 +140,14 @@ export default {
         priceMax: function () {
             let max = 0
             if (this.productAll1.length !== 0 ){
-                for (let i = 1; i < this.productAll1.length; i++){
+                for (let i = 0; i < this.productAll1.length; i++){
                     if (max < this.productAll1[i].price)
                         max = this.productAll1[i].price;
                     }
                 return max
             }
             else{
-                for (let i = 1; i < this.productDetail.length; i++){
+                for (let i = 0; i < this.productDetail.length; i++){
                     if (max < this.productDetail[i].price)
                         max = this.productDetail[i].price;
                     }
@@ -151,14 +157,14 @@ export default {
         priceMin: function () {
             if (this.productAll1.length !== 0 ){
                 let min = this.productAll1[0].price
-                for (let i = 1; i < this.productAll1.length; i++){
+                for (let i = 0; i < this.productAll1.length; i++){
                     if (min > this.productAll1[i].price)
                         min = this.productAll1[i].price;}
                 return min
             }
             else{
                 let min = this.productDetail[0].price
-                for (let i = 1; i < this.productDetail.length; i++){
+                for (let i = 0; i < this.productDetail.length; i++){
                     if (min > this.productDetail[i].price)
                         min = this.productDetail[i].price;}
                 return min
@@ -237,11 +243,11 @@ export default {
                     this.productAll1= response.data
                     let min = this.productDetail[0].price
                     let max = 0
-                    for (let i = 1; i < this.productDetail.length; i++){
+                    for (let i = 0; i < this.productDetail.length; i++){
                         if (max < this.productDetail[i].price)
                             max = this.productDetail[i].price;
                     }
-                    for (let i = 1; i < this.productDetail.length; i++){
+                    for (let i = 0; i < this.productDetail.length; i++){
                         if (min > this.productDetail[i].price)
                             min = this.productDetail[i].price;
                     }
@@ -253,11 +259,11 @@ export default {
                     this.productAll1= this.productAll
                     let min = this.productAll[0].price
                     let max = 0
-                    for (let i = 1; i < this.productAll.length; i++){
+                    for (let i = 0; i < this.productAll.length; i++){
                         if (max < this.productAll[i].price)
                             max = this.productAll[i].price;
                     }
-                    for (let i = 1; i < this.productAll.length; i++){
+                    for (let i = 0; i < this.productAll.length; i++){
                         if (min > this.productAll[i].price)
                             min = this.productAll[i].price;
                     }

@@ -37,7 +37,7 @@
                         <router-link :to="`/purchase/${item1.type}/${item1.detail}/${item1.id-1}`"> 
                             <p class="itemproduct__item__right__top__detail__name" :title="item1.title">{{item1.title}}</p>
                         </router-link>
-                        <p class="itemproduct__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
+                        <p class="itemproduct__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }} ₫</p>
                         
                     </div>
                 </VueSlickCarousel>
@@ -50,7 +50,7 @@
                         <router-link style="text-decoration: none" :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`"> 
                             <img :src="item1.image" alt="">
                             <p class="product__item__right__top__detail__name" :title="item1.title">{{item1.title}}{{item1.title.length > 60 ? '...' : ''}}</p>
-                            <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }}đ</p>
+                            <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }} ₫</p>
                         </router-link>
                     </div>
                 </div> -->

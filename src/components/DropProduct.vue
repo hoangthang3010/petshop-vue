@@ -13,7 +13,7 @@
                     class="dropproduct__drop__item__box  dropright"
                     v-for="(item, key) in product" 
                     :key="key"
-                    @mouseenter="onHandleShowDrop1(key)"
+                    @mouseenter="onHandleShowDrop1(key, item.name)"
                     @mouseleave="onHandleDisShowDrop1(key)"
                 >
                     <router-link style="color: black" :to ="`/product/${item.name}`">
@@ -36,7 +36,7 @@
                     :key="key"
                     @mouseenter="onHandleShowDrop2(key)"
                 >
-                    <router-link style="color: black;" :to ="`/product/${item.name}`">
+                    <router-link style="color: black;" :to ="`/product/${name}/${item.name}`">
                         {{item.title}}
                     </router-link>
                 </div>
@@ -56,13 +56,15 @@ export default {
             showDrop1: null,
             id: null,
             id1: null,
+            name: null,
             product: [],
             productDetail: [],
             bestselling: [],
         }
     },
     methods:{
-        onHandleShowDrop1(index){
+        onHandleShowDrop1(index, name){
+            this.name= name
             this.showDrop = index
             this.id = index
         },
@@ -74,6 +76,7 @@ export default {
             this.id = null
         },
         onHandleDisShowDrop1(){
+            // this.name = null
             // this.id = key
         }
     },

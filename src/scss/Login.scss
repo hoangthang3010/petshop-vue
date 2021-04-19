@@ -1,0 +1,58 @@
+.userlogin{
+    padding-top: 20px;
+    margin: auto;
+    width: 30%;
+    &__box{
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+        border: 1px solid rgb(186, 186, 186);
+        &__title{
+            font-weight: 600;
+        }
+        &__main{
+            &__title{
+                font-weight: 600;
+                margin-bottom: 0px;
+            }
+            &--input{
+                border: 1px solid rgb(186, 186, 186);
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        &__memo{
+            margin-bottom: 10px;
+            &--checkbox{
+                margin-right: 5px;
+            }
+            &__title{
+                font-weight: 600;
+            }
+        }
+        &__login{
+            &--submit{
+                padding: 5px 10px;
+                border: none;
+                background-color: orange;
+                color: white;
+                font-weight: 600;
+                margin-bottom: 10px;
+                &:hover{
+                    background-color: rgb(220, 143, 1);
+                }
+            }
+            &__forget{
+                cursor: pointer;
+                // font-weight: 600;
+                color: orange;
+                &:hover{
+                    color: rgb(214, 139, 0);
+                }
+            }
+        }
+    }
+}
+p{
+    margin-bottom: 0px;
+}

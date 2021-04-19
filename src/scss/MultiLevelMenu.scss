@@ -20,6 +20,9 @@
                 padding: 10px;
                 font-size: 13px;
                 margin-bottom: 0px;
+                &:hover{
+                    color: orange;
+                }
             }
             &__icon{
                 transform: translate(0%, 20%);
@@ -28,7 +31,7 @@
                 top: 5px;
                 right: 5%;
                 font-size: 16px;
-                transition: transform 1s; 
+                transition: transform 0.3s; 
                 &:hover{
                     // transform: rotate(180deg)
                 }
@@ -45,6 +48,7 @@
                 &__li1{
                     padding: 5px 8px;
                     &:hover{
+                        color: orange;
                         border-left: 3px solid orange !important;
                         padding-left: 8px;
                         background-color: #ECECEC;

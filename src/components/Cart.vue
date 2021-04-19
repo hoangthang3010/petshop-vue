@@ -25,7 +25,7 @@
                                     <p class="cart__left__item__table__content__tr__link__title col-8">{{item.title}}</p>
                                 </router-link>
                             </td>
-                            <td class="cart__left__item__table__content__tr col-2">{{item.price | filterPrice}}đ</td>
+                            <td class="cart__left__item__table__content__tr col-2">{{item.price | filterPrice}} ₫</td>
                             <td class="cart__left__item__table__content__tr col-2">
                                 <input 
                                         class="cart__left__item__table__content__tr--change" 
@@ -51,7 +51,7 @@
                                         @click="handleRemove(key)"
                                     >Xóa sản phẩm</p>
                             </td>
-                            <td class="cart__left__item__table__content__tr col-2">{{item.count * item.price | filterPrice}}đ</td>
+                            <td class="cart__left__item__table__content__tr col-2">{{item.count * item.price | filterPrice}} ₫</td>
                         </tr>
                     </table>
                     <div class="cart__left__item__back">
@@ -66,11 +66,11 @@
                 <div class="cart__right__money">
                     <div class="cart__right__money__provisional">
                         <p class="cart__right__money__provisional__left col-6">Tạm tính</p>
-                        <p class="cart__right__money__provisional__right col-6">{{getTotal | filterPrice}}đ</p>
+                        <p class="cart__right__money__provisional__right col-6">{{getTotal | filterPrice}} ₫</p>
                     </div>
                     <div class="cart__right__money__total">
                         <span class="cart__right__money__total__left col-6">Tổng</span>
-                        <span class="cart__right__money__total__right col-6">{{getTotal | filterPrice}}đ</span>
+                        <span class="cart__right__money__total__right col-6">{{getTotal | filterPrice}} ₫</span>
                     </div>
                 </div>
                 <p class="cart__right__pay">TIẾN HÀNH THANH TOÁN</p>

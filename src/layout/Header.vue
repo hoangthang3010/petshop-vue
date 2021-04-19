@@ -37,11 +37,15 @@
               <!-- <md-button class="md-primary">Primary</md-button> -->
             <!-- </div> -->
           </router-link>
-          <div class="header__top__right__login col-6">
+          <router-link 
+            class="header__top__right__login col-6"
+            to="/user_login"
+            style="text-decoration: none; color: black;"
+          >
             <font-awesome-icon :icon="['fas', 'user']" size="2x" />
             <!-- <a-icon style="fontSize: 30px"  type="user" /> -->
             <span class="header__top__right__login__title">Đăng nhập</span>
-          </div>
+          </router-link>
         </div>
       </div>
       <div class="header__bottom">

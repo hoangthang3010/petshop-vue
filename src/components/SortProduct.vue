@@ -1,7 +1,7 @@
 <template>
     <div class="sort">
         <ul class="sort__dropdown">
-            <li class="sort__dropdown__title">Sắp xếp theo chữ cái</li>
+            <li class="sort__dropdown__title">Sắp xếp theo tên</li>
             <li class="sort__dropdown__btn">
                 <button
                     class="sort__dropdown__btn--submit"
@@ -18,7 +18,7 @@
                     Từ Z-A &darr;
                 </button>
             </li>
-            <li class="sort__dropdown__title">Sắp xếp theo giá</li>
+            <li class="sort__dropdown__title" style="margin-top: 10px">Sắp xếp theo giá</li>
             <li>
                 <button  
                     class="sort__dropdown__btn--submit"

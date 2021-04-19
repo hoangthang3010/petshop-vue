@@ -1,4 +1,49 @@
 {
+  "account": [
+    {
+      "id": 1,
+      "role": "admin",
+      "username": "admin",
+      "password": "12345",
+      "email": "admin123@gmail.com"
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "username": "thang",
+      "password": "thang",
+      "email": "thangminhhoang98@gmail.com",
+      "fullname": "Hoàng Minh Thắng"
+    },
+    {
+      "id": 3,
+      "role": "user",
+      "username": "dai",
+      "password": "dai",
+      "email": "thangminhhoang98@gmail.com",
+      "fullname": "Phùng Thế Đại"
+    },
+    {
+      "role": "user",
+      "username": "ấi",
+      "password": "ahaha",
+      "email": "ahahhaha",
+      "fullname": "akakakak",
+      "id": 4
+    },
+    {
+      "role": "user",
+      "username": "thangthang",
+      "password": "1234",
+      "email": "thangminhhoang99@gmail.com",
+      "fullname": "hoang minh thang",
+      "sex": "0",
+      "phonenumber": "0969851742",
+      "birthday": "13/05/2014",
+      "old": "7",
+      "id": 6
+    }
+  ],
   "slider": [
     {
       "id": "2",

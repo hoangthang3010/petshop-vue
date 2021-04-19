@@ -59,6 +59,7 @@
                         </div> -->
                     </div>
                 </div>
+                
                 <md-tabs  class="productD__left__tab">
                     <md-tab id="tab-home" md-label="Mô tả">
                         <div v-if="productDetail[id].product_detail">
@@ -128,6 +129,7 @@
                     <!-- <span class="productD__right__product__title">Sản phẩm</span> -->
                     <!-- </div> -->
                     <div  class="productD__right__product__body">
+                        <h2>Sản phẩm</h2>
                         <MultiLevelMenu/>
                     </div>
                 </div>
