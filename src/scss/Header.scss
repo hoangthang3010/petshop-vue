@@ -52,8 +52,10 @@
             //     color: black;
             // }
             &__cart{
-                padding: 0px;
+                // border-right: 1px solid black;
+                padding: 2px !important;
                 align-items: center;
+                flex: end;
                 display: flex;
                 &__icon{
                     font-size: 30px;
@@ -65,6 +67,7 @@
                 }
             }
             &__login{
+                padding: 2px !important;
                 display: flex;
                 align-items: center;
                 &__title{

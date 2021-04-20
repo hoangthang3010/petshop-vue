@@ -25,10 +25,7 @@
             <div class="userlogin__box__login">
                 <button 
                     class="userlogin__box__login--submit" 
-                    @click="handleLogin({
-                        username: username,
-                        password: password
-                    })"
+                    @click="handleLogin()"
                 >
                     Đăng nhập
                 </button>
@@ -39,29 +36,72 @@
 </template>
 <script>
 import '../scss/Login.scss'
-import { mapMutations} from 'vuex'
+// import { mapMutations} from 'vuex'
+import axios from 'axios'
+import {API_URL} from '../.env.js'
 export default {
     data(){
         return{
+            users: [],
             username: '',
-            password: ''
+            password: '',
+            checkUser: ''
         }
     },
     methods:{
-        ...mapMutations(['handleLogin']),
+        // ...mapMutations(['handleLogin']),
         handleUsername(){
             console.log(this.username);
         },
         handlePassword(){console.log(this.password);
         },
-        // handleLogin(){
-            // for(let i=0; i<this.users.length; i++){
-            //     if(this.users[i].username == this.username && this.users[i].password == this.password){
-            //         return this.$router.push("/")
-            //         // alert("Đăng nhập thành công")
-            //     }
-            // }
-        // }
+        handleLogin(){
+            for(let i=0; i<this.users.length; i++){
+                if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password == this.password){
+                    return (
+                        this.$bus.emit('increaseCounter', this.users[i].fullname),
+                        this.checkUser = i,
+                        this.$router.push("/info_user"),
+                        alert("Đăng nhập thành công"),
+                        sessionStorage.setItem('username',this.users[i].username),
+                        sessionStorage.setItem('role',this.users[i].role),
+                        sessionStorage.setItem('fullname',this.users[i].fullname),
+                        sessionStorage.setItem('email',this.users[i].email),
+                        sessionStorage.setItem('phonenumber',this.users[i].phonenumber),
+                        sessionStorage.setItem('birthday',this.users[i].birthday),
+                        sessionStorage.setItem('old',this.users[i].old),
+                        sessionStorage.setItem('sex',this.users[i].sex)
+                    )
+                }
+                else if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password !== this.password){
+                    return( 
+                        alert("Mật khẩu sai"),
+                        this.checkUser = i
+                    )
+                }
+                else if((this.users[i].username !== this.username || this.users[i].email !== this.username) && this.users[i].password == this.password){
+                    return(
+                        alert("Tên đăng nhập/email sai"),
+                        this.checkUser = i
+                    )
+                }
+                else this.checkUser = ''
+            }
+            if (this.checkUser === '') {
+                alert("Tên đăng nhập/email và mật khẩu sai")
+                
+            }       
+        }
     },
+    mounted () {
+        axios.get(`${API_URL}/account`)
+            .then(response => {
+                this.users = response.data
+            })
+            .catch(error => {
+                console.log(error)
+                this.errored = true
+            })
+    }
 }
 </script>

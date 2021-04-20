@@ -2,8 +2,9 @@
   <div style="position: fixed; z-index: 100; width:100%;">
     <div id="app" class="header">
       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-      <div class="header__top" id="header1" v-show="!visible">
+      <div class="header__top" id="header1" :style="`height: ${100 - height}px`">
         <div class="header__top__left col-3">
+          {{height}}
           <router-link :to="'/'">
             <img class="header__top__left__image" src="https://jandpet.com.vn/wp-content/uploads/2018/07/JPet-logo-01.png"/>  
           </router-link> 
@@ -26,7 +27,7 @@
         </div>
         <div class="header__top__right col-3">
           <router-link 
-            class="header__top__right__cart col-6" 
+            class="header__top__right__cart col-5" 
             to="/cart"
             style="text-decoration: none; color: black;"
           >
@@ -37,7 +38,18 @@
               <!-- <md-button class="md-primary">Primary</md-button> -->
             <!-- </div> -->
           </router-link>
-          <router-link 
+          <router-link
+            v-if="fullname"
+            class="header__top__right__login col-7"
+            to="/info_user"
+            style="text-decoration: none; color: black;"
+          >
+            <font-awesome-icon :icon="['fas', 'user']" size="2x" />
+            <!-- <a-icon style="fontSize: 30px"  type="user" /> -->
+            <span class="header__top__right__login__title">{{fullname}}</span>
+          </router-link>
+          <router-link
+            v-else
             class="header__top__right__login col-6"
             to="/user_login"
             style="text-decoration: none; color: black;"
@@ -90,14 +102,23 @@ export default {
   name: 'Header',
   data () {
     return {
-      visible: false
+      height: 0,
+      visible: false,
+      fullname: sessionStorage.getItem('fullname')
     }
+  },
+  created(){
+    this.$bus.on('increaseCounter', value => {
+                this.fullname = value
+            })
   },
   computed: mapGetters(['product']),
   methods: {
     scrollListener: function () {
+      console.log(window.scrollY);
+      this.height = window.scrollY
       this.visible = window.scrollY > 0
-    }
+    },
   },
   mounted: function () {
     window.addEventListener('scroll', this.scrollListener)
