@@ -41,54 +41,15 @@
                         
                     </div>
                 </VueSlickCarousel>
-                <!-- <div class="product__item__right__top">
-                    <div    
-                        class="product__item__right__top__detail col-2"
-                        v-for="(item1,key) in productDetail.filter(item1 =>item1.detail  === item.name)" 
-                        :key="key"
-                    >
-                        <router-link style="text-decoration: none" :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`"> 
-                            <img :src="item1.image" alt="">
-                            <p class="product__item__right__top__detail__name" :title="item1.title">{{item1.title}}{{item1.title.length > 60 ? '...' : ''}}</p>
-                            <p class="product__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }} ₫</p>
-                        </router-link>
-                    </div>
-                </div> -->
-                <!-- <paginate
-                    v-model="page"
-                    class="product__item__right__pani"
-                    :page-count="product1.length / 6"
-                    
-                    :page-range="3"
-                    :margin-pages="2"
-                    :click-handler="clickCallback"
-                    :prev-text="'Prev'"
-                    :next-text="'Next'"
-                    :container-class="pagination"
-                    :page-class="'page-item'"
-                >
-                    <span slot="prevContent">Changed previous button</span>
-                    <span slot="nextContent">Changed next button</span>
-                    <span slot="breakViewContent">
-                        <svg width="16" height="4" viewBox="0 0 16 4">
-                        <circle fill="#999999" cx="2" cy="2" r="2" />
-                        <circle fill="#999999" cx="8" cy="2" r="2" />
-                        <circle fill="#999999" cx="14" cy="2" r="2" />
-                        </svg>
-                    </span>
-                </paginate> -->
             </div>
         </div>
     </div>
 </template>
 <script>
 import '../scss/ItemProduct.scss'
-// import Paginate from 'vuejs-paginate'
-// import Vue from 'vue'
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-// Vue.component('paginate', Paginate)
 export default {
     name: "ItemProduct",
     props:['product', 'productDetail'],
@@ -113,14 +74,6 @@ export default {
             }
         }
     },
-    // data(){
-        // display
-    // },
-    // methods:{
-    //     clickCallback (pageNum) => {
-    //         console.log(pageNum)
-    //         }
-    // }
     filters : {
         filterPrice : function(data) {
             return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")

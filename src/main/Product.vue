@@ -283,9 +283,6 @@ export default {
         filterPrice : function(data) {
             return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
         },
-        // filterProduct: function(data){
-        //     return data.filter((item) => item.price > this.repriceMin && item.price < this.repriceMax)
-        // }
     }
     
 }

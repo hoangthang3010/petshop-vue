@@ -144,8 +144,10 @@
 import { mapMutations, mapGetters } from 'vuex'
 import MultiLevelMenu from '../components/MultiLevelMenu.vue'
 import '../scss/ProductDetail.scss'
-import {API_URL} from '../.env.js'
-import axios from 'axios'
+// import {API_URL} from '../.env.js'
+// import axios from 'axios'
+import {RepositoryFactory} from '../api/RepositoryFactory';
+const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     name: "ProductDetail",
     components: {MultiLevelMenu},
@@ -160,16 +162,17 @@ export default {
     computed: mapGetters(['product']),
     created(){
         // if (!this.count) return(this.count = 0, console.log(this.count)),
-        axios.get(`${API_URL}/productDetail`)
-            .then(response => {
-                this.productDetail = response.data,
-                this.count = response.data[this.id].count
-                console.log(this.productDetail);
-            })
-            .catch(error => {
-                console.log(error)
-                this.errored = true
-            })
+        // axios.get(`${API_URL}/productDetail`)
+        //     .then(response => {
+        //         this.productDetail = response.data,
+        //         this.count = response.data[this.id].count
+        //         console.log(this.productDetail);
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //         this.errored = true
+        //     })
+        this.fetch()
     },
     filters : {
         filterPrice : function(data) {
@@ -201,6 +204,10 @@ export default {
         },
         countDown(){
             this.count === 1 ? this.count : this.count-=1
+        },
+        async fetch(){
+            const {data} = await PostsRepository.getProductDetail();
+            this.productDetail = data
         }
     }
 }

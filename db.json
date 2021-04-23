@@ -35,13 +35,36 @@
       "role": "user",
       "username": "thangthang",
       "password": "1234",
-      "email": "thangminhhoang99@gmail.com",
-      "fullname": "hoang minh thang",
+      "email": "thangminhhoang98@gmail.com",
+      "fullname": "Hoàng Minh Thắng",
       "sex": "0",
       "phonenumber": "0969851742",
       "birthday": "13/05/2014",
       "old": "7",
       "id": 6
+    },
+    {
+      "role": "user",
+      "username": "hoangthang3010",
+      "password": "hoangthang3010",
+      "email": "hoangthang301098@gmail.com",
+      "fullname": "Hoàng Minh Thắng",
+      "sex": "1",
+      "phonenumber": "0969851742",
+      "birthday": "30/09/1998",
+      "old": "23",
+      "id": 7
+    },
+    {
+      "sex": "1",
+      "fullname": "hoang minh thang",
+      "username": "hthang",
+      "birthday": "",
+      "email": "thangmibkmbkjh",
+      "phonenumber": "0997578847",
+      "password": "thang",
+      "repassword": "thang",
+      "id": 8
     }
   ],
   "slider": [
@@ -164,44 +187,43 @@
   ],
   "productAll": [
     {
-      "id":1,
+      "id": 1,
       "name": "medicine",
       "title": "Thuốc",
       "display": "true",
-      "type":[
+      "type": [
         {
-          "id":1,
+          "id": 1,
           "name": "medicine_cat",
           "title": "Thuốc cho mèo"
-          
         },
         {
-          "id":2,
+          "id": 2,
           "name": "medicine_dog",
           "title": "Thuốc cho chó"
         }
       ]
     },
     {
-      "id":2,
+      "id": 2,
       "name": "food",
       "title": "Đồ ăn",
       "display": "true",
-      "type":[
+      "type": [
         {
-          "id":1,
+          "id": 1,
           "name": "food_cat",
           "title": "Đồ ăn cho mèo"
         },
         {
-          "id":1,
+          "id": 1,
           "name": "food_dog",
           "title": "Đồ ăn cho chó"
         }
       ]
     }
   ],
-  "productDetail":[
+  "productDetail": [
     {
       "id": 1,
       "type": "cat",
@@ -341,7 +363,7 @@
       "product_amount": 100,
       "count": 1,
       "product_detail": {
-        "describe" :[
+        "describe": [
           {
             "name": "function",
             "title": "Công dụng",
@@ -358,7 +380,7 @@
             "info": ""
           },
           {
-            "name":"user_manual",
+            "name": "user_manual",
             "title": "Hướng dẫn sử dụng",
             "info": ""
           },
@@ -378,7 +400,7 @@
             "info": ""
           },
           {
-            "name":"net_weight",
+            "name": "net_weight",
             "title": "Khối lượng tịnh",
             "info": ""
           },
@@ -527,8 +549,8 @@
     {
       "id": 26,
       "type": "cat",
-      "title": "Thức ăn hữu cơ NATURAL CORE giàu đạm cho mèo" ,
-      "image":"https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-GIÀU-ĐẠM-CHO-MÈO-100x100.jpg",
+      "title": "Thức ăn hữu cơ NATURAL CORE giàu đạm cho mèo",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-GIÀU-ĐẠM-CHO-MÈO-100x100.jpg",
       "price": 320000,
       "detail": "food_cat",
       "product_amount": 100,
@@ -544,7 +566,6 @@
       "product_amount": 100,
       "count": 1
     },
-    
     {
       "id": 28,
       "type": "dog",
@@ -655,7 +676,7 @@
       "product_amount": 100,
       "count": 1,
       "product_detail": {
-        "describe" :[
+        "describe": [
           {
             "name": "function",
             "title": "Công dụng",
@@ -672,7 +693,7 @@
             "info": "Bột ngũ cốc nguyên hạt (ngô), thịt gia cầm, dầu động vận và chất béo, bột đậu nành, bột củ cải đường, thịt gà sấy khô, Caco3, canxi photphat, muối, khoáng chất, vitamin, lecithin, lysin, choline, chất chống ô xy hóa tự nhiên (chiết xuất hương thảo), chlorella"
           },
           {
-            "name":"user_manual",
+            "name": "user_manual",
             "title": "Hướng dẫn sử dụng",
             "info": "Cho ăn theo bảng hướng dẫn cho ăn in trên bao bì, Bảo quản sản phẩm nơi khô ráo và thoáng mát, tránh ánh sáng trực tiếp."
           },
@@ -692,7 +713,7 @@
             "info": "18 tháng kể từ ngày sản xuất"
           },
           {
-            "name":"net_weight",
+            "name": "net_weight",
             "title": "Khối lượng tịnh",
             "info": "2kg"
           },

@@ -1,11 +1,12 @@
-// import axios from 'axios'
+import axios from 'axios'
 // import queryString from 'querystring'
-// import {API_URL} from '../.env.js'
+import {API_URL} from '../.env.js'
 
-// const axiosClient = axios.create({
-//   baseURL: API_URL,
+const Repository = axios.create({
+  baseURL: API_URL,
+  headers: {"Authorization": "Bearer yourToken"}
 //   paramsSerializer: params => queryString.stringify(params),
-// })
+})
 
 // axiosClient.interceptors.response.use( response => {
 //    if (response && response.data) {
@@ -16,4 +17,4 @@
 //   throw error
 // })
 
-// export default axiosClient
+export default Repository

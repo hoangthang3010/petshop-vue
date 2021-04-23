@@ -71,7 +71,7 @@ const cart = {
         },
         handleRemove(state, id){
             for(let i = 0; i< state.product.length; i++){
-                    state.product.splice(id, 1)
+                    return state.product.splice(id, 1)
             }
         }
     }

@@ -5,6 +5,7 @@ import Product from '../main/Product.vue'
 import SlideHomepage1 from '../components/SliderHomepage1.vue'
 import Login from '../components/Login.vue'
 import InfoUser from '../components/InfoUser.vue'
+import CreateAccountUser from '../components/CreateAccountUser.vue'
 // import Pagination from '../components/Pagination1.vue'
 
 export const routes = [
@@ -17,5 +18,6 @@ export const routes = [
     { path: '/slide', name: 'slide', component: SlideHomepage1 },
     { path: '/user_login', name: 'userlogin', component: Login },
     { path: '/info_user', name: 'infouser', component: InfoUser },
+    { path: '/create_account_user', name: 'createaccountuser', component: CreateAccountUser }
     // { path: '/panigation', name: 'panigation', component: Pagination }
 ]

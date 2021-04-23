@@ -17,10 +17,12 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
-
 import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
-import Bus from './components/EventBus'
+import Bus from './plugins/EventBus'
+import UUID from "vue-uuid";
+ 
+Vue.use(UUID);
 Vue.use(Bus)
 Vue.component('VueSlider', VueSlider)
 import JwPagination from 'jw-vue-pagination';

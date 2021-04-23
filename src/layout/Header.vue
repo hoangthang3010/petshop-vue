@@ -2,9 +2,8 @@
   <div style="position: fixed; z-index: 100; width:100%;">
     <div id="app" class="header">
       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-      <div class="header__top" id="header1" :style="`height: ${100 - height}px`">
+      <div class="header__top" id="header1" :style="`margin-top: ${-height}px`"  v-show="!visible">
         <div class="header__top__left col-3">
-          {{height}}
           <router-link :to="'/'">
             <img class="header__top__left__image" src="https://jandpet.com.vn/wp-content/uploads/2018/07/JPet-logo-01.png"/>  
           </router-link> 
@@ -117,7 +116,7 @@ export default {
     scrollListener: function () {
       console.log(window.scrollY);
       this.height = window.scrollY
-      this.visible = window.scrollY > 0
+      this.visible = window.scrollY > 100
     },
   },
   mounted: function () {

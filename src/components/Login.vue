@@ -29,6 +29,15 @@
                 >
                     Đăng nhập
                 </button>
+                
+                    <!-- @click="handleCreateAccountUser()" -->
+                <router-link to="/create_account_user">
+                    <button 
+                        class="userlogin__box__login--submit" 
+                    >
+                        Đăng kí
+                    </button>
+                </router-link>
                 <p class="userlogin__box__login__forget">Quên mật khẩu?</p>
             </div>
         </div>
@@ -63,14 +72,15 @@ export default {
                         this.checkUser = i,
                         this.$router.push("/info_user"),
                         alert("Đăng nhập thành công"),
-                        sessionStorage.setItem('username',this.users[i].username),
-                        sessionStorage.setItem('role',this.users[i].role),
-                        sessionStorage.setItem('fullname',this.users[i].fullname),
-                        sessionStorage.setItem('email',this.users[i].email),
-                        sessionStorage.setItem('phonenumber',this.users[i].phonenumber),
-                        sessionStorage.setItem('birthday',this.users[i].birthday),
-                        sessionStorage.setItem('old',this.users[i].old),
-                        sessionStorage.setItem('sex',this.users[i].sex)
+                        sessionStorage.setItem('id', this.users[i].id)
+                        // sessionStorage.setItem('username',this.users[i].username),
+                        // sessionStorage.setItem('role',this.users[i].role),
+                        // sessionStorage.setItem('fullname',this.users[i].fullname),
+                        // sessionStorage.setItem('email',this.users[i].email),
+                        // sessionStorage.setItem('phonenumber',this.users[i].phonenumber),
+                        // sessionStorage.setItem('birthday',this.users[i].birthday),
+                        // sessionStorage.setItem('old',this.users[i].old),
+                        // sessionStorage.setItem('sex',this.users[i].sex)
                     )
                 }
                 else if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password !== this.password){
