@@ -40,6 +40,13 @@
                         &--radio{
                             height: 100%;
                         }
+                        &__noti{
+                            position: absolute;
+                            right: -100%;
+                            left: 100%;
+                            top: 20%;
+                            color: red
+                        }
                     }
                 }
                 &__image{

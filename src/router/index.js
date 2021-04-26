@@ -5,7 +5,7 @@ import Product from '../main/Product.vue'
 import SlideHomepage1 from '../components/SliderHomepage1.vue'
 import Login from '../components/Login.vue'
 import InfoUser from '../components/InfoUser.vue'
-import CreateAccountUser from '../components/CreateAccountUser.vue'
+import CreateAccountUser from '../components/Create.vue'
 // import Pagination from '../components/Pagination1.vue'
 
 export const routes = [

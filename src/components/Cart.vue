@@ -17,7 +17,7 @@
                         >
                             <td class="cart__left__item__table__content__tr col-6">
                                 <router-link 
-                                    style="text-decoration: none; color: black"
+                                    style="text-decoration: none; color: black; align-items:center"
                                     class="cart__left__item__table__content__tr__link" 
                                     :to="`/purchase/${item.name1}/${item.name2}/${item.id}`"
                                 >

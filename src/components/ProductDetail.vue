@@ -109,6 +109,9 @@
                                 <button class="productD__left__rate__box__right--submit" v-if="showRate" @click="showRate=!showRate" >Gửi</button> 
                                 <button class="productD__left__rate__box__right--cancel" v-if="showRate" @click="showRate=!showRate" >Hủy bỏ</button>
                             </div>
+                            <div v-if="showRate">
+                                <a-rate v-model="value" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,8 +158,9 @@ export default {
         return{
             productDetail: [],
             showRate: false,
-            count: 0,
-            id: this.$route.params.id
+            count: 1,
+            id: this.$route.params.id,
+            value: 0
         }
     },
     computed: mapGetters(['product']),
@@ -179,6 +183,9 @@ export default {
             return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
             // toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         }
+    },
+    mutated(){
+        this.value = 0
     },
     methods: {
         ...mapMutations(['ADD_TO_CART']),

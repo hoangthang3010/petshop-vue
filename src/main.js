@@ -21,6 +21,8 @@ import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
 import Bus from './plugins/EventBus'
 import UUID from "vue-uuid";
+// import { DatePicker } from 'ant-design-vue';
+// Vue.use(DatePicker);
  
 Vue.use(UUID);
 Vue.use(Bus)
@@ -30,7 +32,7 @@ Vue.component('jw-pagination', JwPagination);
 
 Vue.use( VueSplide );
 library.add(fab, fas, far)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(Antd);
 
@@ -39,6 +41,7 @@ const router = new VueRouter({
   routes
 })
 Vue.use(VueMaterial)
+Vue.config.productionTip = false
 
 new Vue({
   el: '#app',

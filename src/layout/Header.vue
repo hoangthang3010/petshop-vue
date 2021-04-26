@@ -33,7 +33,8 @@
             <!-- <div> -->
               <font-awesome-icon :icon="['fas', 'shopping-cart']" size="2x" />
               <!-- <a-icon class="header__top__right__cart__icon" type="shopping-cart" /> -->
-              <span class="header__top__right__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
+              <!-- &nbsp; -->
+              <span class="header__top__right__cart__title">Giỏ hàng({{product.length}})</span>
               <!-- <md-button class="md-primary">Primary</md-button> -->
             <!-- </div> -->
           </router-link>
@@ -114,9 +115,10 @@ export default {
   computed: mapGetters(['product']),
   methods: {
     scrollListener: function () {
-      console.log(window.scrollY);
-      this.height = window.scrollY
+      // console.log(window.scrollY);
+      if( window.scrollY <=100)this.height = window.scrollY
       this.visible = window.scrollY > 100
+      // if (window.scrollY> 100) return 
     },
   },
   mounted: function () {

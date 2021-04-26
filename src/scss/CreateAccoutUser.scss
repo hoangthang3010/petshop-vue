@@ -1,0 +1,12 @@
+.creaccuser{
+    padding-top: 20px;
+    width: 30%;
+    margin: auto;
+    &__title{
+        border-left: 1px solid rgb(208, 208, 208);
+        padding: 8px 0px;
+        text-align: center;
+        background-color: orange;
+        color: white;
+    }
+}
