@@ -43,9 +43,10 @@ const router = new VueRouter({
 Vue.use(VueMaterial)
 Vue.config.productionTip = false
 
-new Vue({
+const vm =new Vue({
   el: '#app',
   render: h => h(App),
   router,
 	store
-})  
+}) 
+export { vm }

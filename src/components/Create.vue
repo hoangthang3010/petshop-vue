@@ -21,7 +21,7 @@
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <input :value="email.text" @change="onHandlEmail" class="infouser__body__right__bottom__info__iright--input" type="text">
                 <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err">Vui lòng nhập email</p>
-                <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err1">Email không đúng đúng định dạng</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err1">Email không đúng định dạng</p>
                 <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err2">Email đã tồn tại</p>
             </td>
         </tr>
@@ -36,9 +36,9 @@
             <td class="infouser__body__right__bottom__info__ileft col-4">Giới tính</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <div class="infouser__body__right__bottom__info__iright--radio">
-                    <input type="radio" name="sex" id="orther" v-model="sex.text" value="2"><label for="orther">Khác</label>
                     <input type="radio" name="sex" id="male" v-model="sex.text" value="0"><label for="male">Nam</label>
                     <input type="radio" name="sex" id="female" v-model="sex.text" value="1"><label for="female">Nữ</label>
+                    <input type="radio" name="sex" id="orther" v-model="sex.text" value="2"><label for="orther">Khác</label>
                 </div>&nbsp;
                 <p class="infouser__body__right__bottom__info__iright__noti" v-show="sex.err">Vui lòng chọn giới tính</p>
             </td>
@@ -65,20 +65,25 @@
                 <p class="infouser__body__right__bottom__info__iright__noti" v-show="repassword.err1">Mật khẩu không khớp</p>
             </td>
         </tr>
-        <tr class="infouser__body__right__bottom__info row">
+        <!-- <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">
-                <button @click="creaccuser">Tạo</button>
+                
             </td>
             <td class="infouser__body__right__bottom__info__iright col-8">
-                <button  @click="cancel">Hủy</button>
+                
             </td>
-        </tr>
+        </tr> -->
+        <div class="creaccuser__action">
+            <button class="creaccuser__action--submit" @click="creaccuser">Tạo</button>
+            <button class="creaccuser__action--cancel" @click="cancel">Hủy</button>
+        </div>
     </div>
 </template>
 <script>
 import {RepositoryFactory} from '../api/RepositoryFactory';
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
+import '../scss/CreateAccountUser.scss'
 
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
 const emailValidator = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
@@ -113,7 +118,7 @@ export default {
             if(this.phonenumber.text === '') this.phonenumber.err = true;
             if(this.password.text === '') this.password.err = true;
             if(this.repassword.text === '') this.repassword.err = true;
-            if(this.password.text !== this.repassword.text && this.repassword !== '') this.repassword.err1 = true;
+            if(this.password.text !== this.repassword.text && this.repassword.text !== '') this.repassword.err1 = true;
             for(let i= 0; i< this.listAccount.length ; i++){
                 if(this.email.text === this.listAccount[i].email  && this.email.text !== ''){
                     this.email.err2 = true
@@ -129,7 +134,32 @@ export default {
                 this.sex.err === false && this.password.err === false && 
                 this.repassword.err === false && this.repassword.err1 === false &&
                 this.username.err1 === false && this.email.err2 === false
-            ) this.createAccount(), console.log('ok');
+            ){
+                this.createAccount(),
+                this.$router.push("/user_login")
+                this.$notification['success']({
+                    message: 'Đăng kí thành công',
+                    description:
+                    'Bạn đã quay lại trang đăng nhập.',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+            else{
+                this.$notification['error']({
+                    message: 'Tạo tài khoản thất bại',
+                    description:
+                    'Vui lòng nhập lại.',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
         },
         async createAccount(){
             const {data} = await PostsRepository.createAccount(this.account);
@@ -178,6 +208,7 @@ export default {
         this.account = {
             fullname: this.fullname.text,
             username: this.username.text,
+            role: "user",
             email: this.email.text,
             phonenumber: this.phonenumber.text,
             birthday: this.birthday.text,
@@ -187,17 +218,3 @@ export default {
     }
 }
 </script>
-<style scoped lang="scss">
-.creaccuser{
-    padding-top: 20px;
-    width: 30%;
-    margin: auto;
-    &__title{
-        border-left: 1px solid rgb(208, 208, 208);
-        padding: 8px 0px;
-        text-align: center;
-        background-color: orange;
-        color: white;
-    }
-}
-</style>

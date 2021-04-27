@@ -86,6 +86,7 @@
               <font-awesome-icon :icon="['fas', 'shopping-cart']" color="white" size="3x" />
               <span class="header__bottom__menu__cart__title">&nbsp;Giỏ hàng({{product.length}})</span>
           </router-link>
+          <!-- <router-view /> -->
         </div>
       </div>
     </div>

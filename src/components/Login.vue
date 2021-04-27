@@ -24,7 +24,7 @@
             </div>
             <div class="userlogin__box__login">
                 <button 
-                    class="userlogin__box__login--submit" 
+                    class="userlogin__box__login--sign_in" 
                     @click="handleLogin()"
                 >
                     Đăng nhập
@@ -33,7 +33,7 @@
                     <!-- @click="handleCreateAccountUser()" -->
                 <router-link to="/create_account_user">
                     <button 
-                        class="userlogin__box__login--submit" 
+                        class="userlogin__box__login--sign_up" 
                     >
                         Đăng kí
                     </button>
@@ -46,8 +46,10 @@
 <script>
 import '../scss/Login.scss'
 // import { mapMutations} from 'vuex'
-import axios from 'axios'
-import {API_URL} from '../.env.js'
+// import axios from 'axios'
+// import {API_URL} from '../.env.js'
+import {RepositoryFactory} from '../api/RepositoryFactory';
+const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     data(){
         return{
@@ -71,8 +73,76 @@ export default {
                         this.$bus.emit('increaseCounter', this.users[i].fullname),
                         this.checkUser = i,
                         this.$router.push("/info_user"),
-                        alert("Đăng nhập thành công"),
+                        this.$notification['success']({
+                            message: 'Đăng nhập thành công',
+                            description:
+                            `Chào ${this.username}`,
+                            duration: 2,
+                            style: {
+                                marginTop: `75px`,
+                                marginBottom: '-50px'
+                            },
+                        }),
                         sessionStorage.setItem('id', this.users[i].id)
+                    )
+                }
+                // else if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password !== this.password){
+                //     return( 
+                //         this.$notification['error']({
+                //             message: 'Mật khẩu sai',
+                //             description:
+                //             'Vui lòng nhập lại mật khẩu.',
+                //             duration: 2,
+                //             style: {
+                //                 marginTop: `75px`,
+                //                 marginBottom: '-50px'
+                //             },
+                //         }),
+                //         this.checkUser = i
+                //     )
+                // }
+                // else if((this.users[i].username !== this.username || this.users[i].email !== this.username) && this.users[i].password === this.password){
+                //     return(
+                //         this.$notification['error']({
+                //             message: 'Tên đăng nhập/email hoặc mật khẩu sai',
+                //             description:
+                //             '',
+                //             duration: 2,
+                //             style: {
+                //                 marginTop: `75px`,
+                //                 marginBottom: '-50px'
+                //             },
+                //         }),
+                //         this.checkUser = i
+                //     )
+                // }
+                else this.checkUser = ''
+            }
+            if (this.checkUser === '') {
+                this.$notification['error']({
+                    message: 'Tên đăng nhập/email hoặc mật khẩu sai',
+                    description:
+                    'Vui lòng nhập lại tên đăng nhập/email hoặc mật khẩu',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }       
+        },
+        async fetchAccount(){
+            const {data} = await PostsRepository.getAccount();
+            this.users = data
+        }
+    },
+    created(){
+        this.fetchAccount()
+    },
+}
+</script>
+
+
                         // sessionStorage.setItem('username',this.users[i].username),
                         // sessionStorage.setItem('role',this.users[i].role),
                         // sessionStorage.setItem('fullname',this.users[i].fullname),
@@ -81,37 +151,3 @@ export default {
                         // sessionStorage.setItem('birthday',this.users[i].birthday),
                         // sessionStorage.setItem('old',this.users[i].old),
                         // sessionStorage.setItem('sex',this.users[i].sex)
-                    )
-                }
-                else if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password !== this.password){
-                    return( 
-                        alert("Mật khẩu sai"),
-                        this.checkUser = i
-                    )
-                }
-                else if((this.users[i].username !== this.username || this.users[i].email !== this.username) && this.users[i].password == this.password){
-                    return(
-                        alert("Tên đăng nhập/email sai"),
-                        this.checkUser = i
-                    )
-                }
-                else this.checkUser = ''
-            }
-            if (this.checkUser === '') {
-                alert("Tên đăng nhập/email và mật khẩu sai")
-                
-            }       
-        }
-    },
-    mounted () {
-        axios.get(`${API_URL}/account`)
-            .then(response => {
-                this.users = response.data
-            })
-            .catch(error => {
-                console.log(error)
-                this.errored = true
-            })
-    }
-}
-</script>

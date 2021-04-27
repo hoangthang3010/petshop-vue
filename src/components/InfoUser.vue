@@ -13,7 +13,7 @@
                 <div>Tài khoản của tôi</div>
                 <div>Đơn mua</div>
                 <div>Thông báo</div>
-                <button @click="del">Đăng xuất</button>
+                <button @click="logout">Đăng xuất</button>
             </div>
             <div class="infouser__body__right col-9">
                 <div class="infouser__body__right__title">
@@ -60,18 +60,7 @@
                         <tr class="infouser__body__right__bottom__info row">
                             <td class="infouser__body__right__bottom__info__ileft col-3">Ngày sinh</td>
                             <td class="infouser__body__right__bottom__info__iright col-9">
-                                    <select class="selcect" id="cars">
-                                        <option :value="user.birthday.slice(-10,-8)">{{user.birthday.slice(-10,-8)}}</option>
-                                        <option  v-for="(index, key) in 31" :key="key" :value="index">{{index}}</option>
-                                    </select>
-                                    <select id="cars">
-                                        <option :value="user.birthday.slice(-7,-5)">{{user.birthday.slice(-7,-5)}}</option>
-                                        <option  v-for="(index, key) in 12" :key="key" :value="index">{{index}}</option>
-                                    </select>
-                                    <select id="cars">
-                                        <option :value="user.birthday.slice(-4)">{{user.birthday.slice(-4)}}</option>
-                                        <option v-for="(index, key) in date.getFullYear()" :key="key" :value="index">{{index}}</option>
-                                    </select>
+                                    <date-picker style="width: 100%" v-model="user.birthday" valueType="format"></date-picker>
                             </td>
                         </tr>
                     </div>
@@ -92,6 +81,8 @@
 <script>
 import '../scss/InfoUser.scss'
 import {RepositoryFactory} from '../api/RepositoryFactory';
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     data(){
@@ -99,32 +90,79 @@ export default {
             user: [],
             id: sessionStorage.getItem('id'),
             date: new Date(),
+            allAccount: [],
+            checkUsername: 0,
+            checkEmail: 0
         }
     },
+    components: { DatePicker },
     methods:{
-        del(){
+        logout(){
             this.$router.push("/"),
             this.$bus.emit('increaseCounter', null),
             sessionStorage.removeItem('id')
         },
         saveInfo(){
-            // for(let i=-, i< )
-            this.$bus.emit('increaseCounter', this.user.fullname),
-            this.fetchUpdateAccount()
+            for(let i=0; i < this.allAccount.length; i++){
+                if(this.user.username === this.allAccount[i].username && this.user.email !== this.allAccount[i].email){
+                    return this.checkUsername += 1
+                }
+                if(this.user.email === this.allAccount[i].email && this.user.username !== this.allAccount[i].username){
+                    return this.checkEmail += 1
+                }
+            }
+            if (this.checkUsername === 1) {
+                this.$notification['success']({
+                    message: 'Tên đăng nhập đã tồn tại',
+                    description:
+                    '',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.checkUsername = 0,
+                this.checkEmail = 0
+            }
+            if (this.checkEmail === 1) {
+                this.$notification['success']({
+                    message: 'Email đã tồn tại',
+                    description:
+                    '',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.checkUsername = 0,
+                this.checkEmail = 0
+            }
+            else{
+                console.log('hi');
+                this.$bus.emit('increaseCounter', this.user.fullname),
+                this.fetchUpdateAccount()
+                this.checkUsername = 0,
+                this.checkEmail = 0
+            }
         },
-        async fetch(){
+        async fetchAccountId(){
             const {data} = await PostsRepository.getAccountId(this.id);
             this.user = data
-            console.log(this.user);
         },
         async fetchUpdateAccount(){
             const {data} = await PostsRepository.updateAccount(this.id, this.user);
             this.user = data
-            console.log(this.user);
+        },
+        async fetchAccount(){
+            const {data} = await PostsRepository.getAccount();
+            this.allAccount = data
         }
     },
     created(){
-        this.fetch()
+        this.fetchAccountId(),
+        this.fetchAccount()
     },
 }
 </script>

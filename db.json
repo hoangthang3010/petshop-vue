@@ -8,254 +8,26 @@
       "email": "admin123@gmail.com"
     },
     {
-      "id": 2,
-      "role": "user",
-      "username": "thang",
-      "password": "thang",
-      "email": "thangminhhoang98@gmail.com",
-      "fullname": "Hoàng Minh Thắng"
-    },
-    {
-      "id": 3,
-      "role": "user",
-      "username": "dai",
-      "password": "dai",
-      "email": "thangminhhoang98@gmail.com",
-      "fullname": "Phùng Thế Đại"
-    },
-    {
-      "role": "user",
-      "username": "ấi",
-      "password": "ahaha",
-      "email": "ahahhaha",
-      "fullname": "akakakak",
-      "id": 4
-    },
-    {
-      "role": "user",
-      "username": "thangthang",
-      "password": "1234",
-      "email": "thangminhhoang98@gmail.com",
       "fullname": "Hoàng Minh Thắng",
-      "sex": "0",
+      "username": "hoangthang30109888",
+      "role": "user",
+      "email": "thangminhhoang9888@gmail.com",
       "phonenumber": "0969851742",
-      "birthday": "13/05/2014",
-      "old": "7",
-      "id": 6
+      "birthday": "1998-10-30",
+      "sex": "0",
+      "password": "12345",
+      "id": 2
     },
     {
-      "role": "user",
+      "fullname": "Hoàng Thắng",
       "username": "hoangthang3010",
-      "password": "hoangthang3010",
+      "role": "user",
       "email": "hoangthang301098@gmail.com",
-      "fullname": "Hoàng Minh Thắng",
+      "phonenumber": "0969851711",
+      "birthday": "1998-10-31",
       "sex": "1",
-      "phonenumber": "0969851742",
-      "birthday": "30/09/1998",
-      "old": "23",
-      "id": 7
-    },
-    {
-      "sex": "1",
-      "fullname": "hoang minh thang",
-      "username": "hthang",
-      "birthday": "",
-      "email": "thangmibkmbkjh",
-      "phonenumber": "0997578847",
-      "password": "thang",
-      "repassword": "thang",
-      "id": 8
-    },
-    {
-      "sex": "0",
-      "fullname": "Minh Thắng",
-      "username": "minhthang98",
-      "birthday": "1999-05-13",
-      "email": "hoangthangg3010@gmail.com",
-      "phonenumber": "0969853243463",
-      "password": "1234",
-      "repassword": "1234",
-      "id": 9
-    },
-    {
-      "sex": "",
-      "fullname": "",
-      "username": "",
-      "birthday": "",
-      "email": "",
-      "phonenumber": "",
-      "password": "",
-      "repassword": "",
-      "id": 10
-    },
-    {
-      "fullname": "sdfsdf",
-      "username": "sdfsdf",
-      "email": "sdfsd",
-      "phonenumber": "fsdfsdf",
-      "birthday": "2021-04-20",
-      "sex": "1",
-      "password": "fsdfsd",
-      "id": 11
-    },
-    {
-      "fullname": "",
-      "username": "",
-      "email": "",
-      "phonenumber": "",
-      "birthday": "",
-      "sex": "",
-      "password": "",
-      "id": 12
-    },
-    {
-      "fullname": "ádas",
-      "username": "",
-      "email": "",
-      "phonenumber": "",
-      "birthday": "",
-      "sex": "",
-      "password": "",
-      "id": 13
-    },
-    {
-      "fullname": "sd",
-      "username": "",
-      "email": "sd",
-      "phonenumber": "",
-      "birthday": "",
-      "sex": "",
-      "password": "",
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "fullname": "thang",
-      "username": "thang",
-      "email": "thangggtahng!fgmail.com",
-      "phonenumber": "0123456789",
-      "birthday": "2021-04-14",
-      "sex": "1",
-      "password": "thang",
-      "id": 18
-    },
-    {
-      "fullname": "thang",
-      "username": "thang",
-      "email": "thangggtahng!fgmail.com",
-      "phonenumber": "0123456789",
-      "birthday": "2021-04-14",
-      "sex": "1",
-      "password": "thang",
-      "id": 19
-    },
-    {
-      "fullname": "thagn",
-      "username": "thang",
-      "email": "thang@gmail.cvom",
-      "phonenumber": "09346898573984",
-      "birthday": "2021-04-15",
-      "sex": "0",
-      "password": "thang",
-      "id": 20
-    },
-    {
-      "fullname": "áda",
-      "username": "ád",
-      "email": "áda",
-      "phonenumber": "ádasda",
-      "birthday": "2021-04-13",
-      "sex": "0",
-      "password": "thang",
-      "id": 21
-    },
-    {
-      "fullname": "thang",
-      "username": "thang",
-      "email": "thang@gmail.com",
-      "phonenumber": "0969851742",
-      "birthday": "2021-04-13",
-      "sex": "1",
-      "password": "thang",
-      "id": 22
-    },
-    {
-      "fullname": "thangt",
-      "username": "thang",
-      "email": "thang@gmail.com",
-      "phonenumber": "0988748",
-      "birthday": "2021-04-20",
-      "sex": "1",
-      "password": "thang",
-      "id": 23
-    },
-    {
-      "fullname": "thangt",
-      "username": "thangg",
-      "email": "thangg@gmail.com",
-      "phonenumber": "0988748",
-      "birthday": "2021-04-20",
-      "sex": "1",
-      "password": "thang",
-      "id": 24
-    },
-    {
-      "fullname": "thang",
-      "username": "thanggg",
-      "email": "thanggg@gmail.com",
-      "phonenumber": "thang",
-      "birthday": "2021-04-13",
-      "sex": "1",
-      "password": "thang",
-      "id": 25
-    },
-    {
-      "fullname": "thắng",
-      "username": "thangggggg",
-      "email": "thangggggggg@gmail.com",
-      "phonenumber": "0967869467",
-      "birthday": "2021-04-06",
-      "sex": "1",
-      "password": "thang",
-      "id": 26
-    },
-    {
-      "fullname": "thang",
-      "username": "thangggsd",
-      "email": "thangsdf@gmail.com",
-      "phonenumber": "0979867166",
-      "birthday": "2021-04-08",
-      "sex": "1",
-      "password": "thang",
-      "id": 27
-    },
-    {
-      "fullname": "thang",
-      "username": "thang123",
-      "email": "thang123@gmail.com",
-      "phonenumber": "0968783652",
-      "birthday": "2021-04-15",
-      "sex": "0",
-      "password": "thang",
-      "id": 28
-    },
-    {
-      "fullname": "thang",
-      "username": "thang1234",
-      "email": "thang1234@gmail.com",
-      "phonenumber": "0987958794",
-      "birthday": "2021-04-22",
-      "sex": "1",
-      "password": "thang",
-      "id": 29
+      "password": "12345",
+      "id": 3
     }
   ],
   "slider": [

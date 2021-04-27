@@ -1,4 +1,5 @@
-
+import { notification } from 'ant-design-vue';
+import { vm } from '@/main'
 const cart = {
     state:{
         product:[],
@@ -25,19 +26,111 @@ const cart = {
             //         // console.log(state.product.indexOf(i));
             // }
             if (state.product.length === 0){ 
-                return state.product = state.product.concat(product1); 
+                const key = `1`;
+                return(
+                    console.log(11212),
+                    // alert('hi'),
+                    state.product = state.product.concat(product1),
+                    notification.success({ 
+                        message: 'Sản phẩm đã được thêm vào giỏ hàng', 
+                        description: '',
+                        btn: h => {
+                            return h(
+                              'a-button',
+                              {
+                                props: {
+                                  type: 'primary',
+                                  size: 'small',
+                                },
+                                on: {
+                                  click: () => notification.close(key, vm.$router.push('/cart')),
+                                },
+                              },
+                              'Đến giỏ hàng',
+                            );
+                        },
+                        style: {
+                            width: '400px',
+                            marginLeft: `${380 - 400}px`,
+                            marginTop: `75px`,
+                            marginBottom: '-50px'
+                        },
+                        key,
+                        onClose: close,
+                        duration: 2,
+                    })               
+                )
             }
             else{
                 let a = 0;
                 for(let i = 0; i< state.product.length; i++){
                     if (state.product[i].id === product1.id){
+                        const key = `2`;
                         state.product[i].count += product1.count
                         a=1
+                        notification.info({
+                            message: 'Sản phẩm đã có trong giỏ hàng', 
+                            description: `Số lượng sản phẩm này trong giỏ hàng tăng lên ${state.product[i].count}`,
+                            btn: h => {
+                                return h(
+                                  'a-button',
+                                  {
+                                    props: {
+                                      type: 'primary',
+                                      size: 'small',
+                                    },
+                                    on: {
+                                      click: () => notification.close(key, vm.$router.push('/cart')),
+                                    },
+                                  },
+                                  'Đến giỏ hàng',
+                                );
+                            },
+                            style: {
+                                width: '450px',
+                                marginLeft: `${380 - 450}px`,
+                                marginTop: `75px`,
+                                marginBottom: '-50px'
+                            },
+                            key,
+                            onClose: close,
+                            duration: 3,
+                        })
                         break
                     }
                 }
                 if(a==0){
-                    state.product = state.product.concat(product1);
+                    // const key = `open${Date.now()}`;
+                    const key = `1`
+                    state.product = state.product.concat(product1),
+                    notification.success({ 
+                        message: 'Sản phẩm đã được thêm vào giỏ hàng', 
+                        description: '',
+                        btn: h => {
+                            return h(
+                              'a-button',
+                              {
+                                props: {
+                                  type: 'primary',
+                                  size: 'small',
+                                },
+                                on: {
+                                  click: () => notification.close(key, vm.$router.push('/cart')),
+                                },
+                              },
+                              'Đến giỏ hàng',
+                            );
+                        },
+                        style: {
+                            width: '400px',
+                            marginLeft: `${380 - 400}px`,
+                            marginTop: `75px`,
+                            marginBottom: '-50px'
+                        },
+                        key,
+                        onClose: close,
+                        duration: 2,
+                    })  
                 }
             }
         },
