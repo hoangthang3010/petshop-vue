@@ -4,17 +4,19 @@
             <h2 class="userlogin__box__title">Đăng nhập</h2>
             <!-- <div> -->
             <div class="userlogin__box__main">
-                <p class="userlogin__box__main__title">Tên đăng nhập hoặc địa chỉ email *</p>
+                <!-- <p class="userlogin__box__main__title">Tên đăng nhập hoặc địa chỉ email *</p> -->
                 <input class="userlogin__box__main--input" 
                     v-model="username" 
                     @change="handleUsername" 
                     type="text"
+                    placeholder="Email/Tên đăng nhập"
                 >
-                <p class="userlogin__box__main__title">Mật khẩu *</p>
+                <!-- <p class="userlogin__box__main__title">Mật khẩu *</p> -->
                 <input class="userlogin__box__main--input" 
                     @change="handlePassword()" 
                     v-model="password" 
                     type="text"
+                    placeholder="Mật khẩu"
                 >
                 <!-- </div> -->
             </div>
@@ -40,14 +42,32 @@
                 </router-link>
                 <p class="userlogin__box__login__forget">Quên mật khẩu?</p>
             </div>
+            <div class="userlogin__box__or">
+                <div class="userlogin__box__or__hr"></div>
+                <span class="userlogin__box__or__title">HOẶC</span>
+                <div class="userlogin__box__or__hr"></div>
+            </div>
+            <div class="userlogin__box__social">
+                <div class="userlogin__box__social__google" @click="loginGoogle">
+                    <img class="userlogin__box__social__google__image" :src="logoG" alt="">
+                    <span class="userlogin__box__social__google__title">Google</span>
+                </div>
+                <div class="userlogin__box__social__facebook" @click="loginFacebook">
+                    <img class="userlogin__box__social__facebook__image" :src="logoF" alt="">
+                    <span class="userlogin__box__social__facebook__title">Facebook</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 <script>
 import '../scss/Login.scss'
 // import { mapMutations} from 'vuex'
-// import axios from 'axios'
+// import axios from 'axios'    
 // import {API_URL} from '../.env.js'
+import logoG from '../../public/picture/logoG.png'
+import logoF from '../../public/picture/logoF.png'
+import firebase from "firebase";
 import {RepositoryFactory} from '../api/RepositoryFactory';
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
@@ -56,7 +76,9 @@ export default {
             users: [],
             username: '',
             password: '',
-            checkUser: ''
+            checkUser: '',
+            logoG: logoG,
+            logoF: logoF
         }
     },
     methods:{
@@ -130,6 +152,37 @@ export default {
                     },
                 });
             }       
+        },
+        loginGoogle(){
+            const provider = new firebase.auth.GoogleAuthProvider();
+            firebase
+                    .auth()
+                    .signInWithPopup(provider)
+                    .then((result) => {
+                    let token = result.credential.accessToken;
+                    let user = result.user;
+                        console.log(token) // Token
+                        console.log(user.photoURL) // User that was authenticated
+                    })
+                    .catch((err) => {
+                    console.log(err); // This will give you all the information needed to further debug any errors
+                    });
+        },
+        loginFacebook(){
+            // firebase.auth().signInWithPopup(fbProvider).then(function(result) 
+            const fbProvider = new firebase.auth.FacebookAuthProvider();
+            firebase
+                    .auth()
+                    .signInWithPopup(fbProvider)
+                    .then((result) => {
+                    let token = result.credential.accessToken;
+                    let user = result.user;
+                        console.log(token) // Token
+                        console.log(user) // User that was authenticated
+                    })
+                    .catch((err) => {
+                    console.log('fail: ' + err); // This will give you all the information needed to further debug any errors
+                    });
         },
         async fetchAccount(){
             const {data} = await PostsRepository.getAccount();

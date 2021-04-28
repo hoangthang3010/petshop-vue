@@ -9,25 +9,36 @@
     },
     {
       "fullname": "Hoàng Minh Thắng",
-      "username": "hoangthang30109888",
+      "username": "hoangthang301098",
       "role": "user",
-      "email": "thangminhhoang9888@gmail.com",
+      "email": "hoangthang301098@gmail.com",
       "phonenumber": "0969851742",
-      "birthday": "1998-10-30",
+      "birthday": "1998-10-14",
       "sex": "0",
       "password": "12345",
       "id": 2
     },
     {
-      "fullname": "Hoàng Thắng",
+      "fullname": "Hoàng Minh Thắng",
       "username": "hoangthang3010",
       "role": "user",
-      "email": "hoangthang301098@gmail.com",
+      "email": "hoangthang3010@gmail.com",
       "phonenumber": "0969851711",
       "birthday": "1998-10-31",
-      "sex": "1",
+      "sex": "0",
       "password": "12345",
       "id": 3
+    },
+    {
+      "fullname": "Phùng Thế Đại",
+      "username": "daiphung",
+      "role": "user",
+      "email": "daiphung@gmail.com",
+      "phonenumber": "096776487",
+      "birthday": "1999-05-05",
+      "sex": "1",
+      "password": "1234",
+      "id": 4
     }
   ],
   "slider": [

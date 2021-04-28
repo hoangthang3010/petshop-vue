@@ -6,16 +6,41 @@
                     <img class="col-3" src="ádaSD" alt="dsdf"/>
                     <div class="col-9">
                         <h4>hoangthang3010</h4>
-                        <p>Sửa hồ sơ</p>
+                        <p @click="showProfile">Sửa hồ sơ</p>
                     </div>
                 </div>
                 <hr/>
-                <div>Tài khoản của tôi</div>
-                <div>Đơn mua</div>
-                <div>Thông báo</div>
-                <button @click="logout">Đăng xuất</button>
+                <div class="infouser__body__left__menu">
+                    <span 
+                        onMouseOver="this.style.color='red'" 
+                        onMouseOut="this.style.color='black'"
+                        @click="showProfile"
+                    >
+                        Tài khoản của tôi
+                    </span>
+                </div>
+                <div class="infouser__body__left__menu">
+                    <span 
+                        onMouseOver="this.style.color='red'" 
+                        onMouseOut="this.style.color='black'"
+                        @click="showSale"
+                    >
+                        Đơn mua
+                    </span>
+                </div>
+                <div class="infouser__body__left__menu">
+                    <span 
+                        onMouseOver="this.style.color='red'" 
+                        onMouseOut="this.style.color='black'"
+                        @click="showNotification"
+                    >
+                        Thông báo
+                    </span>
+                </div>
+                <button class="infouser__body__right--save" @click="logout">Đăng xuất</button>
+                <span class="infouser__body__right--forget" @click="forget">Đổi mật khẩu</span>
             </div>
-            <div class="infouser__body__right col-9">
+            <div class="infouser__body__right col-9" v-if="showRight === 'profile'">
                 <div class="infouser__body__right__title">
                     <h4>Hồ Sơ Của Tôi</h4>
                     <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
@@ -73,7 +98,39 @@
                         <!-- </div> -->
                     </div>
                 </div>
-                <button @click="saveInfo">Lưu</button>
+                <button class="infouser__body__right--save" @click="saveInfo">Lưu</button>
+            </div>
+            <SaleUser v-if="showRight === 'sale'"/>
+            <NotificationUser v-if="showRight === 'notification'"/>
+            <div class="infouser__body__right col-9" v-if="showRight === 'forget'">
+                <div class="infouser__body__right__title">
+                    <h4>Mật khẩu</h4>
+                    <p>Thay đổi mật khẩu</p>
+                </div>
+                <hr/>
+                <div class="infouser__body__right__forget">
+                    <p class="infouser__body__right__forget__title">Mật khẩu cũ</p>
+                    <input
+                        v-model="oldPassword"
+                        class="infouser__body__right__forget--input" 
+                        type="text"
+                    >
+                    <p class="infouser__body__right__forget__title">Mật khẩu mới</p>
+                    <input
+                        v-model="password"
+                        class="infouser__body__right__forget--input" 
+                        type="text"
+                    >
+                    <p class="infouser__body__right__forget__title">Nhập lại mật khẩu mới</p>
+                    <input 
+                        v-model="rePassword"
+                        class="infouser__body__right__forget--input" 
+                        type="text"
+                    >
+                    <button class="infouser__body__right__forget--change" @click="change">
+                        Thay đổi
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -83,6 +140,8 @@ import '../scss/InfoUser.scss'
 import {RepositoryFactory} from '../api/RepositoryFactory';
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
+import SaleUser from './SaleUser.vue'
+import NotificationUser from './NotificationUser.vue'
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     data(){
@@ -92,10 +151,14 @@ export default {
             date: new Date(),
             allAccount: [],
             checkUsername: 0,
-            checkEmail: 0
+            checkEmail: 0,
+            showRight: 'profile',
+            oldPassword: '',
+            password: '',
+            rePassword: ''
         }
     },
-    components: { DatePicker },
+    components: { DatePicker, SaleUser, NotificationUser},
     methods:{
         logout(){
             this.$router.push("/"),
@@ -104,15 +167,15 @@ export default {
         },
         saveInfo(){
             for(let i=0; i < this.allAccount.length; i++){
-                if(this.user.username === this.allAccount[i].username && this.user.email !== this.allAccount[i].email){
-                    return this.checkUsername += 1
+                if(this.user.username === this.allAccount[i].username && this.user.id !== this.allAccount[i].id){
+                    this.checkUsername += 1
                 }
-                if(this.user.email === this.allAccount[i].email && this.user.username !== this.allAccount[i].username){
-                    return this.checkEmail += 1
+                if(this.user.email === this.allAccount[i].email && this.user.id !== this.allAccount[i].id){
+                    this.checkEmail += 1
                 }
             }
-            if (this.checkUsername === 1) {
-                this.$notification['success']({
+            if (this.checkUsername > 0) {
+                this.$notification['error']({
                     message: 'Tên đăng nhập đã tồn tại',
                     description:
                     '',
@@ -122,11 +185,9 @@ export default {
                         marginBottom: '-50px'
                     },
                 });
-                this.checkUsername = 0,
-                this.checkEmail = 0
             }
-            if (this.checkEmail === 1) {
-                this.$notification['success']({
+            if (this.checkEmail > 0) {
+                this.$notification['error']({
                     message: 'Email đã tồn tại',
                     description:
                     '',
@@ -136,15 +197,118 @@ export default {
                         marginBottom: '-50px'
                     },
                 });
-                this.checkUsername = 0,
-                this.checkEmail = 0
             }
-            else{
-                console.log('hi');
+            if (this.checkEmail === 0 && this.checkUsername === 0) {
+                // console.log('hi');
                 this.$bus.emit('increaseCounter', this.user.fullname),
                 this.fetchUpdateAccount()
-                this.checkUsername = 0,
-                this.checkEmail = 0
+                this.$notification['success']({
+                    message: 'Thay đổi thông tin thành công',
+                    description:
+                    '',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+            this.checkUsername = 0,
+            this.checkEmail = 0
+        },
+        showProfile(){
+            this.showRight = 'profile'
+        },
+        showSale(){
+            console.log(123);
+            this.showRight = 'sale'
+        },
+        forget(){
+            this.showRight = 'forget'
+        },
+        showNotification(){
+            this.showRight = 'notification'
+        },
+        change(){
+            console.log(this.oldPassword );
+            console.log(this.user.password);
+            if( this.oldPassword !== this.user.password){
+                this.$notification['error']({
+                    message: 'Mật khẩu không đúng',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });  
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''   
+            }
+            else if(this.password !== this.rePassword){
+                this.$notification['error']({
+                    message: 'Mật khẩu không khớp',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+            else if(this.password === '' || this.rePassword === ''){
+                this.$notification['error']({
+                    message: 'Vui lòng nhập trường còn trống',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+            else if(this.password === this.user.password && this.oldPassword === this.user.password){
+                this.$notification['error']({
+                    message: 'Nhập mật khẩu mới khác',
+                    description:
+                    'Mật khẩu này trùng mật khẩu cũ',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+            else{
+                this.user.password = this.password
+                this.$notification['success']({
+                    message: 'Đổi mật khẩu thành công',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.fetchUpdateAccount()
+                this.showRight= 'profile'
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
             }
         },
         async fetchAccountId(){
