@@ -39,14 +39,14 @@
             <!-- </div> -->
           </router-link>
           <router-link
-            v-if="fullname"
+            v-if="getUser"
             class="header__top__right__login col-7"
             to="/info_user"
             style="text-decoration: none; color: black;"
           >
             <font-awesome-icon :icon="['fas', 'user']" size="2x" />
             <!-- <a-icon style="fontSize: 30px"  type="user" /> -->
-            <span class="header__top__right__login__title">{{fullname}}</span>
+            <span class="header__top__right__login__title">{{getUser.displayName}}</span>
           </router-link>
           <router-link
             v-else
@@ -113,7 +113,7 @@ export default {
                 this.fullname = value
             })
   },
-  computed: mapGetters(['product']),
+  computed: mapGetters(['product',"getUser", "isUserAuth"]),
   methods: {
     scrollListener: function () {
       // console.log(window.scrollY);

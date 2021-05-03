@@ -137,24 +137,17 @@
 </template>
 <script>
 import '../scss/InfoUser.scss'
+import {RepositoryFactory} from '../api/RepositoryFactory';
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 import SaleUser from '../components/SaleUser.vue'
-import { mapGetters } from 'vuex'
-// import firebase from "firebase";
-import { mapActions } from "vuex";
+import firebase from "firebase";
 import NotificationUser from '../components/NotificationUser.vue'
+const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     data(){
         return{
-            user:{
-                email: this.$store.getters.getUser.email,
-                phonenumber: '',
-                username: '',
-                fullname: this.$store.getters.getUser.displayName,
-                sex: '',
-                birthday: ''
-            },
+            user: [],
             id: sessionStorage.getItem('id'),
             date: new Date(),
             allAccount: [],
@@ -167,20 +160,67 @@ export default {
         }
     },
     components: { DatePicker, SaleUser, NotificationUser},
-    computed: mapGetters(["getUser"]),
     methods:{
-        ...mapActions(["signOutAction"]),
         logout(){
-            this.signOutAction();
-            // this.$router.push("/"),
-            // this.$bus.emit('increaseCounter', null),
-            // sessionStorage.removeItem('id')
-            // firebase.auth().signOut().then(() => {
-            // }).catch((error) => {
-            //     console.log(error);
-            // });
+            this.$router.push("/"),
+            this.$bus.emit('increaseCounter', null),
+            sessionStorage.removeItem('id')
+            firebase.auth().signOut().then(() => {
+            }).catch((error) => {
+                console.log(error);
+            });
         },
-        saveInfo(){},
+        saveInfo(){
+            for(let i=0; i < this.allAccount.length; i++){
+                if(this.user.username === this.allAccount[i].username && this.user.id !== this.allAccount[i].id){
+                    this.checkUsername += 1
+                }
+                if(this.user.email === this.allAccount[i].email && this.user.id !== this.allAccount[i].id){
+                    this.checkEmail += 1
+                }
+            }
+            if (this.checkUsername > 0) {
+                this.$notification['error']({
+                    message: 'Tên đăng nhập đã tồn tại',
+                    description:
+                    '',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+            if (this.checkEmail > 0) {
+                this.$notification['error']({
+                    message: 'Email đã tồn tại',
+                    description:
+                    '',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+            if (this.checkEmail === 0 && this.checkUsername === 0) {
+                // console.log('hi');
+                this.$bus.emit('increaseCounter', this.user.fullname),
+                this.fetchUpdateAccount()
+                this.$notification['success']({
+                    message: 'Thay đổi thông tin thành công',
+                    description:
+                    '',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+            this.checkUsername = 0,
+            this.checkEmail = 0
+        },
         showProfile(){
             this.showRight = 'profile'
         },
@@ -194,6 +234,104 @@ export default {
         showNotification(){
             this.showRight = 'notification'
         },
-    }
+        change(){
+            console.log(this.oldPassword );
+            console.log(this.user.password);
+            if( this.oldPassword !== this.user.password){
+                this.$notification['error']({
+                    message: 'Mật khẩu không đúng',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });  
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''   
+            }
+            else if(this.password !== this.rePassword){
+                this.$notification['error']({
+                    message: 'Mật khẩu không khớp',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+            else if(this.password === '' || this.rePassword === ''){
+                this.$notification['error']({
+                    message: 'Vui lòng nhập trường còn trống',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+            else if(this.password === this.user.password && this.oldPassword === this.user.password){
+                this.$notification['error']({
+                    message: 'Nhập mật khẩu mới khác',
+                    description:
+                    'Mật khẩu này trùng mật khẩu cũ',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+            else{
+                this.user.password = this.password
+                this.$notification['success']({
+                    message: 'Đổi mật khẩu thành công',
+                    description:
+                    '',
+                    duration: 3,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+                this.fetchUpdateAccount()
+                this.showRight= 'profile'
+                this.oldPassword =''
+                this.password= ''
+                this.rePassword = ''
+            }
+        },
+        async fetchAccountId(){
+            const {data} = await PostsRepository.getAccountId(this.id);
+            this.user = data
+        },
+        async fetchUpdateAccount(){
+            const {data} = await PostsRepository.updateAccount(this.id, this.user);
+            this.user = data
+        },
+        async fetchAccount(){
+            const {data} = await PostsRepository.getAccount();
+            this.allAccount = data
+        }
+    },
+    created(){
+        this.fetchAccountId(),
+        this.fetchAccount()
+    },
 }
 </script>

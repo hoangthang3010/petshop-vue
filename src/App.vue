@@ -10,11 +10,21 @@
 import Header from './layout/Header.vue'
 import '../src/scss/App.scss'
 import BackToTop from './components/BackToTop.vue'
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: 'App',
   components: {
     Header,
     BackToTop
+  },
+  mounted() {
+    this.authAction();
+  },
+  computed: {
+    ...mapGetters(["getUser", "isUserAuth"])
+  },
+  methods: {
+    ...mapActions(["authAction"])
   }
 }
 </script>

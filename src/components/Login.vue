@@ -6,16 +6,14 @@
             <div class="userlogin__box__main">
                 <!-- <p class="userlogin__box__main__title">Tên đăng nhập hoặc địa chỉ email *</p> -->
                 <input class="userlogin__box__main--input" 
-                    v-model="username" 
-                    @change="handleUsername" 
+                    v-model="email" 
                     type="text"
                     placeholder="Email/Tên đăng nhập"
                 >
                 <!-- <p class="userlogin__box__main__title">Mật khẩu *</p> -->
                 <input class="userlogin__box__main--input" 
-                    @change="handlePassword()" 
                     v-model="password" 
-                    type="text"
+                    type="password"
                     placeholder="Mật khẩu"
                 >
                 <!-- </div> -->
@@ -33,7 +31,7 @@
                 </button>
                 
                     <!-- @click="handleCreateAccountUser()" -->
-                <router-link to="/create_account_user">
+                <router-link to="/register_user">
                     <button 
                         class="userlogin__box__login--sign_up" 
                     >
@@ -61,146 +59,83 @@
     </div>
 </template>
 <script>
+
 import '../scss/Login.scss'
-// import { mapMutations} from 'vuex'
-// import axios from 'axios'    
-// import {API_URL} from '../.env.js'
 import logoG from '../../public/picture/logoG.png'
 import logoF from '../../public/picture/logoF.png'
-import firebase from "firebase";
-import {RepositoryFactory} from '../api/RepositoryFactory';
-const PostsRepository = RepositoryFactory.communicationAPI('posts')
+import { mapActions } from "vuex";
 export default {
-    data(){
+    data() {
         return{
-            users: [],
-            username: '',
+            email: '',
             password: '',
-            checkUser: '',
             logoG: logoG,
-            logoF: logoF
+            logoF: logoF,
+            token: '',
+            user: ''
         }
     },
-    methods:{
-        // ...mapMutations(['handleLogin']),
-        handleUsername(){
-            console.log(this.username);
-        },
-        handlePassword(){console.log(this.password);
-        },
+    methods: {
+        ...mapActions(["signInAction", "signInFacebookAction", "signInGoogleAction"]),
         handleLogin(){
-            for(let i=0; i<this.users.length; i++){
-                if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password == this.password){
-                    return (
-                        this.$bus.emit('increaseCounter', this.users[i].fullname),
-                        this.checkUser = i,
-                        this.$router.push("/info_user"),
-                        this.$notification['success']({
-                            message: 'Đăng nhập thành công',
-                            description:
-                            `Chào ${this.username}`,
-                            duration: 2,
-                            style: {
-                                marginTop: `75px`,
-                                marginBottom: '-50px'
-                            },
-                        }),
-                        sessionStorage.setItem('id', this.users[i].id)
-                    )
-                }
-                // else if((this.users[i].username == this.username || this.users[i].email == this.username) && this.users[i].password !== this.password){
-                //     return( 
-                //         this.$notification['error']({
-                //             message: 'Mật khẩu sai',
-                //             description:
-                //             'Vui lòng nhập lại mật khẩu.',
-                //             duration: 2,
-                //             style: {
-                //                 marginTop: `75px`,
-                //                 marginBottom: '-50px'
-                //             },
-                //         }),
-                //         this.checkUser = i
-                //     )
-                // }
-                // else if((this.users[i].username !== this.username || this.users[i].email !== this.username) && this.users[i].password === this.password){
-                //     return(
-                //         this.$notification['error']({
-                //             message: 'Tên đăng nhập/email hoặc mật khẩu sai',
-                //             description:
-                //             '',
-                //             duration: 2,
-                //             style: {
-                //                 marginTop: `75px`,
-                //                 marginBottom: '-50px'
-                //             },
-                //         }),
-                //         this.checkUser = i
-                //     )
-                // }
-                else this.checkUser = ''
-            }
-            if (this.checkUser === '') {
-                this.$notification['error']({
-                    message: 'Tên đăng nhập/email hoặc mật khẩu sai',
-                    description:
-                    'Vui lòng nhập lại tên đăng nhập/email hoặc mật khẩu',
-                    duration: 2,
-                    style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
-                    },
-                });
-            }       
+            this.signInAction({ email: this.email, password: this.password });
+            // firebase
+            //     .auth()
+            //     .signInWithEmailAndPassword(this.email, this.password)
+            //     .then((result) => {
+            //         console.log(result);
+            //         // this.token = result.credential.accessToken;
+            //         this.$bus.emit('increaseCounter', this.email);
+            //         console.log(this.token)
+                    
+            //     })
+            //     .catch(err => alert(err.message))
         },
         loginGoogle(){
-            const provider = new firebase.auth.GoogleAuthProvider();
-            firebase
-                    .auth()
-                    .signInWithPopup(provider)
-                    .then((result) => {
-                    let token = result.credential.accessToken;
-                    let user = result.user;
-                        console.log(token) // Token
-                        console.log(user.photoURL) // User that was authenticated
-                    })
-                    .catch((err) => {
-                    console.log(err); // This will give you all the information needed to further debug any errors
-                    });
+            this.signInGoogleAction()
+            // const provider = new firebase.auth.GoogleAuthProvider();
+            // firebase
+            //         .auth()
+            //         .signInWithPopup(provider)
+            //         .then((result) => {
+            //         this.token = result.credential.accessToken;
+            //         this.user = result.user;
+            //         console.log(result);
+            //             console.log(this.token) // Token
+            //             console.log(this.user.photoURL) // User that was authenticated
+            //             this.$bus.emit('increaseCounter', this.user.displayName)
+            //         })
+            //         .then(() => {
+            //             this.$router.push("/info_user")
+            //             // this.$bus.emit('increaseCounter', this.users[i].fullname),
+            //         })
+            //         .catch((err) => {
+            //         console.log(err); // This will give you all the information needed to further debug any errors
+            //         });
         },
         loginFacebook(){
+            this.signInFacebookAction();
             // firebase.auth().signInWithPopup(fbProvider).then(function(result) 
-            const fbProvider = new firebase.auth.FacebookAuthProvider();
-            firebase
-                    .auth()
-                    .signInWithPopup(fbProvider)
-                    .then((result) => {
-                    let token = result.credential.accessToken;
-                    let user = result.user;
-                        console.log(token) // Token
-                        console.log(user) // User that was authenticated
-                    })
-                    .catch((err) => {
-                    console.log('fail: ' + err); // This will give you all the information needed to further debug any errors
-                    });
+            // const fbProvider = new firebase.auth.FacebookAuthProvider();
+            // // fbProvider.addScope('user_birthday');
+            // firebase
+            //         .auth()
+            //         .signInWithPopup(fbProvider)
+            //         .then((result) => {
+            //         this.token = result.credential.accessToken;
+            //         this.user = result.user;
+            //             console.log(this.token) // Token
+            //             console.log(this.user) // User that was authenticated
+            //             this.$bus.emit('increaseCounter', this.user.displayName)
+            //             console.log(this.user.user_birthday)
+            //         })
+            //         .then(() => {
+            //             this.$router.push("/info_user")
+            //         })
+            //         .catch((err) => {
+            //         console.log('fail: ' + err); // This will give you all the information needed to further debug any errors
+            //         });
         },
-        async fetchAccount(){
-            const {data} = await PostsRepository.getAccount();
-            this.users = data
-        }
-    },
-    created(){
-        this.fetchAccount()
-    },
+    }
 }
 </script>
-
-
-                        // sessionStorage.setItem('username',this.users[i].username),
-                        // sessionStorage.setItem('role',this.users[i].role),
-                        // sessionStorage.setItem('fullname',this.users[i].fullname),
-                        // sessionStorage.setItem('email',this.users[i].email),
-                        // sessionStorage.setItem('phonenumber',this.users[i].phonenumber),
-                        // sessionStorage.setItem('birthday',this.users[i].birthday),
-                        // sessionStorage.setItem('old',this.users[i].old),
-                        // sessionStorage.setItem('sex',this.users[i].sex)
