@@ -19,6 +19,8 @@
         background-color: white;
         display: flex;
         padding: 10px;
+        // margin: 10px;
+        // margin-right: 20px;
         &__left{
             // border-right: 1px solid black;
             padding: 0px;
@@ -32,14 +34,34 @@
             width: 400px;
             padding: 0px;
             display: block;
-            button.slick-prev:before, button.slick-next:before {
-                font-size: 20px;
-                line-height: 1;
-                opacity: 0.75;
-                color: rgb(92, 92, 92) !important;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
+            .slick-prev:before, .slick-next:before {
+                color: #ccc;
+                font-size: 30px;
+              }
+              .slick-prev {
+                visibility: hidden;
+                transform: translateX(50px);
+                z-index: 50;
+                transition: all .3s ease-in-out;
+              }
+              .slick-next {
+                visibility: hidden;
+                transform: translateX(-100px);
+                z-index: 50;
+                transition: all .3s ease-in-out;
+              }
+              .slick-slider {
+                &:hover {
+                  .slick-prev {
+                    visibility: visible;
+                    transform: translateX(-8px);
+                  }
+                  .slick-next {
+                    visibility: visible;
+                    transform: translateX(0px);
+                  }
+                }
+              }
             &__top{
                 height: fit-content;
                 padding: 0px;

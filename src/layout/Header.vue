@@ -39,14 +39,15 @@
             <!-- </div> -->
           </router-link>
           <router-link
-            v-if="getUser"
+            v-if="fullname"
             class="header__top__right__login col-7"
             to="/info_user"
             style="text-decoration: none; color: black;"
           >
             <font-awesome-icon :icon="['fas', 'user']" size="2x" />
             <!-- <a-icon style="fontSize: 30px"  type="user" /> -->
-            <span class="header__top__right__login__title">{{getUser.displayName}}</span>
+            <!-- <span class="header__top__right__login__title">{{getUser.displayName}}</span> -->
+            <span class="header__top__right__login__title">{{fullname}}</span>
           </router-link>
           <router-link
             v-else
@@ -63,10 +64,10 @@
       <div class="header__bottom">
         <!-- <div class="header__bottom__"></div> -->
         <div class="header__bottom__menu">
-          <router-link style="background-color: orange" :to="'/'" v-show="visible">
+          <router-link class="col-2" style="background-color: orange" :to="'/'" v-show="visible">
              <font-awesome-icon :icon="['fas', 'home']" style="color: white; background-color: orange" size="3x" />
           </router-link> 
-          <ul class="header__bottom__menu__ul">
+          <ul class="header__bottom__menu__ul col-8">
             <li class="header__bottom__menu__ul__li">GIỚI THIỆU</li>
             <router-link style="text-decoration: none" to="/product/all">
               <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
@@ -78,7 +79,7 @@
             <li class="header__bottom__menu__ul__li">VIDEO</li>
           </ul>
           <router-link
-            class="header__bottom__menu__cart"
+            class="header__bottom__menu__cart col-2"
             v-show="visible"  
             to="/cart"
             style="text-decoration: none;"
@@ -118,7 +119,8 @@ export default {
     scrollListener: function () {
       // console.log(window.scrollY);
       if( window.scrollY <=100)this.height = window.scrollY
-      this.visible = window.scrollY > 100
+      this.visible = window.scrollY > 99
+      // console.log(window.scrollY );
       // if (window.scrollY> 100) return 
     },
   },

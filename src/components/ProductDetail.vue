@@ -155,7 +155,7 @@ export default {
     name: "ProductDetail",
     components: {MultiLevelMenu},
     data() {
-        return{
+        return{ 
             productDetail: [],
             showRate: false,
             count: 1,
@@ -177,6 +177,7 @@ export default {
         //         this.errored = true
         //     })
         this.fetch()
+        window.scrollTo(0,0)
     },
     filters : {
         filterPrice : function(data) {
@@ -184,9 +185,9 @@ export default {
             // toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         }
     },
-    mutated(){
-        this.value = 0
-    },
+    // mutated(){
+    //     this.value = 0
+    // },
     methods: {
         ...mapMutations(['ADD_TO_CART']),
         // ADD_TO_CARD(id, title, price, count){

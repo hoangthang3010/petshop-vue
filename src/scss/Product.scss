@@ -33,6 +33,7 @@
     &__right{
         display: block;
         &__item{
+            margin-bottom: 20px;
             text-align: center;
             // padding:0px 6px;
             border: 1px solid white;
@@ -59,6 +60,11 @@
             &__price{
                 color: red;
                 font-size: 15px;
+                padding: 0px 3px;
+            }
+            &__price-old{
+                color: rgb(140, 140, 140);
+                text-decoration: line-through;
             }
             &:hover{
                 // border: 1px solid rgb(223, 222, 222);

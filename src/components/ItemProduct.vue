@@ -33,12 +33,12 @@
                         v-for="(item1,key) in productDetail.filter(item1 =>item1.detail  === item.name)" 
                         :key="key"
                     >
-                        <img :src="item1.image" alt="">
+                        <!-- <img :src="item1.image" alt="">
                         <router-link :to="`/purchase/${item1.type}/${item1.detail}/${item1.id-1}`"> 
                             <p class="itemproduct__item__right__top__detail__name" :title="item1.title">{{item1.title}}</p>
                         </router-link>
-                        <p class="itemproduct__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }} ₫</p>
-                        
+                        <p class="itemproduct__item__right__top__detail__price">Giá: {{ item1.price | filterPrice }} ₫</p> -->
+                        <CardItems :item= item1 />
                     </div>
                 </VueSlickCarousel>
             </div>
@@ -50,10 +50,11 @@ import '../scss/ItemProduct.scss'
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import CardItems from './CardItems.vue'
 export default {
     name: "ItemProduct",
     props:['product', 'productDetail'],
-    components: { VueSlickCarousel },
+    components: { VueSlickCarousel, CardItems },
     data() {
         return {
             settings: {

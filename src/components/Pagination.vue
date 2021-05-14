@@ -1,34 +1,39 @@
 <template>
     <div class="row" style="width: 100%">
         <div>
-            <jw-pagination :items="productAll" @changePage="onChangePage" :labels="customLabels" :pageSize="8"></jw-pagination>
+            <jw-pagination :items="productAll" @changePage="onChangePage" :labels="customLabels" :pageSize="8" :maxPages="4"></jw-pagination>
         </div> 
         <div class="row"  style="width: 100%">
             <div
-                class="product__right__item col-3"
-                v-for="item in pageOfItems" 
+                class="col-3"
+                 v-for="item in pageOfItems" 
                 :key="item.id"
             >
-                <img :src="item.image"/>
-                <router-link 
-                    :to="`/purchase/${item.type}/${item.detail}/${item.id-1}`"
-                    style="text-decoration: none"
-                > 
-                    <p class="product__right__item__name" :title="item.title">{{item.title}}</p>
-                </router-link>
-                <p class="product__right__item__price" :title="item.price">{{item.price | filterPrice}} ₫</p>
+                <div class="product__right__item" >
+                    <CardItems :item= item />
+                    <!-- <img :src="item.image"/>
+                    <router-link 
+                        :to="`/purchase/${item.type}/${item.detail}/${item.id-1}`"
+                        style="text-decoration: none"
+                    > 
+                        <p class="product__right__item__name" :title="item.title">{{item.title}}</p>
+                    </router-link>
+                    <p class="product__right__item__price" :title="item.price">{{item.price | filterPrice}} ₫</p> -->
+                </div>
             </div>
+
         </div>
     </div>
 </template>
 
 <script>
 const customLabels = {
-    first: '<<',
-    last: '>>',
-    previous: '<',
-    next: '>'
+    first: '❮❮',
+    last: '❯❯',
+    previous: '❮',
+    next: '❯'
 };
+import CardItems from './CardItems.vue'
 export default {
     data() {
         return {
@@ -36,6 +41,7 @@ export default {
             pageOfItems: []
         };
     },
+    components: {CardItems},
     props: ["productAll"],
     methods: {
         onChangePage(pageOfItems) {

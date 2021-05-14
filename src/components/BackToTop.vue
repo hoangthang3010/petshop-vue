@@ -3,6 +3,7 @@
         <slot></slot>
         <a class="btn btn-light">
             <font-awesome-icon :icon="['fas', 'angle-double-up']" size="3x" />
+            <!-- <i class="fad fa-angle-double-up"></i> -->
         </a>
     </a>
 </template>

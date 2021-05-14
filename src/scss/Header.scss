@@ -90,9 +90,13 @@
             align-items: center;
             display: flex;
             margin: auto;
+            width: 80%;
+            text-align: center;
             &__ul{
+                justify-content: center;
+                margin: auto;
                 display: flex;
-                margin: 0px 150px;
+                // margin: 0px 150px;
                 // background-color: orange;
                 &__li{
                     cursor: pointer;

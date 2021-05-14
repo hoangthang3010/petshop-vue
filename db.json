@@ -39,6 +39,16 @@
       "sex": "1",
       "password": "1234",
       "id": 4
+    },
+    {
+      "fullname": "Nguyễn Văn Phong",
+      "username": "phong",
+      "email": "phong@gmail.com",
+      "phonenumber": "099885781",
+      "birthday": "2021-05-15",
+      "sex": "1",
+      "password": "1234",
+      "id": 5
     }
   ],
   "slider": [
@@ -204,6 +214,7 @@
       "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp chó mèo ngon miệng",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
       "price": 225000,
+      "sale": 20,
       "detail": "medicine_cat",
       "product_amount": 100,
       "count": 1,
@@ -217,6 +228,7 @@
       "title": "Advocate Cat – 1 tuýp thuốc trị ve rận dành cho mèo dưới 4kg",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.52-400x400-1-300x300.jpg",
       "price": 300000,
+      "sale": 40,
       "detail": "medicine_cat",
       "product_amount": 100,
       "count": 1,
@@ -230,6 +242,7 @@
       "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp chó mèo ngon miệng",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
       "price": 225000,
+      "sale": 20,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1,
@@ -243,6 +256,7 @@
       "title": "Tuýp nhỏ rận cho chó dưới 10kg frontline",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Trị-ve-ran-cho-Frontline-400x400.jpg",
       "price": 250000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -253,6 +267,7 @@
       "title": "My Beau – Gel dinh dưỡng bổ khớp 300ml cho cả chó và mèo",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656-1.jpg",
       "price": 700000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -263,6 +278,7 @@
       "title": "Yuhan – Thuốc Promotion hỗ trợ xương khớp 30v",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-promotion-420-yuhan-30-vien--280x280.jpg",
       "price": 750000,
+      "sale": 20,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -273,6 +289,7 @@
       "title": "Quick stop – Thuốc cầm máu 14g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-cam-mau-quick-stop-14g-1-300x300.jpg",
       "price": 600000,
+      "sale": 20,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -283,6 +300,7 @@
       "title": "Day’s Paw – Thuốc bổ xương khớp 250g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/6911_l.jpg",
       "price": 430000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -293,6 +311,7 @@
       "title": "My beau – Gel dinh dưỡng tổng hợp cho mèo 300ml cải thiện da và lông",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-cho-meo-300ml-cai-thien-da-va-long.jpg",
       "price": 500000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -303,6 +322,7 @@
       "title": "My beau – Gel dinh dưỡng tổng hợp cho chó 300ml",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-300ml.jpg",
       "price": 450000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -313,6 +333,7 @@
       "title": "Canxi Excel 8in1",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/excel-thuốc-bổ-sung-vitamin-cho-chó-trưởng-thành-8in1-70-viên.jpg",
       "price": 350000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -323,6 +344,7 @@
       "title": "My Beau – Gel dinh dưỡng bổ khớp cho chó và mèo 300ml",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656.jpg",
       "price": 700000,
+      "sale": 0,
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -333,6 +355,7 @@
       "title": "Nutri Plan – Tuna & Anchovy (Cá ngừ & cá cơm)",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/06c83afef08e09d0509f.jpg",
       "price": 45000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1,
@@ -406,6 +429,7 @@
       "title": "Nutri Plan – Tuna & Chicken (Cá ngừ & Thịt ức gà)",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/9159fc6f361fcf41960e.jpg",
       "price": 45000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -416,6 +440,7 @@
       "title": "Ofresh Cat",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Ofresh-Cat-400x400.jpg",
       "price": 280000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -426,6 +451,7 @@
       "title": "Sheba – Thịt hộp cá ngừ & tôm 85g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.28.jpg",
       "price": 50000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -436,6 +462,7 @@
       "title": "Fancy Feast – Thịt hộp vị cá ngừ 85g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.22.jpg",
       "price": 60000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -446,6 +473,7 @@
       "title": "Súp Cá Ciao",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Sup-Ca-Siao-300x300.jpg",
       "price": 70000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -456,6 +484,7 @@
       "title": "Greenies – Kẹo gum sạch răng vị cá hồi 85g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.20-300x300.jpg",
       "price": 200000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -466,6 +495,7 @@
       "title": "Lamer- Thịt cá ngừ Fucoidan và thịt dê 120g – chó mè",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.13-2-200x300.jpg",
       "price": 180000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -476,6 +506,7 @@
       "title": "Pet Morning – Thịt cá ngừ vằn cắt miếng cho mèo 22",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/12840_l-300x300.jpg",
       "price": 40000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -486,6 +517,7 @@
       "title": "Pet Morning – Thịt cá ngừ vằn cho mèo vị tự nhiên 22",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/12842_l-300x300.jpg",
       "price": 40000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -496,6 +528,7 @@
       "title": "Thức ăn hỗn hợp hoàn chỉnh cho mèo Catsme 5kg",
       "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/CatsMe-5.jpg",
       "price": 440000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -506,6 +539,7 @@
       "title": "Thức ăn hỗn hợp hoàn chỉnh cho mèo Catsme 2kg",
       "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/CatsMe_2.jpg",
       "price": 240000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -516,6 +550,7 @@
       "title": "Thức ăn hạt mềm cho mèo ZENITH CAT HAIRBALL",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HẠT-MỀM-CHO-MÈO-ZENITH-CAT-HAIRBALL-280x280.jpg",
       "price": 270000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -526,6 +561,7 @@
       "title": "Thức ăn hữu cơ NATURAL CORE giàu đạm cho mèo",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-GIÀU-ĐẠM-CHO-MÈO-100x100.jpg",
       "price": 320000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -536,6 +572,7 @@
       "title": "Ofresh Kitten",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Ofresh-Kitten-280x280.jpg",
       "price": 280000,
+      "sale": 0,
       "detail": "food_cat",
       "product_amount": 100,
       "count": 1
@@ -546,6 +583,7 @@
       "title": "PATE MONGE THỊT HEO VÀ TRÁI THƠM 100G",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-THỊT-HEO-VÀ-TRÁI-THƠM-100G-300x300.jpg",
       "price": 40000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -556,6 +594,7 @@
       "title": "PATE MONGE VỊ CÁ HỒI VÀ QUẢ LÊ",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-VỊ-CÁ-HỒI-VÀ-QUẢ-LÊ-280x280.jpg",
       "price": 40000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -566,6 +605,7 @@
       "title": "Cesar – Thức ăn hộp cho chó vị gà & bò 100g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/118_l-300x300.jpg",
       "price": 50000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -576,6 +616,7 @@
       "title": "Cesar – Thức ăn hộp cho chó vị bò phô mai 100g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/121_l.jpg",
       "price": 50000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -586,6 +627,7 @@
       "title": "Puppy Friend – Thịt vịt đóng hộp 100g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thit-vit-dong-hop-puppy-friend-100g.jpg",
       "price": 30000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -596,6 +638,7 @@
       "title": "Good Friend – Kẹo gum vị sữa 5p",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/stick-xuong-sua-good-friend-5-thanh-.jpg",
       "price": 60000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -606,6 +649,7 @@
       "title": "Good Friend – Kẹo gum vị sữa 2p",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/stick-xuong-vi-sua-good-friend-2p--100x100.jpg",
       "price": 60000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -616,6 +660,7 @@
       "title": "Doggy Man – Phomat miếng hello 100g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/phomat-mieng-doggy-man-hello-100g-280x280.jpg",
       "price": 140000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -626,6 +671,7 @@
       "title": "Bow wow yogurt drops ( strawberry flavor ) 75g",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/banh-sua-chua-bow-wow-vi-dau-75g.jpg",
       "price": 80000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -636,6 +682,7 @@
       "title": "Good Friend – Stick xương bò 5 chiếc",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/good-friend-stick-xương-bò-5p.jpg",
       "price": 60000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -646,6 +693,7 @@
       "title": "Thức ăn hỗn hợp hoàn chỉnh cho chó We’ll be star Gold",
       "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/We’ll-be-star-Gold-4.jpg",
       "price": 380000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1,
@@ -719,6 +767,7 @@
       "title": "Thức ăn hữu cơ NATURAL CORE cho chó nhạy cảm cá hồi",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-CHO-CHÓ-NHẠY-CẢM-CÁ-Hồi-100x100.jpg",
       "price": 300000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -729,6 +778,7 @@
       "title": "Thức ăn hữu cơ NATURAL CORE cho chó thịt cừu",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/THỨC-ĂN-HỮU-CƠ-NATURAL-CORE-CHO-CHÓ-THỊT-CỪU-280x280.png",
       "price": 260000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -739,6 +789,7 @@
       "title": "PATE MONGE VỊ THỊT BÒ",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/PATE-MONGE-VỊ-THỊT-BÒ-100x100.jpg",
       "price": 40000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
@@ -749,6 +800,7 @@
       "title": "Thức ăn hạt mềm cho chó Dr.Soft IGY",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/12/Thức-ăn-hạt-mềm-cho-chó-Dr.Soft-IGY-280x280.jpg",
       "price": 270000,
+      "sale": 0,
       "detail": "food_dog",
       "product_amount": 100,
       "count": 1
