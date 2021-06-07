@@ -25,6 +25,7 @@ const cart = {
             //         // console.log(i);
             //         // console.log(state.product.indexOf(i));
             // }
+            console.log(product1);
             if (state.product.length === 0){ 
                 const key = `1`;
                 return(
@@ -63,9 +64,10 @@ const cart = {
             }
             else{
                 let a = 0;
+                console.log(product1);
                 for(let i = 0; i< state.product.length; i++){
                     if (state.product[i].id === product1.id){
-                        const key = `2`;
+                        const key = product1.id+1;
                         state.product[i].count += product1.count
                         a=1
                         notification.info({
@@ -100,8 +102,8 @@ const cart = {
                     }
                 }
                 if(a==0){
-                    // const key = `open${Date.now()}`;
-                    const key = `1`
+                    const key = `open${Date.now()}`;
+                    // const key = `1`
                     state.product = state.product.concat(product1),
                     notification.success({ 
                         message: 'Sản phẩm đã được thêm vào giỏ hàng', 

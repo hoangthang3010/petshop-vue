@@ -30,5 +30,15 @@
     &__price{
         display: flex;
         justify-content: center;
+        padding: 5px;
+    }
+    &__addtocard{
+        cursor: pointer;
+        color: white;
+        padding: 5px 8px;
+        background-color: orange;
+        &:hover{
+            background-color: rgb(219, 151, 23);
+        }
     }
 }

@@ -159,7 +159,7 @@ export default {
             productDetail: [],
             showRate: false,
             count: 1,
-            id: this.$route.params.id,
+            id: Number(this.$route.params.id),
             value: 0
         }
     },

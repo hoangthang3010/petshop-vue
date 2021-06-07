@@ -8,7 +8,7 @@
     <img :src="item.image" />
     <router-link
       :to="`/purchase/${item.type}/${item.detail}/${item.id - 1}`"
-      style="text-decoration: none"
+      style="text-decoration: none;"
     >
       <p class="product__right__item__name" :title="item.title">
         {{ item.title }}
@@ -27,12 +27,10 @@
         {{ item.price | filterPrice }} ₫
       </p>
     </div>
-    <div class="carditem__addtocard">
-      <div>
-        <span
+    <div class="carditem__addtocard"
           @click="
             ADD_TO_CART({
-              id: id,
+              id: item.id-1,
               title: item.title,
               price: item.price,
               image: item.image,
@@ -41,9 +39,9 @@
               name2: item.detail,
             })
           "
-          >Thêm vào giỏ hàng</span
+         >
+        <span >Thêm vào giỏ hàng</span
         >
-      </div>
     </div>
   </div>
 </template>
