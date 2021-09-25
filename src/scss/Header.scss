@@ -1,5 +1,6 @@
 .header{
     width: 100%;
+    position: relative;
     // z-index: 100;
     background-color: white;
     &__top{
@@ -52,8 +53,9 @@
             //     color: black;
             // }
             &__cart{
+                position: relative;
                 // border-right: 1px solid black;
-                padding: 5px !important;
+                padding: 5px 10px !important;
                 // text-align: end;
                 align-items: center;
                 flex: end;
@@ -64,23 +66,36 @@
                 &__title{
                     // margin: auto; 
                     margin-left: 5px;
-                    font-size: 15px;
+                    font-size: 13px;
+                }
+                &::after{
+                    position: absolute;
+                    content: "";
+                    top: 20%;
+                    right: 0;
+                    // right: 3px;
+                   width: 1px;
+                   background-color: rgb(189, 189, 189); 
+                   height: 60%;
                 }
             }
             &__login{
-                padding: 2px !important;
+                padding: 5px 10px !important;
                 display: flex;
                 align-items: center;
                 &__title{
                     // margin: auto;
                     margin-left: 5px;
-                    font-size: 15px;
+                    font-size: 13px;
                 }
             }
         }
     } 
     &__bottom{
         // position: fixed;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
         display: flex;
         z-index: 98;
         height: 50px;

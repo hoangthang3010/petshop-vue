@@ -76,9 +76,9 @@
                             <td class="infouser__body__right__bottom__info__ileft col-3">Giới tính</td>
                             <td class="infouser__body__right__bottom__info__iright col-9">
                                 <div class="infouser__body__right__bottom__info__iright--radio">
-                                    <input type="radio" name="sex" id="orther" v-model="user.sex" value="2"><label for="orther">Khác</label>
-                                    <input type="radio" name="sex" id="male" v-model="user.sex" value="0"><label for="male">Nam</label>
-                                    <input type="radio" name="sex" id="female" v-model="user.sex" value="1"><label for="female">Nữ</label>
+                                    <input type="radio" name="sex" id="orther" v-model="user.sex" value="2"><label style="margin: 0 10px 0 2px" for="orther">Khác</label>
+                                    <input type="radio" name="sex" id="male" v-model="user.sex" value="0"><label style="margin: 0 10px 0 2px" for="male">Nam</label>
+                                    <input type="radio" name="sex" id="female" v-model="user.sex" value="1"><label style="margin: 0 10px 0 2px" for="female">Nữ</label>
                                 </div>&nbsp;
                             </td>
                         </tr>

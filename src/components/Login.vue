@@ -15,7 +15,7 @@
                 <input class="userlogin__box__main--input" 
                     @change="handlePassword()" 
                     v-model="password" 
-                    type="text"
+                    type="password"
                     placeholder="Mật khẩu"
                 >
                 <!-- </div> -->

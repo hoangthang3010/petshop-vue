@@ -1,12 +1,15 @@
 .userlogin{
     padding-top: 20px;
     margin: auto;
-    width: 30%;
+    width: 100%;
+    min-height: 450px;
+    background-color: #fafafa;
     &__box{
         padding: 20px;
-        width: 90%;
+        width: 30%;
+        background-color: white;
         margin: auto;
-        border: 1px solid rgb(186, 186, 186);
+        border: 1px solid rgb(223, 223, 223);
         &__title{
             font-weight: 600;
         }

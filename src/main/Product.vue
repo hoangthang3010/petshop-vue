@@ -101,12 +101,14 @@ export default {
             productAllP: [],
             sortTypes:{
                     // tăng
+                //   (item.price * item.sale) / 100)  
+                // (a.price * a.sale)/100 - (b.price * b.sale)*100
                 increase: {
-                    fn: (a, b) => a.price - b.price
+                    fn: (a, b) => (a.price - (a.price * a.sale)/100) - (b.price - (b.price * b.sale)/100)
                 },
                 // giảm
                 reduction: {
-                    fn: (a, b) => b.price - a.price
+                    fn: (a, b) => (b.price - (b.price * b.sale)/100) - (a.price - (a.price * a.sale)/100)
                 },
                 az:{
                     fn: (a, b) =>   { 
@@ -141,15 +143,15 @@ export default {
             let max = 0
             if (this.productAll1.length !== 0 ){
                 for (let i = 0; i < this.productAll1.length; i++){
-                    if (max < this.productAll1[i].price)
-                        max = this.productAll1[i].price;
+                    if (max < (this.productAll1[i].price - (this.productAll1[i].price*this.productAll1[i].sale)/100))
+                        max = (this.productAll1[i].price - (this.productAll1[i].price*this.productAll1[i].sale)/100);
                     }
                 return max
             }
             else{
                 for (let i = 0; i < this.productDetail.length; i++){
-                    if (max < this.productDetail[i].price)
-                        max = this.productDetail[i].price;
+                    if (max < (this.productDetail[i].price - (this.productDetail[i].price*this.productDetail[i].sale)/100))
+                        max = (this.productDetail[i].price - (this.productDetail[i].price*this.productDetail[i].sale)/100);
                     }
                 return max
             }
@@ -158,15 +160,15 @@ export default {
             if (this.productAll1.length !== 0 ){
                 let min = this.productAll1[0].price
                 for (let i = 0; i < this.productAll1.length; i++){
-                    if (min > this.productAll1[i].price)
-                        min = this.productAll1[i].price;}
+                    if (min > (this.productAll1[i].price - (this.productAll1[i].price*this.productAll1[i].sale)/100))
+                        min = (this.productAll1[i].price - (this.productAll1[i].price*this.productAll1[i].sale)/100)}
                 return min
             }
             else{
                 let min = this.productDetail[0].price
                 for (let i = 0; i < this.productDetail.length; i++){
-                    if (min > this.productDetail[i].price)
-                        min = this.productDetail[i].price;}
+                    if (min > (this.productDetail[i].price - (this.productDetail[i].price*this.productDetail[i].sale)/100))
+                        min = (this.productDetail[i].price - (this.productDetail[i].price*this.productDetail[i].sale)/100)}
                 return min
             }
         },
@@ -180,7 +182,7 @@ export default {
                 this.productAll = this.productDetail
             }
             else{
-                this.productAll = this.productDetail.filter((item) => item.detail === type || item.type === type)
+                this.productAll = this.productDetail.filter((item) => item.detail === type || item.type === type || item.type_product === type)
             }
             this.productAll1 = this.productAll
             // console.log(this.priceMax)
@@ -197,7 +199,7 @@ export default {
         filterPrice(){
             console.log(this.repriceMin);
             console.log(this.repriceMax);
-            this.productAll = this.productAll1.filter((item) => item.price >= this.repriceMin && item.price <= this.repriceMax)
+            this.productAll = this.productAll1.filter((item) => (item.price - (item.price * item.sale) / 100) >= this.repriceMin && (item.price - (item.price * item.sale) / 100) <= this.repriceMax)
         },
         onHandleSortAZ(type){
             this.sort = type
@@ -224,7 +226,7 @@ export default {
     //     this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id)
     //     this.productAll1 = this.productAll
     // },
-    mounted () {
+    created () {
         axios.get(`${API_URL}/ProductAll`)
             .then(response => {
                 this.product = response.data
@@ -237,7 +239,6 @@ export default {
         axios.get(`${API_URL}/productDetail`)
             .then(response => {
                 this.productDetail = response.data
-                // this.productAll =response.data
                 if (this.$route.params.id === 'all'){
                     this.productAll = response.data
                     this.productAll1= response.data
@@ -255,7 +256,7 @@ export default {
                     this.repriceMax = max
                 }
                 else{
-                    this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id)
+                    this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id || item.type_product == this.$route.params.id)
                     this.productAll1= this.productAll
                     let min = this.productAll[0].price
                     let max = 0
@@ -267,12 +268,9 @@ export default {
                         if (min > this.productAll[i].price)
                             min = this.productAll[i].price;
                     }
-                    console.log(min);
                     this.repriceMin = min
                     this.repriceMax = max
                 }
-                
-                // console.log(response.data);
             })
             .catch(error => {
                 console.log(error)

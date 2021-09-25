@@ -2,12 +2,16 @@ import Repository from './Repository'
 const account = "/account"
 // const productAll = "/productAll"
 const productDetail = "/productDetail"
+const rateProduct = '/rateProduct'
 export default {
     getAccount(){
         return Repository.get(`${account}`);
     },
     getAccountId(accountId){
         return Repository.get( `${account}/${accountId}`)
+    },
+    getRateProduct(){
+        return Repository.get( `${rateProduct}`)
     },
     createAccount(payload){
         return Repository. post(`${account}`, payload)
@@ -32,7 +36,7 @@ export default {
     },
     deteleProductDetail(productDetailId){
         return Repository.delete(`${productDetail}/${productDetailId}`)
-    }
+    } 
 
 }
 // const productApi = {

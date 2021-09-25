@@ -35,6 +35,7 @@
                         padding: 6px;
                     }
                     &__iright{
+                        // position: relative;
                         margin: auto;
                         &--input{
                             width: 100%;
@@ -103,6 +104,14 @@
                     text-decoration: underline;
                 }
             }
+        }
+    }
+    
+    .mx-datepicker{
+        width: 100%;
+        .mx-input{
+            border-radius: 0 !important;
+            box-shadow: none;
         }
     }
 }

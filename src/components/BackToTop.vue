@@ -1,5 +1,6 @@
 <template>
     <a @click="scrollTop" v-show="visible" class="bottom-right">
+      
         <slot></slot>
         <a class="btn btn-light">
             <font-awesome-icon :icon="['fas', 'angle-double-up']" size="3x" />

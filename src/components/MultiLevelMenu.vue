@@ -129,6 +129,18 @@ export default {
             this.idli=type
             this.idli1 = null
             this.displayul = null
+            console.log(type);
+            this.$emit('type', type)
+            if (this.displayul !== type){
+                this.displayul=type
+                // console.log(id);
+                // this.idli1=null
+            }
+            else{
+                this.displayul = null
+                // this.idli1=null
+            }
+            
         },
         showBorderli1(id,id1,type,type1){
             this.id1 = null
@@ -139,6 +151,7 @@ export default {
             this.$emit('type', type1)
         },
         showDropDown(id, type){
+            this.$emit('type', type)
             if (this.displayul !== type){
                 this.displayul=type
                 // console.log(id);

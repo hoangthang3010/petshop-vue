@@ -5,8 +5,8 @@
             <td class="infouser__body__right__bottom__info__ileft col-4">Tên đăng nhập</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <input v-model="username.text" class="infouser__body__right__bottom__info__iright--input" type="text">
-                <p v-show="username.err">Vui lòng nhập tên đăng nhâp</p>
-                <p v-show="username.err1">Tên đăng nhập đã tồn tại</p>
+               <p class="infouser__body__right__bottom__info__iright__noti" v-show="username.err">Vui lòng nhập tên đăng nhâp</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="username.err1">Tên đăng nhập đã tồn tại</p>
                  <!-- {{username.err}} -->
             </td>
         </tr>
@@ -14,41 +14,41 @@
             <td class="infouser__body__right__bottom__info__ileft col-4">Tên</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <input v-model="fullname.text" class="infouser__body__right__bottom__info__iright--input" type="text">
-                <p v-show="fullname.err">Vui lòng nhập tên của bạn</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="fullname.err">Vui lòng nhập tên của bạn</p>
             </td>
         </tr>
         <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">Email</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <input v-model="email.text" @change="onChange()" class="infouser__body__right__bottom__info__iright--input" type="text">
-                <p v-show="email.err">Vui lòng nhập email</p>
-                <p v-show="email.err1">Email không đúng đúng định dạng</p>
-                <p v-show="email.err2">Email đã tồn tại</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err">Vui lòng nhập email</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err1">Email không đúng đúng định dạng</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="email.err2">Email đã tồn tại</p>
             </td>
         </tr>
         <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">Số điện thoại</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <input v-model="phonenumber.text" class="infouser__body__right__bottom__info__iright--input" type="text">
-                <p v-show="phonenumber.err">Vui lòng nhập số điện thoại</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="phonenumber.err">Vui lòng nhập số điện thoại</p>
             </td>
         </tr>
         <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">Giới tính</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <div class="infouser__body__right__bottom__info__iright--radio">
-                    <input type="radio" name="sex" id="orther" v-model="sex.text" value="2"><label for="orther">Khác</label>
-                    <input type="radio" name="sex" id="male" v-model="sex.text" value="0"><label for="male">Nam</label>
-                    <input type="radio" name="sex" id="female" v-model="sex.text" value="1"><label for="female">Nữ</label>
+                    <input type="radio" name="sex" id="orther" v-model="sex.text" value="2"><label style="margin: 0 10px 0 2px" for="orther">Khác</label>
+                    <input type="radio" name="sex" id="male" v-model="sex.text" value="0"><label style="margin: 0 10px 0 2px" for="male">Nam</label>
+                    <input type="radio" name="sex" id="female" v-model="sex.text" value="1"><label style="margin: 0 10px 0 2px" for="female">Nữ</label>
                 </div>&nbsp;
-                <p v-show="sex.err">Vui lòng chọn giới tính</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="sex.err">Vui lòng chọn giới tính</p>
             </td>
         </tr>
         <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">Ngày sinh</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
                 <date-picker v-model="birthday.text" valueType="format"></date-picker>
-                <p v-show="birthday.err">Vui lòng chọn ngày sinh</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="birthday.err">Vui lòng chọn ngày sinh</p>
                     <!-- <date-picker v-model="time" type="datetime"></date-picker> -->
                     <!-- <select class="selcect" id="cars">
                         <option :value="user.birthday.slice(-10,-8)">{{user.birthday.slice(-10,-8)}}</option>
@@ -67,24 +67,24 @@
         <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">Mật khẩu</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
-                <input v-model="password.text" class="infouser__body__right__bottom__info__iright--input" type="text">
-                <p v-show="password.err">Vui lòng nhập mật khẩu</p>
+                <input type="password" v-model="password.text" class="infouser__body__right__bottom__info__iright--input">
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="password.err">Vui lòng nhập mật khẩu</p>
             </td>
         </tr>
         <tr class="infouser__body__right__bottom__info row">
             <td class="infouser__body__right__bottom__info__ileft col-4">Nhập lại mật khẩu</td>
             <td class="infouser__body__right__bottom__info__iright col-8">
-                <input v-model="repassword.text" class="infouser__body__right__bottom__info__iright--input" type="text">
-                <p v-show="repassword.err">Vui lòng nhập lại mật khẩu</p>
-                <p v-show="repassword.err1">Mật khẩu không khớp</p>
+                <input type="password" v-model="repassword.text" class="infouser__body__right__bottom__info__iright--input">
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="repassword.err">Vui lòng nhập lại mật khẩu</p>
+                <p class="infouser__body__right__bottom__info__iright__noti" v-show="repassword.err1 && !repassword.err">Mật khẩu không khớp</p>
             </td>
         </tr>
         <tr class="infouser__body__right__bottom__info row">
-            <td class="infouser__body__right__bottom__info__ileft col-4">
-                <button @click="creaccuser">Tạo</button>
+            <td class="infouser__body__right__bottom__info__ileft creaccuser__action col-4">
+                <button class="creaccuser__action--submit" @click="creaccuser">Tạo</button>
             </td>
-            <td class="infouser__body__right__bottom__info__iright col-8">
-                <button  @click="cancel">Hủy</button>
+            <td class="infouser__body__right__bottom__info__iright creaccuser__action col-8">
+                <button class="creaccuser__action--cancel" @click="cancel">Hủy</button>
             </td>
         </tr>
     </div>
@@ -105,7 +105,7 @@ export default {
             sex: {text: '', err: false},
             fullname: {text: '', err: false},
             username: {text: '', err: false, err1: false},
-            birthday: {text: '', err: false},
+            birthday: {text: '1970-01-01', err: false},
             email: {text: '', err: false, err1: false, err2: false},
             phonenumber: {text: '', err: false},
             password: {text: '', err: false},
@@ -146,7 +146,31 @@ export default {
                 this.sex.err === false && this.password.err === false && 
                 this.repassword.err === false && this.repassword.err1 === false &&
                 this.username.err1 === false && this.email.err2 === false
-            ) this.createAccount(), console.log('ok');
+            ){ this.createAccount(),
+                this.$router.push("/user_login")
+                this.$notification['success']({
+                    message: 'Đăng kí thành công',
+                    description:
+                    'Bạn đã quay lại trang đăng nhập.',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+            else{
+                this.$notification['error']({
+                    message: 'Tạo tài khoản thất bại',
+                    description:
+                    'Vui lòng nhập lại.',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
         },
         // onChange(){
         //     this.repassword.err1 = false
@@ -167,7 +191,7 @@ export default {
             this.sex= {text: '', err: false},
             this.fullname= {text: '', err: false},
             this.username= {text: '', err: false},
-            this.birthday= {text: '', err: false},
+            this.birthday= {text: '1970-01-01', err: false},
             this.email= {text: '', err: false, err1: false},
             this.phonenumber= {text: '', err: false},
             this.password= {text: '', err: false},
@@ -214,17 +238,51 @@ export default {
     }
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .creaccuser{
     padding-top: 20px;
     width: 30%;
     margin: auto;
+    min-height: 500px;
     &__title{
         border-left: 1px solid rgb(208, 208, 208);
         padding: 8px 0px;
         text-align: center;
         background-color: orange;
         color: white;
+    }
+    &__action{
+        // margin-top: 20px;
+        // text-align: center;
+        &--submit{
+            // margin: 0px 5px;
+            border: 0px;
+            color: white;
+            padding: 6px 20px;
+            font-weight: 600;
+            background-color: rgb(0, 158, 0);
+            &:hover{
+                background-color: green;
+            }
+        }
+        &--cancel{
+            // margin: 0px 5px;
+            color: white;
+            border: 0px;
+            padding: 6px 20px;
+            font-weight: 600;
+            background-color: orange;
+            &:hover{
+                background-color: rgb(201, 131, 0);
+            }
+        }
+    }
+    .mx-datepicker{
+        width: 100%;
+        
+        .mx-input{
+            border-radius: 0 !important;
+        }
     }
 }
 </style>

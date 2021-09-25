@@ -17,8 +17,10 @@
             Giá từ: {{priceMin | filterPrice}} ₫ - {{priceMax | filterPrice}} ₫
         </p>
         <!-- {{value[0]}} --- {{value[1]}} -->
+        <!-- {{value}} -->
         <!-- <p >
             {{priceMin}} - {{priceMax}}</p> -->
+            <!-- {{valueRange}} -->
     </div>
 </template>
 <script>
@@ -37,6 +39,11 @@ export default {
             this.$emit('rePriceMin', this.value[0])
         }
     },
+    // computed:{
+    //     valueRange(){
+    //         return this.value
+    //     }
+    // },
     created() {
         this.formatter = value => `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} ₫`
         this.min = this.priceMin

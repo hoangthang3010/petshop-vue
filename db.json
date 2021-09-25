@@ -23,8 +23,8 @@
       "username": "hoangthang3010",
       "role": "user",
       "email": "hoangthang3010@gmail.com",
-      "phonenumber": "0969851711",
-      "birthday": "1998-10-31",
+      "phonenumber": "0969851742",
+      "birthday": "2021-07-08",
       "sex": "0",
       "password": "12345",
       "id": 3
@@ -207,6 +207,40 @@
       ]
     }
   ],
+  "rateProduct":[
+    {
+      "productId": 1,
+      "star": 5
+    },
+    {
+      "productId": 2,
+      "star": 4
+    },
+    {
+      "productId": 2,
+      "star": 3
+    },
+    {
+      "productId": 1,
+      "star": 5
+    },
+    {
+      "productId": 1,
+      "star": 4
+    },
+    {
+      "productId": 1,
+      "star": 2
+    },
+    {
+      "productId": 1,
+      "star": 5
+    },
+    {
+      "productId": 1,
+      "star": 3
+    }
+  ],
   "productDetail": [
     {
       "id": 1,
@@ -215,6 +249,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
       "price": 225000,
       "sale": 20,
+      "type_product": "medicine",
       "detail": "medicine_cat",
       "product_amount": 100,
       "count": 1,
@@ -229,6 +264,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/04/1.52-400x400-1-300x300.jpg",
       "price": 300000,
       "sale": 40,
+      "type_product": "medicine",
       "detail": "medicine_cat",
       "product_amount": 100,
       "count": 1,
@@ -243,6 +279,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
       "price": 225000,
       "sale": 20,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1,
@@ -257,6 +294,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Trị-ve-ran-cho-Frontline-400x400.jpg",
       "price": 250000,
       "sale": 0,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -268,6 +306,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656-1.jpg",
       "price": 700000,
       "sale": 0,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -279,6 +318,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-promotion-420-yuhan-30-vien--280x280.jpg",
       "price": 750000,
       "sale": 20,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -290,6 +330,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-cam-mau-quick-stop-14g-1-300x300.jpg",
       "price": 600000,
       "sale": 20,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -301,6 +342,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/6911_l.jpg",
       "price": 430000,
       "sale": 0,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -312,6 +354,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-cho-meo-300ml-cai-thien-da-va-long.jpg",
       "price": 500000,
       "sale": 0,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -323,6 +366,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/thuoc-bo-tong-hop-my-beau-300ml.jpg",
       "price": 450000,
       "sale": 0,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -333,7 +377,8 @@
       "title": "Canxi Excel 8in1",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/excel-thuốc-bổ-sung-vitamin-cho-chó-trưởng-thành-8in1-70-viên.jpg",
       "price": 350000,
-      "sale": 0,
+      "sale": 20,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -345,6 +390,7 @@
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/05/7656.jpg",
       "price": 700000,
       "sale": 0,
+      "type_product": "medicine",
       "detail": "medicine_dog",
       "product_amount": 100,
       "count": 1
@@ -357,6 +403,7 @@
       "price": 45000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1,
       "product_detail": {
@@ -431,6 +478,7 @@
       "price": 45000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -442,6 +490,7 @@
       "price": 280000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -453,6 +502,7 @@
       "price": 50000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -464,6 +514,7 @@
       "price": 60000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -473,8 +524,9 @@
       "title": "Súp Cá Ciao",
       "image": "https://jandpet.com.vn/wp-content/uploads/2019/11/Sup-Ca-Siao-300x300.jpg",
       "price": 70000,
-      "sale": 0,
+      "sale": 20,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -486,6 +538,7 @@
       "price": 200000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -497,6 +550,7 @@
       "price": 180000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -508,6 +562,7 @@
       "price": 40000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -519,6 +574,7 @@
       "price": 40000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -530,6 +586,7 @@
       "price": 440000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -541,6 +598,7 @@
       "price": 240000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -552,6 +610,7 @@
       "price": 270000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -563,6 +622,7 @@
       "price": 320000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -574,6 +634,7 @@
       "price": 280000,
       "sale": 0,
       "detail": "food_cat",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -585,6 +646,7 @@
       "price": 40000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -596,6 +658,7 @@
       "price": 40000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -607,6 +670,7 @@
       "price": 50000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -618,6 +682,7 @@
       "price": 50000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -629,6 +694,7 @@
       "price": 30000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -640,6 +706,7 @@
       "price": 60000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -651,6 +718,7 @@
       "price": 60000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -662,6 +730,7 @@
       "price": 140000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -673,6 +742,7 @@
       "price": 80000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -684,6 +754,7 @@
       "price": 60000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -695,6 +766,7 @@
       "price": 380000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1,
       "product_detail": {
@@ -769,6 +841,7 @@
       "price": 300000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -780,6 +853,7 @@
       "price": 260000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -791,6 +865,7 @@
       "price": 40000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     },
@@ -802,6 +877,7 @@
       "price": 270000,
       "sale": 0,
       "detail": "food_dog",
+      "type_product": "food",
       "product_amount": 100,
       "count": 1
     }

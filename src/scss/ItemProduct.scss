@@ -40,13 +40,13 @@
               }
               .slick-prev {
                 visibility: hidden;
-                transform: translateX(50px);
+                transform: translateX(20px);
                 z-index: 50;
                 transition: all .3s ease-in-out;
               }
               .slick-next {
                 visibility: hidden;
-                transform: translateX(-100px);
+                transform: translateX(-20px);
                 z-index: 50;
                 transition: all .3s ease-in-out;
               }

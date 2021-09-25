@@ -23,6 +23,7 @@
     "jw-vue-pagination": "^1.0.3",
     "vue": "^2.6.11",
     "vue-displacement-slideshow": "^3.0.1",
+    "vue-fb-customer-chat": "^0.2.0",
     "vue-material": "^1.0.0-beta-15",
     "vue-range-component": "^1.0.3",
     "vue-router": "^3.5.1",
