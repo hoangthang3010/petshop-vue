@@ -48,7 +48,8 @@ export default {
             bestselling: [],
         }
     },
-    mounted () {
+    created () {
+        window.scrollTo(0,0)
         axios.get(API_URL)
             .then(response => {
                 this.bestselling = response.data

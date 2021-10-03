@@ -137,40 +137,61 @@
                             </div>
                         </div>
                         <div class="col-3 productD__left__rate__box__right">
-                            <p class="productD__left__rate__box__right__show" v-if="showRate">
-                                Đánh giá sao
-                            </p>
-                            <div v-if="showRate" style="margin-bottom: 8px">
-                                <a-rate v-model="value" />
-                            </div>
                             <div>
-                                <button class="productD__left__rate__box__right--submit" v-if="!showRate" @click="showRate=!showRate" >Đánh giá</button>
-                                <button class="productD__left__rate__box__right--submit" v-if="showRate" @click="showRate=!showRate" >Gửi</button> 
-                                <button class="productD__left__rate__box__right--cancel" v-if="showRate" @click="onCancelRate" >Hủy bỏ</button>
+                                <button class="productD__left__rate__box__right--submit" v-if="!showRate" @click="showRate = !showRate" >Đánh giá</button>
+                                 <!-- && checkUserRate < 0 -->
+                                <p v-if="showRate && !idUser">Bạn chưa đăng nhập, vui lòng đăng nhập để đánh giá sản phẩm</p>
+                                     <!-- && checkUserRate >= 0 -->
+                                <div v-if="showRate && idUser">
+                                    <div v-if="totalRate.length > 0 && (totalRate.filter(item => item.productId == id && item.userId == idUser).length >  0 && isShowRate)">
+                                        <p>Bạn đã đánh giá sản phẩm này {{totalRate.filter(item => item.productId == id && item.userId == idUser)[0].star}} sao</p>
+                                        <button class="productD__left__rate__box__right--submit" @click="isShowRate = !isShowRate" >Đánh giá lại</button>
+                                    </div><!-- {{checkUserRate}} -->
+                                    <!-- {{totalRate.filter(item => item.productId == id && item.userId == idUser).length}}{{isShowRate}} -->
+                                    <div v-if="totalRate.filter(item => item.productId == id && item.userId == idUser).length > 0 && !isShowRate || totalRate.filter(item => item.productId == id && item.userId == idUser).length <= 0 && isShowRate || totalRate.length == 0">
+                                        <p class="productD__left__rate__box__right__show">
+                                            Đánh giá sao
+                                        </p>
+                                        <div style="margin-bottom: 8px">
+                                            <a-rate v-model="rateCount" />
+                                        </div>
+                                        <button class="productD__left__rate__box__right--cancel" @click="onCancelRate" >Hủy bỏ</button>
+                                        <button class="productD__left__rate__box__right--submit" @click="onHandleRate" >Gửi</button>
+                                    </div>
+                                </div>
+                                <button class="productD__left__rate__box__right--submit" v-if="showRate && !idUser" @click="isShowLogin=!isShowLogin" >Đăng nhập</button> 
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="productD__left__sale itemproduct__item__right" style="width: 100%; margin-top: 20px">
-                        <p style="font-size: 14px; font-weight: bold">Sản phẩm đang khuyến mãi</p>
-                        <VueSlickCarousel 
-                            v-bind="settings" 
-                            v-if="productDetail.length > 0"
-                            style="width: 91%; margin: auto"
+                <!-- {{ totalRate.filter(item => item.productId == id && item.userId == idUser)[0].star}} -->
+                <!-- {{totalRate.filter(item => item.productId == id && item.userId == idUser)}} -->
+                <div class="productD__left__rate box-comment">
+                    <p class="productD__left__rate__title">Bình luận</p>
+                    <Comment 
+                        class="box-comment-content" 
+                        :idUser ="idUser" 
+                        :allComment ="allComment" 
+                        :id ="id" 
+                        @handleComment="handleComment"
+                        @handleDeleteComment="handleDeleteComment"
+                        @handleEditComment="handleEditComment"
+                    />
+                </div>
+                <div class="productD__left__sale itemproduct__item__right" style="width: 100%; margin-top: 20px; display: none">
+                    <p style="font-size: 14px; font-weight: bold">Sản phẩm đang khuyến mãi</p>
+                    <VueSlickCarousel 
+                        v-bind="settings" 
+                        v-if="productDetail.length > 0"
+                        style="width: 91%; margin: auto"
+                    >
+                        <div   
+                            class="itemproduct__item__right__top__detail"
+                            v-for="(item, key) in productDetail.filter(item => item.sale > 0)" :key="key"
                         >
-                            <div   
-                                class="itemproduct__item__right__top__detail"
-                                v-for="(item, key) in productDetail.filter(item => item.sale > 0)" :key="key">
-                                <!-- {{item}} -->
-                                <!-- <router-link style="text-decoration: none" :to="`/purchase/${product.name}/${item1.type}/${item1.detail}/${item1.id-1}`">  -->
-                                    <!-- <img :src="item.image" alt="">
-                                    <p class="product__item__right__detail__name" :title="item.title">{{item.title}}{{item.title.length > 60 ? '...' : ''}}</p>
-                                    <p class="product__item__right__detail__price">Giá: {{ item.price | filterPrice }}đ</p> -->
-                                    
-                                    <CardItems :item= item />
-                                <!-- </router-link> -->
-                            </div>
-                        </VueSlickCarousel>
+                            <CardItems :item= item />
+                        </div>
+                    </VueSlickCarousel>
                 </div>
             </div>
             <div class="col-3 productD__right">
@@ -188,12 +209,18 @@
                 </div>
             </div>
         </div>
+        <div class="modal-login" v-if="isShowLogin">
+            <div class="display-modal-login" @click="isShowLogin = !isShowLogin"></div>
+            <Login :isShowLogin = "isShowLogin" @isShowLogin ="isShowLogin =!isShowLogin"/>
+        </div>
     </div>
 </template>
 <script>
 import { mapMutations, mapGetters } from 'vuex'
 import MultiLevelMenu from '../components/MultiLevelMenu.vue'
+import Comment from '../components/Comment.vue'
 import '../scss/ProductDetail.scss'
+import Login from './Login.vue'
 import CardItems from './CardItems.vue'
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -204,7 +231,7 @@ import {RepositoryFactory} from '../api/RepositoryFactory';
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     name: "ProductDetail",
-    components: {MultiLevelMenu, CardItems, VueSlickCarousel },
+    components: {MultiLevelMenu, CardItems, VueSlickCarousel, Login, Comment},
     data() {
         return{ 
             productDetail: [],
@@ -212,7 +239,9 @@ export default {
             count: 1,
             id: '',
             // id: Number(this.$route.params.id),
-            value: 0,
+            rateCount: 0,
+            idUser: sessionStorage.getItem('id'),
+            isShowLogin: false,
             totalStar: '',
             fiveStar: [],
             fourStar: [],
@@ -220,12 +249,17 @@ export default {
             twoStar: [],
             oneStar: [],
             totalRate: [],
+            countRate: {},
+            followData: [],
+            checkUserRate: -1,
+            isShowRate: true,
+            allComment: [],
             settings: {
                 // "arrows": true,
                 // "dots": true,
                 // "centerMode": true,
                 // "centerPadding": "20px",
-                "focusOnSelect": true,
+                // "rows": 2,q
                 "infinite": true,
                 "slidesToShow": 4,
                 "speed": 500,
@@ -245,6 +279,8 @@ export default {
     created(){
         this.fetch()
         this.fetchRateProduct()
+        this.fetchCommentProduct()
+        this.userRateProduct()
         this.id = Number(this.$route.params.id)
         window.scrollTo(0,0)
     },
@@ -254,14 +290,42 @@ export default {
             // toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         }
     },
+    beforeUpdate(){
+        if(this.rateCount){
+            this.countRate = {
+                productId: Number(this.id),
+                star: this.rateCount,
+                userId:  this.infoUser.id
+            }
+        }
+    },
     updated(){
         if(this.id != this.$route.params.id){
             window.scrollTo(0,0),
-            this.fetchRateProduct(),
+            this.fetchRateProduct()
+            this.fetchCommentProduct()
             this.$forceUpdate()
+            this.userRateProduct()
         }
         //      window.scrollTo(0,0)
-            this.id = Number(this.$route.params.id)
+            this.id = Number(this.$route.params.id),
+            this.fetchAccountID(),
+            this.idUser= sessionStorage.getItem('id')
+            this.checkUserRate = this.totalRate.map(item =>{ //kiểm tra xem bạn đã đánh giá sản phẩm này chưa
+                        return item.userId;
+                    }).indexOf(Number(sessionStorage.getItem('id')));
+                    // console.log(this.checkUserRate);
+                    // console.log(this.totalRate);
+            // this.checkUserRate = this.totalRate.filter(item => item.productId == this.id && item.userId == this.idUser)
+    },
+    watch: {
+        followData(){
+            this.fetchRateProduct(),
+            this.fetchCommentProduct(),
+            this.rateCount = 0;
+            this.idUser= sessionStorage.getItem('id')
+            // this.$forceUpdate()
+        },
     },
     mounted(){},
     methods: {
@@ -274,29 +338,82 @@ export default {
             if (!this.count || this.count == 0 || this.count % 1 !== 0) 
                 return(
                     this.count = 1
-                    // console.log(this.count)
                 )
             else 
                 return(
                     this.count = Number(this.count)
-                    // console.log(this.count)
                 )
+        },
+        onReRate(){
+            this.isShowRate = false
         },
         countUp(){
             this.count = this.count + 1;
-            // console.log(this.count);
         },
         countDown(){
             this.count === 1 ? this.count : this.count-=1
         },
         onCancelRate(){
-            this.value = 0;
+            this.rateCount = 0;
             this.showRate = false
+            this.isShowRate = true
+        },
+        onHandleRate(){
+            this.showRate = !this.showRate
+            if(this.rateCount > 0){
+                if(this.totalRate.filter(item => item.productId == this.id && item.userId == this.idUser).length == 0){
+                    this.rateProduct()
+                    this.$notification['success']({
+                        message: 'Đánh giá sản phẩm thành công',
+                        duration: 2,
+                        style: {
+                            marginTop: `75px`,
+                            marginBottom: '-50px'
+                        },
+                    })
+                    this.isShowRate = true
+                }
+                else{
+                    this.userRateProduct()
+                    this.$notification['success']({
+                        message: 'Đánh giá sản phẩm thành công',
+                        duration: 2,
+                        style: {
+                            marginTop: `75px`,
+                            marginBottom: '-50px'
+                        },
+                    })
+                    this.isShowRate = true
+                    // console.log('hkjhkjk');
+                }
+            }
+            else{
+                this.showRate = true
+                this.$notification['error']({
+                    message: 'Đánh giá sao thất bại',
+                    description:
+                    'Vui lòng chọn số sao cần đánh giá',
+                    duration: 2,
+                    style: {
+                        marginTop: `75px`,
+                        marginBottom: '-50px'
+                    },
+                });
+            }
+        },
+        handleComment(){
+            if(this.userId || sessionStorage.getItem('id')) this.fetchCommentProduct()
+            else this.isShowLogin=!this.isShowLogin
+        },
+        handleDeleteComment(){
+            this.fetchCommentProduct()
+        },
+        handleEditComment(){
+            this.fetchCommentProduct()
         },
         async fetch(){
             const {data} = await PostsRepository.getProductDetail();
             this.productDetail = data
-            // console.log(data);
         },
         async fetchRateProduct(){
             const {data} = await PostsRepository.getRateProduct();
@@ -318,9 +435,25 @@ export default {
                 this.totalStar =  []
                 this.totalRate = []
             }
-            // console.log(this.totalStar);
-            // console.log(this.$route.params.id);
         },
+        async rateProduct(){
+            const {data} = await PostsRepository.createRateProduct(this.countRate);
+            this.followData = data
+            // this.$forceUpdate()
+        },
+        async fetchAccountID(){
+            const {data} = await PostsRepository.getAccountId(this.idUser);
+            this.infoUser = data
+            this.$bus.emit('infoUser', this.infoUser)
+        },
+        async userRateProduct(){
+            const {data} = await PostsRepository.updateUserRateProduct(this.totalRate.filter(item => item.productId == this.id && item.userId == this.idUser)[0].id, this.countRate);
+            this.followData = data
+        },
+        async fetchCommentProduct(){
+            const {data} = await PostsRepository.getCommentProduct();
+            this.allComment = data.filter(item => item.productId == this.$route.params.id)
+        }
     }
 }
 </script>

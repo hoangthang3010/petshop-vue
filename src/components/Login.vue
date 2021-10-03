@@ -81,6 +81,7 @@ export default {
             logoF: logoF
         }
     },
+    props: ['isShowLogin'],
     methods:{
         // ...mapMutations(['handleLogin']),
         handleUsername(){
@@ -94,7 +95,8 @@ export default {
                     return (
                         this.$bus.emit('increaseCounter', this.users[i].fullname),
                         this.checkUser = i,
-                        this.$router.push("/info_user"),
+                        this.isShowLogin ? this.$router.push("") : this.$router.push("/info_user"),
+                        this.$emit('isShowLogin'),
                         this.$notification['success']({
                             message: 'Đăng nhập thành công',
                             description:

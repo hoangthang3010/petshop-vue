@@ -29,7 +29,7 @@
                 &__content{
                     margin: auto;
                     width: 100%;
-                    border-bottom: 1px solid rgb(220, 220, 220);
+                    // border-bottom: 1px solid rgb(220, 220, 220);
                     &__tr{
                         &:nth-child(3){
                             text-align: center;
@@ -173,6 +173,39 @@
             &:hover{
                 background-color:rgb(150, 60, 0);
             }
+        }
+    }
+    .ant-table-thead,
+    .ant-table-tbody{
+        tr{
+            // display: flex;
+            th,
+            td{
+                padding: 8px 16px
+                // display: block;
+            }
+        }
+    }
+    .ant-table-hide-scrollbar{
+        min-width: 0px !important;
+    }
+    // .ant-table-row-cell-break-word{
+    //     display: block;
+    // }
+    .input-number{
+        .number{
+            border-right: none;
+            border-left: none;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
         }
     }
 }

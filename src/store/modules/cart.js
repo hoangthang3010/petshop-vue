@@ -3,17 +3,27 @@ import { vm } from '@/main'
 const cart = {
     state:{
         product:[],
-        amount: 0
+        amount: 0,
+        selectedRowKeys: [],
+        selectedRows: []
     },
     getters: {
         product: state => state.product,
         getTotal: state =>{
             let total = 0
+            state.selectedRows.forEach(item => {
+                total += item.count * item.price
+            })
+            return total;
+        },
+        getTotal1: state =>{
+            let total = 0
             state.product.forEach(item => {
                 total += item.count * item.price
             })
             return total;
-        }
+        },
+        selectedRowKeys: state => state.selectedRowKeys
     },
     mutations:{
         ADD_TO_CART(state, product1){ 
@@ -25,7 +35,7 @@ const cart = {
             //         // console.log(i);
             //         // console.log(state.product.indexOf(i));
             // }
-            console.log(product1);
+            // console.log(product1);
             if (state.product.length === 0){ 
                 const key = `1`;
                 return(
@@ -64,7 +74,7 @@ const cart = {
             }
             else{
                 let a = 0;
-                console.log(product1);
+                // console.log(product1);
                 for(let i = 0; i< state.product.length; i++){
                     if (state.product[i].id === product1.id){
                         const key = product1.id+1;
@@ -137,24 +147,26 @@ const cart = {
             }
         },
         countUp(state, id){
-            console.log(id);
-            console.log(state.product);
+            // console.log(id);
+            // console.log(state.product);
             for(let i = 0; i< state.product.length; i++){
                 if (state.product[i].id === id){
                     state.product[i].count+=1
                 }
             }
+            console.log(state.product);
         },
-        countDown(state, id){
+        countDown(state, id, id2){
             for(let i = 0; i< state.product.length; i++){
                 if (state.product[i].id === id && state.product[i].count>1){
                     state.product[i].count-=1
                 }
             }
+            console.log(id2);
         },
         handleCount(state, id){
             for(let i = 0; i< state.product.length; i++){
-                if ((!state.product[i].count ||  state.product[i].count == 0 ||  state.product[i].count % 1 !== 0) && state.product[i].id === id) 
+                if ((!state.product[i].count ||  state.product[i].count <= 0 ||  state.product[i].count % 1 !== 0) && state.product[i].id === id) 
                     return(
                         state.product[i].count = 1
                     )
@@ -164,11 +176,28 @@ const cart = {
                     )
             }
         },
-        handleRemove(state, id){
+        handleRemove(state, key){
+            state.selectedRows = state.selectedRows.filter(item => item.id !== state.product[key].id)
+            if(state.selectedRowKeys.length === state.product.length) state.selectedRowKeys.pop()
             for(let i = 0; i< state.product.length; i++){
-                    return state.product.splice(id, 1)
+                    return state.product.splice(key, 1)
             }
-        }
+            
+            // console.log(state.product[key].id);
+            // console.log(state.selectedRows.filter(item => item.id !== state.product[key].id));
+        },
+        onSelectChange(state, selectedRowKeys){
+            state.selectedRows = []
+            state.selectedRowKeys = selectedRowKeys;
+            for(let i = 0; i<state.product.length; i++){
+                for(let j = 0; j<selectedRowKeys.length; j++){
+                    if(i == selectedRowKeys[j]){
+                        state.selectedRows.push(state.product[i])
+                    }
+                }
+            }
+        },
+        // onSelectInvert(state,selectedRows)
     }
 }
 export default cart

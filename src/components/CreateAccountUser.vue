@@ -136,8 +136,8 @@ export default {
                     this.username.err1 = true
                 }
             }
-        console.log(this.email.err2)
-        console.log(this.username.err1);
+        // console.log(this.email.err2)
+        // console.log(this.username.err1);
             // console.log(this.listAccount);
             if(
                 this.fullname.err === false && this.username.err === false &&
@@ -232,7 +232,8 @@ export default {
             phonenumber: this.phonenumber.text,
             birthday: this.birthday.text,
             sex: this.sex.text,
-            password: this.password.text
+            password: this.password.text,
+            avatar: "https://www.unmc.edu/cihc/_images/faculty/default.jpg"
         }
         // console.log(this.time);
     }

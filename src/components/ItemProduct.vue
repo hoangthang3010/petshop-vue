@@ -62,7 +62,7 @@ export default {
                 // "dots": true,
                 // "centerMode": true,
                 // "centerPadding": "20px",
-                "focusOnSelect": true,
+                // "focusOnSelect": true,/
                 "infinite": true,
                 "slidesToShow": 5,
                 "speed": 500,

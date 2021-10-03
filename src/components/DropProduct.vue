@@ -80,7 +80,7 @@ export default {
             // this.id = key
         }
     },
-    mounted () {
+    created () {
         axios.get(API_URL)
             .then(response => {
                 this.bestselling = response.data

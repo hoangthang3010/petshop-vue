@@ -154,6 +154,7 @@ export default {
             this.$emit('type', type)
             if (this.displayul !== type){
                 this.displayul=type
+                this.idli=type
                 // console.log(id);
                 // this.idli1=null
             }

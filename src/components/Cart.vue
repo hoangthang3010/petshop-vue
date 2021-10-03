@@ -3,57 +3,66 @@
         <div class="cart" v-if="product.length>0">
             <div class="cart__left col-8">
                 <div class="cart__left__item">
-                    <table class="cart__left__item__table">
-                        <tr class="cart__left__item__table__title row">
-                            <th class="cart__left__item__table__title__th col-6">Sản phẩm</th>
-                            <th class="cart__left__item__table__title__th col-2">Giá</th>
-                            <th class="cart__left__item__table__title__th col-2">Số lượng</th>
-                            <th class="cart__left__item__table__title__th col-2">Tạm tính</th>
-                        </tr>
-                        <tr 
-                            class="cart__left__item__table__content row" 
-                            v-for="(item, key) in product"
-                            :key="key"
-                        >
-                            <td class="cart__left__item__table__content__tr col-6">
-                                <router-link 
-                                    style="text-decoration: none; color: black; align-items:center"
-                                    class="cart__left__item__table__content__tr__link" 
-                                    :to="`/purchase/${item.name1}/${item.name2}/${item.id}`"
+                    <div :style="`max-height: 343px; border-bottom: 1px solid #ececec;x; overflow-y: ${product.length > 4?'scroll': ''}; margin-top: 36px`"> 
+                        <table class="cart__left__item__table">
+                            <!-- <thead> -->
+                                <tr class="cart__left__item__table__title row"
+                                    :style="`width: ${product.length > 4?'calc(96% - 1px)': 'calc(96% + 4px)'}`"
                                 >
-                                    <img class="col-4" :src="item.image" alt="">
-                                    <p class="cart__left__item__table__content__tr__link__title col-8">{{item.title}}</p>
-                                </router-link>
-                            </td>
-                            <td class="cart__left__item__table__content__tr col-2">{{item.price | filterPrice}} ₫</td>
-                            <td class="cart__left__item__table__content__tr col-2">
-                                <input 
-                                        class="cart__left__item__table__content__tr--change" 
-                                        type="button" 
-                                        value="-"
-                                        @click="countDown(item.id)"
-                                    >
-                                    <input 
-                                        class="cart__left__item__table__content__tr--num" 
-                                        type="text"
-                                        v-model="item.count"
-                                        @change="handleCount(item.id)"
-                                    >
-                                    <input 
-                                        class="cart__left__item__table__content__tr--change" 
-                                        type="button" 
-                                        value="+"
-                                        @click="countUp(item.id)"
-                                    >
+                                    <th class="cart__left__item__table__title__th col-6">Sản phẩm</th>
+                                    <th class="cart__left__item__table__title__th col-2">Giá</th>
+                                    <th class="cart__left__item__table__title__th col-2">Số lượng</th>
+                                    <th class="cart__left__item__table__title__th col-2">Tạm tính</th>
+                                </tr>
+                            <!-- </thead>
+                            <tbody> -->
+                                <tr 
+                                style=""
+                                    class="cart__left__item__table__content row" 
+                                    v-for="(item, key) in product"
+                                    :key="key"
+                                >
+                                    <td class="cart__left__item__table__content__tr col-6">
+                                        <router-link 
+                                            style="text-decoration: none; color: black; align-items:center"
+                                            class="cart__left__item__table__content__tr__link" 
+                                            :to="`/purchase/${item.name1}/${item.name2}/${item.id}`"
+                                        >
+                                            <img class="col-4" :src="item.image" alt="">
+                                            <p class="cart__left__item__table__content__tr__link__title col-8">{{item.title}}</p>
+                                        </router-link>
+                                    </td>
+                                    <td class="cart__left__item__table__content__tr col-2">{{item.price | filterPrice}} ₫</td>
+                                    <td class="cart__left__item__table__content__tr col-2">
+                                        <input 
+                                                class="cart__left__item__table__content__tr--change" 
+                                                type="button" 
+                                                value="-"
+                                                @click="countDown(item.id)"
+                                            >
+                                            <input 
+                                                class="cart__left__item__table__content__tr--num" 
+                                                type="text"
+                                                v-model="item.count"
+                                                @change="handleCount(item.id)"
+                                            >
+                                            <input 
+                                                class="cart__left__item__table__content__tr--change" 
+                                                type="button" 
+                                                value="+"
+                                                @click="countUp(item.id)"
+                                            >
 
-                                    <p 
-                                        class="cart__left__item__table__content__tr--remove"
-                                        @click="handleRemove(key)"
-                                    >Xóa sản phẩm</p>
-                            </td>
-                            <td class="cart__left__item__table__content__tr col-2">{{item.count * item.price | filterPrice}} ₫</td>
-                        </tr>
-                    </table>
+                                            <p 
+                                                class="cart__left__item__table__content__tr--remove"
+                                                @click="handleRemove(key)"
+                                            >Xóa sản phẩm</p>
+                                    </td>
+                                    <td class="cart__left__item__table__content__tr col-2">{{item.count * item.price | filterPrice}} ₫</td>
+                                </tr>
+                            <!-- </tbody> -->
+                        </table>
+                    </div>
                     <div class="cart__left__item__back">
                         <router-link style="text-decoration: none" to="/">
                             <span class="cart__left__item__back--click"> &nbsp;	TIẾP TỤC XEM SẢN PHẨM</span>

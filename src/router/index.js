@@ -1,6 +1,6 @@
 import Hompage from '../main/Homepage.vue'
 import ProductDetail from '../components/ProductDetail.vue'
-import Cart from '../components/Cart.vue'
+import Cart from '../components/CartTest.vue'
 import Product from '../main/Product.vue'
 import SlideHomepage1 from '../components/SliderHomepage1.vue'
 import Login from '../components/Login.vue'

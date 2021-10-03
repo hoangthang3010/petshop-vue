@@ -11,9 +11,11 @@
               <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
             </router-link>
             <router-link style="text-decoration: none" to="/panigation">
-            <li class="header__bottom__menu__ul__li">TIN TỨC</li>
+              <li class="header__bottom__menu__ul__li">TIN TỨC</li>
             </router-link>
-            <li class="header__bottom__menu__ul__li">LIÊN HỆ</li>
+            <router-link style="text-decoration: none" to="/test">
+              <li class="header__bottom__menu__ul__li">LIÊN HỆ</li>
+            </router-link>
             <li class="header__bottom__menu__ul__li">VIDEO</li>
           </ul>
           <router-link
