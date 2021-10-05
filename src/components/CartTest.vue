@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="min-height: 400px; display: flex">
         <div class="cart" v-if="product.length>0">
             <div class="cart__left col-8">
                 <div class="cart__left__item">
@@ -37,11 +37,12 @@
                                     class="cart__left__item__table__content__tr--change" 
                                     type="button" 
                                     value="-"
+                                    :disabled="record.count == 1"
                                     @click="countDown(record.id)"
                                 >
                                 <input 
                                     class="cart__left__item__table__content__tr--num number" 
-                                    type="text"
+                                    type="number"
                                     v-model="record.count"
                                     @change="handleCount(record.id)"
                                 >
@@ -51,8 +52,10 @@
                                     value="+"
                                     @click="countUp(record.id)"
                                 >
-
+                                <!-- {{selectedRowKeys}}-{{key}} --
+                                {{selectedRowKeys.indexOf(key)}} -->
                                 <p 
+                                    v-if="selectedRowKeys.indexOf(key) < 0"
                                     class="cart__left__item__table__content__tr--remove"
                                     @click="handleRemove(key)"
                                 >Xóa sản phẩm</p>
@@ -78,11 +81,12 @@
                 <div class="cart__right__money">
                     <div class="cart__right__money__provisional">
                         <p class="cart__right__money__provisional__left col-6">Tạm tính</p>
-                        <p class="cart__right__money__provisional__right col-6">{{getTotal | filterPrice}} ₫</p>
+                        <p class="cart__right__money__provisional__right col-6">{{productDel ? delSelectedRow : getTotal | filterPrice}} ₫</p>
                     </div>
+                    <!-- {{productDel}} -->
                     <div class="cart__right__money__total">
                         <span class="cart__right__money__total__left col-6">Tổng</span>
-                        <span class="cart__right__money__total__right col-6">{{getTotal | filterPrice}} ₫</span>
+                        <span class="cart__right__money__total__right col-6">{{productDel ? delSelectedRow : getTotal | filterPrice}} ₫</span>
                     </div>
                 </div>
                 <p class="cart__right__pay">TIẾN HÀNH THANH TOÁN</p>
@@ -126,7 +130,8 @@ export default {
     return {
     //   data,
       columns,
-    //   selectedRowKeys: [], // Check here to configure the default column
+      selectedRowKeys: [], // Check here to configure the default column
+      selectedRows: [],
     };
   },
     filters : {
@@ -136,28 +141,53 @@ export default {
         }
     },
     created(){
-        
-        //         setTimeout(() => {
-        // this.selectedRowKeys = []
-        //         }, 1000);
-        // console.log(this.selectedRowKeys);
-        window.scrollTo(0,120)
+        if(this.product.length > 0) window.scrollTo(0,130)
+        else window.scrollTo(0,0)
     },
   computed: {
-    ...mapGetters(['product', 'getTotal', 'selectedRowKeys', 'getTotal1']),
+    //   'getTotal', 'selectedRowKeys', 
+    ...mapGetters(['product', 'getTotal1', 'productDel']),
+    getTotal(){
+        let total = 0
+        this.selectedRows.forEach(item => {
+            total += item.count * item.price
+        })
+        return total;
+    },
+    // delSelectedRow(){
+    //     // let i = this.product1.filter((item, key) => item.id != this.product[key].id)
+    //     console.log(this.product1);
+    //     console.log(this.product1);
+    //     let a = this.selectedRows.filter(item => item.id !== this.productDel.id)
+    //     console.log(a);
+    //     let total = 0
+    //     a.forEach(item => {
+    //         total += item.count * item.price
+    //     })
+    //     return total;
+    // },
+    // hasSelected() {
+        // let a = this.selectedRows.filter(item => item.id !== this.productDel.id)
+    //   return this.selectedRowKeys.length > 0;
+    // },
     // hasSelected() {
     //   return this.selectedRowKeys.length > 0;
     // },
   },
-  methods: {
-    ...mapMutations(['countUp', 'countDown', 'handleCount', 'handleRemove','onSelectChange']),
-    // onSelectChange(selectedRowKeys) {
-    //   this.selectedRowKeys = selectedRowKeys;
-    // },
+  updated(){
+    //   if(this.productDel){
+    //       this.selectedRows = this.selectedRows.filter(item => item.id !== this.productDel.id)
+    //   }
   },
-  beforeDestroy(){
-       this.selectedRowKeys = []
-  }
+  methods: {
+    //    ,'onSelectChange'
+    ...mapMutations(['countUp', 'countDown', 'handleCount','handleRemove']),
+    onSelectChange(selectedRowKeys, selectedRows) {
+      this.selectedRowKeys = selectedRowKeys;
+      this.selectedRows = selectedRows
+    },
+    // handleRemove(){}
+  },
 //   destroyed
 };
 </script>

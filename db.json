@@ -67,11 +67,6 @@
       "id": 6
     },
     {
-      "productId": 1,
-      "star": 5,
-      "id": 7
-    },
-    {
       "fullname": "Phạm Văn Kiên",
       "username": "phamkien",
       "email": "phamkien@gmail.com",
@@ -337,9 +332,6 @@
       "id": 16
     },
     {
-      "productId": 3,
-      "star": 5,
-      "userId": 8,
       "id": 17
     }
   ],
@@ -997,11 +989,7 @@
             "title": "Địa chỉ",
             "info": "31, Gongdan 1-gil, Jeongeup-si, Jeollabuk-do, Korea"
           }
-        ],
-        "tutorial": {
-          "purchase": "Quý khách truy cập website của chúng tôi xem sản phẩm và lựa chọn sản phẩm cần mua. - Nhấn nút \"Thêm vào giỏ hàng\" để đưa sản phẩm vào giỏ hàng. - Sau khi đã hoàn tất việc chọn hàng, quý khách vào giỏ hàng để xem (biểu tượng giỏ hàng ngoài cùng bên phải topbar). - Chuyển tới trang thanh toán. - Nhập đầy đủ thông tin cá nhân và thông tin thanh toán vào biểu mẫu. -Kết thúc đơn hàng, quý khách vui lòng chờ nhân viên của chúng tôi điện thoại lại để chốt đơn.",
-          "pay": "Hiện tại, chúng tôi mới chỉ cung cấp 2 hình thức thanh toán: (1). nhận hàng thanh toán và (2). thanh toán chuyển khoản. - 1. Quý khách đặt hàng và được nhân viên xác nhận qua cuộc gọi trực tiếp. Qua đó, chúng tôi gửi hàng về cho quý khách thông qua dịch vụ ship COD. Quý khách nhận hàng, kiểm tra hàng và thanh toán trực tiếp cho nhân viên bưu phát. - 2: Quý khách chuyển khoản trước cho chúng tôi qua tài khoản nhân hàng, và chúng tôi sẽ gửi chuyển phát nhanh cho quý khách"
-        }
+        ]
       }
     },
     {
@@ -1051,11 +1039,6 @@
       "type_product": "food",
       "product_amount": 100,
       "count": 1
-    },
-    {
-      "productId": 1,
-      "star": 5,
-      "id": 43
     }
   ],
   "user": [

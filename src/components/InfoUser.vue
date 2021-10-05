@@ -186,7 +186,7 @@ export default {
             rePassword: '',
             isEditPofile: false,
             previewImage:null,
-            changeAvatar: false,
+            changeAvatar: true,
         }
     },
     components: { DatePicker, SaleUser, NotificationUser},
@@ -201,7 +201,7 @@ export default {
             });
         },
         saveInfo(){
-            this.changeAvatar = !this.changeAvatar
+            this.changeAvatar = true
             this.user.avatar = this.previewImage
             for(let i=0; i < this.allAccount.length; i++){
                 if(this.user.username === this.allAccount[i].username && this.user.id !== this.allAccount[i].id){
@@ -258,25 +258,26 @@ export default {
         },
         showProfile(){
             this.showRight = 'profile'
-            window.scrollTo(0,100)
+            this.isEditPofile = false
+            window.scrollTo(0,0)
         },
         editProfile(){
             this.showRight = 'profile'
             this.isEditPofile = true
-            window.scrollTo(0,100)
+            window.scrollTo(0,0)
         },
         showSale(){
             console.log(123);
             this.showRight = 'sale'
-            window.scrollTo(0,100)
+            window.scrollTo(0,0)
         },
         forget(){
             this.showRight = 'forget'
-            window.scrollTo(0,100)
+            window.scrollTo(0,0)
         },
         showNotification(){
             this.showRight = 'notification'
-            window.scrollTo(0,100)
+            window.scrollTo(0,0)
         },
         change(){
             // console.log(this.oldPassword );
@@ -364,7 +365,7 @@ export default {
         handleCancelEditProfile(){
             this.previewImage = this.user.avatar
             this.isEditPofile = !this.isEditPofile
-            this.changeAvatar = !this.changeAvatar
+            this.changeAvatar = true
         },
         handleDeleteAvatar(){
             this.changeAvatar = !this.changeAvatar

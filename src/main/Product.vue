@@ -227,6 +227,7 @@ export default {
     //     this.productAll1 = this.productAll
     // },
     created () {
+        window.scrollTo(0,100)
         axios.get(`${API_URL}/ProductAll`)
             .then(response => {
                 this.product = response.data

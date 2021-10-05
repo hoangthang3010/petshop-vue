@@ -10,7 +10,8 @@
         </div>
         <div class="header__top__mid col-6">
           <div class="header__top__mid__search col-8">
-            <input class="header__top__mid__search__item" type="text"/>
+            <!-- <input class="header__top__mid__search__item" type="text"/> -->
+            <SearchProduct />
           </div>
           <div class="header__top__mid__clientcare col-4">
             <font-awesome-icon 
@@ -68,6 +69,7 @@
 </template>
 <script>
 import '../scss/Header.scss'
+import SearchProduct from '../components/SearchProduct.vue'
 // import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import {RepositoryFactory} from '../api/RepositoryFactory';
@@ -77,9 +79,10 @@ export default {
   data () {
     return {
       id: sessionStorage.getItem('id'),
-      fullname: ''
+      fullname: '',
     }
   },
+  components: {SearchProduct},
   methods:{
     async fetchAccountId(){
             const {data} = await PostsRepository.getAccountId(this.id);
@@ -92,6 +95,7 @@ export default {
                 this.fullname = value
             })
     this.fetchAccountId()  
+    this.fetch()
   },
   computed: mapGetters(['product',"getUser", "isUserAuth"]),
 }

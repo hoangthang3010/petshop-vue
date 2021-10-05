@@ -4,18 +4,20 @@ const cart = {
     state:{
         product:[],
         amount: 0,
-        selectedRowKeys: [],
-        selectedRows: []
+        // productDel: {},
+        selectedRowKeys1: []
+        // selectedRowKeys: [],
+        // selectedRows: []
     },
     getters: {
         product: state => state.product,
-        getTotal: state =>{
-            let total = 0
-            state.selectedRows.forEach(item => {
-                total += item.count * item.price
-            })
-            return total;
-        },
+        // getTotal: state =>{
+        //     let total = 0
+        //     state.selectedRows.forEach(item => {
+        //         total += item.count * item.price
+        //     })
+        //     return total;
+        // },
         getTotal1: state =>{
             let total = 0
             state.product.forEach(item => {
@@ -23,7 +25,9 @@ const cart = {
             })
             return total;
         },
-        selectedRowKeys: state => state.selectedRowKeys
+        // productDel: state => state.productDel,
+        selectedRowKeys1: state => state.selectedRowKeys1
+        // selectedRowKeys: state => state.selectedRowKeys
     },
     mutations:{
         ADD_TO_CART(state, product1){ 
@@ -167,24 +171,24 @@ const cart = {
         handleCount(state, id){
             for(let i = 0; i< state.product.length; i++){
                 if ((!state.product[i].count ||  state.product[i].count <= 0 ||  state.product[i].count % 1 !== 0) && state.product[i].id === id) 
-                    return(
-                        state.product[i].count = 1
-                    )
+                    // return(
+                      {  state.product[i].count = 1}
+                        // console.log(state.product[i].count)
+                    // )
                 else 
-                    return(
-                        state.product[i].count = Number( state.product[i].count)
-                    )
+                    // return(
+                        {state.product[i].count = Number( state.product[i].count)}
+                        // console.log(state.product[i].count)
+                    // )
             }
         },
         handleRemove(state, key){
-            state.selectedRows = state.selectedRows.filter(item => item.id !== state.product[key].id)
-            if(state.selectedRowKeys.length === state.product.length) state.selectedRowKeys.pop()
+            // state.selectedRows = state.selectedRows.filter(item => item.id !== state.product[key].id)
+            // if(state.selectedRowKeys.length === state.product.length) state.selectedRowKeys.pop()
+            // state.productDel = state.product[key]
             for(let i = 0; i< state.product.length; i++){
                     return state.product.splice(key, 1)
             }
-            
-            // console.log(state.product[key].id);
-            // console.log(state.selectedRows.filter(item => item.id !== state.product[key].id));
         },
         onSelectChange(state, selectedRowKeys){
             state.selectedRows = []
@@ -197,7 +201,6 @@ const cart = {
                 }
             }
         },
-        // onSelectInvert(state,selectedRows)
     }
 }
 export default cart
