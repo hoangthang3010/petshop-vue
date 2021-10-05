@@ -7,7 +7,7 @@
       placeholder="Tìm kiếm sản phẩm..."
       v-model="searchQuery"
     />
-    <i v-if="searchQuery" class="fal fa-times-circle icon-x" @click="searchQuery = ''"></i>
+    <i v-if="searchQuery" class="fas fa-times-circle icon-x" alt="x" @click="searchQuery = ''"></i>
     <div
       v-if="productAll.length > resultQuery.length  && resultQuery.length>0"
       class="drop_search"
@@ -25,7 +25,7 @@
             <p>{{ item.title }}</p>
           </div>
       </div>
-      <div v-if="resultQuery.length>5">Xem thêm...</div>
+      <div v-if="resultQuery.length>5" style="padding: 5px 10px">Xem thêm...</div>
     </div>
     <div v-if="searchQuery" @click="searchQuery = ''" class="overlay"></div>
   </div>

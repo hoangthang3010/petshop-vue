@@ -178,7 +178,7 @@
                         @handleEditComment="handleEditComment"
                     />
                 </div>
-                <div class="productD__left__sale itemproduct__item__right" style="width: 100%; margin-top: 20px; display: none">
+                <div class="productD__left__sale itemproduct__item__right" style="width: 100%; margin-top: 20px;">
                     <p style="font-size: 14px; font-weight: bold">Sản phẩm đang khuyến mãi</p>
                     <VueSlickCarousel 
                         v-bind="settings" 
