@@ -4,10 +4,7 @@ const cart = {
     state:{
         product:[],
         amount: 0,
-        // productDel: {},
-        selectedRowKeys1: []
-        // selectedRowKeys: [],
-        // selectedRows: []
+        selectedRowState: []
     },
     getters: {
         product: state => state.product,
@@ -26,7 +23,7 @@ const cart = {
             return total;
         },
         // productDel: state => state.productDel,
-        selectedRowKeys1: state => state.selectedRowKeys1
+        selectedRowState: state => state.selectedRowState
         // selectedRowKeys: state => state.selectedRowKeys
     },
     mutations:{
@@ -168,13 +165,16 @@ const cart = {
             }
             console.log(id2);
         },
-        handleCount(state, id){
+        handleCount(state, item){
             for(let i = 0; i< state.product.length; i++){
-                if ((!state.product[i].count ||  state.product[i].count <= 0 ||  state.product[i].count % 1 !== 0) && state.product[i].id === id) 
+                if ((!state.product[i].count ||  state.product[i].count <= 0 ||  state.product[i].count % 1 !== 0) && state.product[i].id === item.id) 
                     // return(
                       {  state.product[i].count = 1}
                         // console.log(state.product[i].count)
                     // )
+                else if(state.product[i].count >= item.amount){
+                    state.product[i].count = item.amount
+                }
                 else 
                     // return(
                         {state.product[i].count = Number( state.product[i].count)}
@@ -201,6 +201,10 @@ const cart = {
                 }
             }
         },
+        onPayBill1(state, pay){
+            state.product = state.product.filter(item => !pay.includes(item))
+            state.selectedRowState = []
+        }
     }
 }
 export default cart

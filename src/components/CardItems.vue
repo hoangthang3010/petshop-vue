@@ -7,7 +7,7 @@
     <!-- </div> -->
     <img :src="item.image" />
     <router-link
-      :to="`/purchase/${item.type}/${item.detail}/${item.id - 1}`"
+      :to="`/purchase/${item.type}/${item.detail}/${item.id}`"
       style="text-decoration: none;"
     >
       <p class="product__right__item__name" :title="item.title">
@@ -30,9 +30,9 @@
     <div class="carditem__addtocard"
           @click="
             ADD_TO_CART({
-              id: item.id-1,
+              id: item.id,
               title: item.title,
-              price: item.price,
+              price: item.price - (item.price * item.sale) / 100,
               image: item.image,
               count: count,
               name1: item.type,

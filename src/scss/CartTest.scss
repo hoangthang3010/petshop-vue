@@ -52,7 +52,7 @@
                         &--remove{
                             cursor: pointer;
                             margin-bottom: 0px;
-                            margin-top: 5px;
+                            // margin-top: 5px;
                             &:hover{
                                 color: red;
                             }
@@ -72,6 +72,9 @@
                                 display: -webkit-box;
                             }
                         }
+                    }
+                    .amount{
+                        margin-top: 5px
                     }
                 }
             }
@@ -165,13 +168,18 @@
         &__pay{
             cursor: pointer;
             margin-top: 20px;
-            text-align: center;
+            display: flex;    
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
             color: white;
             border: none;
             padding: 8px;
+            height: 45px;
+            border-radius: 4px;
             background-color: #ff6600;
             &:hover{
-                background-color:rgb(150, 60, 0);
+                background-color:#f06000;
             }
         }
     }

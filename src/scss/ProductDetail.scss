@@ -43,6 +43,8 @@
                             text-align: center;
                             width: 60px;
                             border: 1px solid rgb(209, 209, 209);
+                            border-left: none;
+                            border-right: none;
                         }
                     }
                     &__add{
@@ -58,6 +60,9 @@
                             background-color: #a04000;
                         }
                     }
+                }
+                >p{
+                    margin-top: 10px;
                 }
             }
             // .md-content.md-theme-default{

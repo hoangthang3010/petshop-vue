@@ -1,19 +1,34 @@
 <template>
     <div class="productD">
-        <div class="card-group"  v-if="productDetail.length!==0">
+        <div class="card-group"  v-if="productDetailId.length!==0">
             <div class="col-9 productD__left" style="padding-bottom: 40px">
                 <div class="productD__left__top">
                     <div class="col-6 productD__left__top__image">
-                        <img :src="productDetail && productDetail[id].image"/>  
+                        <img :src="productDetailId && productDetailId.image"/>  
                     </div>
                     <div class="col-6 productD__left__top__info">
                         <h3 class="productD__left__top__info__title">
-                            {{ productDetail && productDetail[$route.params.id].title}}
+                            {{ productDetailId && productDetailId.title}}
                         </h3>
-                        <div class="productD__left__top__info__price">
+                        <div class="productD__left__top__info__price" v-if="productDetailId.sale">
+                            <div>
+                            Giá gốc: 
+                            <span class="product__right__item__price-old" style="font-size: 13px">
+                                {{ productDetailId && productDetailId.price | filterPrice }} đ
+                            </span>
+                            <!-- {{productDetailId && productDetailId.sale}}% -->
+                            </div>
+                            <div>
+                                Giá khuyến mãi:
+                            <span class="productD__left__top__info__price__1">
+                                {{ productDetailId && (productDetailId.price - (productDetailId.price * productDetailId.sale) / 100) | filterPrice }} đ
+                            </span>
+                            </div>
+                        </div>
+                        <div class="productD__left__top__info__price" v-else>
                             Giá: 
                             <span class="productD__left__top__info__price__1">
-                                {{ productDetail && productDetail[$route.params.id].price | filterPrice }} đ
+                                {{ productDetailId && productDetailId.price | filterPrice }} đ
                             </span>
                         </div>
                         <div class="productD__left__top__info__order">
@@ -23,6 +38,7 @@
                                     class="productD__left__top__info__order__count--change" 
                                     type="button" 
                                     value="-"
+                                    :disabled="count == 1"
                                     @click="countDown()"
                                 >
                                 <input 
@@ -35,6 +51,7 @@
                                     class="productD__left__top__info__order__count--change" 
                                     type="button" 
                                     value="+"
+                                    :disabled="count >= productDetailId.product_amount"
                                     @click="countUp()"
                                 >
                             </div>
@@ -42,13 +59,13 @@
                                 class="productD__left__top__info__order__add"
                                 @click="ADD_TO_CART({
                                     id : id, 
-                                    title: productDetail[id].title, 
-                                    price: productDetail[id].price,
-                                    image: productDetail[id].image,
+                                    title: productDetailId.title, 
+                                    price: productDetailId.price - (productDetailId.price * productDetailId.sale) / 100,
+                                    image: productDetailId.image,
                                     count: count,
                                     name1: $route.params.name1,
                                     name2: $route.params.name2,
-
+                                    product_amount: productDetailId.product_amount
                                 })"
                                 
                             >Thêm vào giỏ hàng</div>
@@ -57,13 +74,14 @@
                         <!-- <div class="productD__left__top__info__capacity">
                             <h1>Công dụng: </h1>
                         </div> -->
+                        <p>Còn {{productDetailId.product_amount}} sản phẩm</p>
                     </div>
                 </div>
                 
                 <md-tabs  class="productD__left__tab">
                     <md-tab id="tab-home" md-label="Mô tả">
-                        <div v-if="productDetail[id].product_detail">
-                            <div v-for="(item, key) in productDetail[id].product_detail && productDetail[id].product_detail.describe" :key="key">
+                        <div v-if="productDetailId.describe">
+                            <div v-for="(item, key) in productDetailId.describe && productDetailId.describe" :key="key">
                                 <span style="font-size: 15px; font-weight: 600; color: black">{{item.title}}:</span>
                                 <p>{{item.info}}</p>
                             </div>
@@ -76,10 +94,10 @@
                             md-label="Hướng dẫn mua hàng và thanh toán"
                     >
                         <p style="font-size: 15px; font-weight: 600; color: black; margin-bottom: 10px !important">Hướng dẫn mua hàng</p>
-                        <!-- <p>{{productDetail[id].product_detail && productDetail[id].product_detail.tutorial.purchase}}</p> -->
+                        <!-- <p>{{productDetailId.product_detail && productDetailId.product_detail.tutorial.purchase}}</p> -->
                         <p style="font-size: 13px;line-height: 20px; margin-bottom: 5px !important">Quý khách truy cập website của chúng tôi xem sản phẩm và lựa chọn sản phẩm cần mua. - Nhấn nút "Thêm vào giỏ hàng" để đưa sản phẩm vào giỏ hàng. - Sau khi đã hoàn tất việc chọn hàng, quý khách vào giỏ hàng để xem (biểu tượng giỏ hàng ngoài cùng bên phải topbar). - Chuyển tới trang thanh toán. - Nhập đầy đủ thông tin cá nhân và thông tin thanh toán vào biểu mẫu. -Kết thúc đơn hàng, quý khách vui lòng chờ nhân viên của chúng tôi điện thoại lại để chốt đơn.</p>
                         <p style="font-size: 15px; font-weight: 600; color: black; margin-bottom: 10px !important">Hướng dẫn thanh toán</p>
-                        <!-- <p>{{productDetail[id].product_detail && productDetail[id].product_detail.tutorial.pay}}</p> -->
+                        <!-- <p>{{productDetailId.product_detail && productDetailId.product_detail.tutorial.pay}}</p> -->
                         <p style="font-size: 13px;line-height: 20px; margin-bottom: 5px  !important">Hiện tại, chúng tôi mới chỉ cung cấp 2 hình thức thanh toán: (1). nhận hàng thanh toán và (2). thanh toán chuyển khoản. - 1. Quý khách đặt hàng và được nhân viên xác nhận qua cuộc gọi trực tiếp. Qua đó, chúng tôi gửi hàng về cho quý khách thông qua dịch vụ ship COD. Quý khách nhận hàng, kiểm tra hàng và thanh toán trực tiếp cho nhân viên bưu phát. - 2: Quý khách chuyển khoản trước cho chúng tôi qua tài khoản nhân hàng, và chúng tôi sẽ gửi chuyển phát nhanh cho quý khách:</p>
                     </md-tab>
                 </md-tabs>
@@ -235,6 +253,7 @@ export default {
     data() {
         return{ 
             productDetail: [],
+            productDetailId: [],
             showRate: false,
             count: 1,
             id: '',
@@ -278,6 +297,7 @@ export default {
     },
     created(){
         this.fetch()
+        this.getProductDetailId()
         this.fetchRateProduct()
         this.fetchCommentProduct()
         this.userRateProduct()
@@ -339,6 +359,11 @@ export default {
                 return(
                     this.count = 1
                 )
+            else if(this.count >= this.productDetailId.product_amount){
+                return(
+                    this.count = this.productDetailId.product_amount
+                )
+            }
             else 
                 return(
                     this.count = Number(this.count)
@@ -453,6 +478,10 @@ export default {
         async fetchCommentProduct(){
             const {data} = await PostsRepository.getCommentProduct();
             this.allComment = data.filter(item => item.productId == this.$route.params.id)
+        },
+        async getProductDetailId(){
+            const {data} = await PostsRepository.getProductDetailId(this.$route.params.id);
+            this.productDetailId = data
         }
     }
 }

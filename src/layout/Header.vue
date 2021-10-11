@@ -95,7 +95,7 @@ export default {
                 this.fullname = value
             })
     this.fetchAccountId()  
-    this.fetch()
+    // this.fetch()
   },
   computed: mapGetters(['product',"getUser", "isUserAuth"]),
 }
