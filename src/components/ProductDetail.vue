@@ -58,7 +58,7 @@
                             <div 
                                 class="productD__left__top__info__order__add"
                                 @click="ADD_TO_CART({
-                                    id : id, 
+                                    id : id,
                                     title: productDetailId.title, 
                                     price: productDetailId.price - (productDetailId.price * productDetailId.sale) / 100,
                                     image: productDetailId.image,
@@ -312,10 +312,12 @@ export default {
     },
     beforeUpdate(){
         if(this.rateCount){
+            let time = new Date()
             this.countRate = {
                 productId: Number(this.id),
                 star: this.rateCount,
-                userId:  this.infoUser.id
+                userId:  this.infoUser.id,
+                time: time
             }
         }
     },
@@ -392,8 +394,8 @@ export default {
                         message: 'Đánh giá sản phẩm thành công',
                         duration: 2,
                         style: {
-                            marginTop: `75px`,
-                            marginBottom: '-50px'
+                            top: `75px`,
+                            marginBottom: '10px'
                         },
                     })
                     this.isShowRate = true
@@ -404,8 +406,8 @@ export default {
                         message: 'Đánh giá sản phẩm thành công',
                         duration: 2,
                         style: {
-                            marginTop: `75px`,
-                            marginBottom: '-50px'
+                            top: `75px`,
+                            marginBottom: '10px'
                         },
                     })
                     this.isShowRate = true
@@ -420,8 +422,8 @@ export default {
                     'Vui lòng chọn số sao cần đánh giá',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
             }

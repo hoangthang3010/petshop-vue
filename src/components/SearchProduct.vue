@@ -134,7 +134,8 @@ export default {
     z-index: 99;
     width: 100%;
     height: 100%;
-    // background-color: red;
+    opacity: 0.4;
+    background-color: black;
   }
   ::-webkit-scrollbar {
       width: 6px;

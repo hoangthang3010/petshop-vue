@@ -5,7 +5,7 @@
         <div class="cart__left__item">
           <div>
             <template>
-              {{ `Đã chọn ${selectedRowKeys.length} sản phẩm` }}
+              <p style="margin-bottom: 4px!important">{{ `Đã chọn ${selectedRowKeys.length} sản phẩm` }} {{listBill}}</p>
             </template>
             <a-table
               class="cart__left__item__table"
@@ -84,7 +84,7 @@
                   {{
                     productAll.filter((item) => item.id == record.id)[0]
                       .product_amount
-                  }}
+                  }} sản phẩm
                 </p>
                 <p
                   v-if="selectedRowKeys.indexOf(key) < 0"
@@ -136,22 +136,52 @@
             >
           </div>
         </div>
-        <p class="cart__right__pay" @click="onPayBill(selectedRows)">
-          THANH TOÁN TiỀN MẶT
+        <p class="cart__right__pay" @click="PayOrder">
+          THANH TOÁN
         </p>
-        <hr />
-        <div>
-          <div v-if="!paidFor">
-            <!-- - ${{ product.price }} OB -->
-            <h5>Thanh toán bằng Paypal</h5>
-            <!-- <p>{{ product.description }}</p> -->
+      </div>
+      <div class="form-pay" v-if="isShowBill">
+        <h4 style="margin-bottom: 20px; font-weight: bold">Hóa đơn của bạn</h4>
+        <div class="row">
+          <div class="box-left col-6">
+            <div :style="selectedRows.length > 7 ? 'overflowY: scroll; height: 312px;overflow-x: hidden; padding-right: 10px':''">
+              <div class="row" v-for="(item, key) in selectedRows" :key="key">
+                <span class="col-8">{{item.title}}</span>
+                <div class="col-4">
+                  <p>x{{item.count}}</p>
+                  <p>{{item.price | filterPrice}} đ</p>
+                </div>
+              </div>
+            </div>
+            <hr/>
+            <p style="text-align: right">Tổng: {{getTotal | filterPrice}} đ</p>
           </div>
-          <div v-if="paidFor">
-            <h1>Noice, you bought a beautiful lamp!</h1>
+          <div class="box-left col-6">
+            <div>
+              <p>Địa chỉ <span style="color: red">*</span>:</p>
+              <input type="text" v-model="address" placeholder="Địa chi của bạn">
+              <p>Số điện thoại người nhận <span style="color: red">*</span>:</p>
+              <input type="number" v-model="numberphone" placeholder="Nhập số điện thoại">
+            </div>
+            <div>
+              <p class="cart__right__pay" @click="onPayBill(selectedRows)">
+                THANH TOÁN TIỀN MẶT
+              </p>
+              <hr />
+              <div v-if="!paidFor">
+                <!-- - ${{ product.price }} OB -->
+                <h5>Thanh toán bằng Paypal</h5>
+                <!-- <p>{{ product.description }}</p> -->
+              </div>
+              <div v-if="paidFor">
+                <h1>Noice, you bought a beautiful lamp!</h1>
+              </div>
+              <div ref="paypal"></div>
+            </div>
           </div>
-          <div ref="paypal"></div>
         </div>
       </div>
+      <div class="overlay-pay" v-if="isShowBill" @click="isShowBill = false"></div>
     </div>
     <div class="cartNone" v-else>
       <font-awesome-icon :icon="['far', 'dizzy']" size="5x" />
@@ -170,14 +200,14 @@ const columns = [
     title: "Sản phẩm",
     key: "title",
     scopedSlots: { customRender: "nameproduct" },
-    width: "55%",
+    width: "54%",
   },
   {
     title: "Số lượng",
     dataIndex: "count",
     key: "count",
     scopedSlots: { customRender: "count" },
-    width: 120,
+    width: 140,
   },
   {
     title: "Tính tiền",
@@ -204,7 +234,12 @@ export default {
                 price: 777.77,
                 description: "leg lamp from that one movie",
                 img: "./assets/lamp.jpg"
-            }
+            },
+            idUser: sessionStorage.getItem('id'),
+            bill: [],
+            isShowBill: false,
+            address: '',
+            numberphone: ''
         };
     },
     filters: {
@@ -221,19 +256,33 @@ export default {
     computed: {
         ...mapGetters(["product", "getTotal1", "productDel", "selectedRowState"]),
         getTotal() {
-        let total = 0;
-        this.selectedRows.forEach((item) => {
-            total += item.count * item.price;
-        });
-        return total;
+          let total = 0;
+          this.selectedRows.forEach((item) => {
+              total += item.count * item.price;
+          });
+          return total;
         },
+        listProductOrder(){
+          let a= []
+          this.selectedRows.map(item =>{
+            a.push({"idProduct":item.id, "price": item.price, "amount": item.count})
+          })
+          return a
+        }
     },
     mounted() {
-        const script = document.createElement("script");
-        script.src =
-        "https://www.paypal.com/sdk/js?client-id=AdAe7P9QznTR2CulihLRIXY_NfydldNW6nWLtIe9URlvi0hDYxAK7imFklM76Q2sBzJBrsuv-X_Nqe39";
-        script.addEventListener("load", this.setLoaded);
-        document.body.appendChild(script);
+    },
+    beforeUpdate(){
+      let time = new Date()
+      this.bill = {
+        "idUser": this.idUser,
+        "statusOrder": "unconfirmed",
+        "listProductOrder": this.listProductOrder, 
+        "total": this.getTotal,
+        "dateOrder": time,
+        "address": this.address,
+        "numberphone": this.numberphone
+      }
     },
     methods: {
     //    ,'onSelectChange'
@@ -244,14 +293,80 @@ export default {
       "handleRemove",
       "onPayBill1",
     ]),
+    PayOrder(){
+      if(!this.idUser){
+        this.$notification['error']({
+            message: 'Bạn chưa đăng nhập',
+            description:
+            'Vui lòng đăng nhập để đặt hàng',
+            duration: 2,
+            style: {
+                top: `75px`,
+                marginBottom: '10px'
+            },
+        });
+      }
+      else if(this.idUser && !this.selectedRowKeys.length){
+        this.$notification['error']({
+            message: 'Bạn chưa chọn sản phẩm nào',
+            description:
+            'Vui lòng chọn sản  phẩm để thanh toán',
+            duration: 2,
+            style: {
+                top: `75px`,
+                marginBottom: '10px'
+            },
+        });
+      }
+      else{
+        const script = document.createElement("script");
+        script.src =
+        "https://www.paypal.com/sdk/js?client-id=AdAe7P9QznTR2CulihLRIXY_NfydldNW6nWLtIe9URlvi0hDYxAK7imFklM76Q2sBzJBrsuv-X_Nqe39";
+        script.addEventListener("load", this.setLoaded);
+        document.body.appendChild(script);
+        this.isShowBill = true
+      }
+    },
     onSelectChange(selectedRowKeys, selectedRows) {
       this.selectedRowKeys = selectedRowKeys;
       this.selectedRows = selectedRows;
     },
     onPayBill(a) {
-      this.selectedRows = [];
-      this.selectedRowKeys = [];
-      this.onPayBill1(a);
+      if(this.numberphone && this.address){
+        let b = Object.assign(this.bill,{"typePay": "cash"})
+        // console.log(b);
+        this.createOrder(b)
+        this.productAll.forEach(item =>{
+          this.listProductOrder.forEach(elem =>{
+            if(item.id == elem.idProduct){
+              const newCount = item.product_amount - elem.amount
+              const newQuantitySold = item.quantity_sold + elem.amount
+              const newElem = {
+                ...item,
+                product_amount: newCount,
+                quantity_sold: newQuantitySold
+              }
+              this.updateProductDetail(item.id, newElem)
+            }
+          })
+        })
+        this.selectedRows = [];
+        this.selectedRowKeys = [];
+        this.onPayBill1(a);
+        this.$router.push("/info_user")
+      }
+      else{
+        this.$notification['error']({
+            message: 'Vui lòng điền đầy đủ thông tin',
+            description:
+            'Vui lòng đăng nhập để đặt hàng',
+            duration: 2,
+            style: {
+                top: `75px`,
+                marginBottom: '10px'
+            },
+        });
+      }
     },
     // handleRemove(){}
     setLoaded: function() {
@@ -259,25 +374,56 @@ export default {
       window.paypal
         .Buttons({
           createOrder: (data, actions) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  description: "Bạn đã mua hàng từ PetShop",
-                  amount: {
-                    currency_code: "USD",
-                    value: Math.round(this.getTotal/23)
+            if(this.numberphone && this.address){
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    description: "Bạn đã mua hàng từ PetShop",
+                    amount: {
+                      currency_code: "USD",
+                      value: Math.round(this.getTotal/23000)
+                    }
                   }
-                }
-              ]
-            });
+                ]
+              });
+            }
+            else{
+              this.$notification['error']({
+                  message: 'Vui lòng điền đủ thông tin',
+                  description:
+                  'Vui lòng đăng nhập để đặt hàng',
+                  duration: 2,
+                  style: {
+                      top: `75px`,
+                      marginBottom: '10px'
+                  },
+              });
+            }
           },
           onApprove: async (data, actions) => {
             const order = await actions.order.capture();
             this.paidFor = true;
             console.log(order);
+            let b = Object.assign(this.bill,{"typePay": "paypal"})
+            this.createOrder(b)
+            this.productAll.forEach(item =>{
+              this.listProductOrder.forEach(elem =>{
+                if(item.id == elem.idProduct){
+                  const newCount = item.product_amount - elem.amount
+                  const newQuantitySold = item.quantity_sold + elem.amount
+                  const newElem = {
+                    ...item,
+                    product_amount: newCount,
+                    quantity_sold: newQuantitySold
+                  }
+                  this.updateProductDetail(item.id, newElem)
+                }
+              })
+            })
             this.onPayBill1(this.selectedRows);
             this.selectedRows = [];
-            this.selectedRowKeys = [];
+            this.selectedRowKeys = []
+            this.$router.push("/info_user")
           },
           onError: err => {
             console.log(err);
@@ -287,6 +433,14 @@ export default {
     },
     async getProductDetail() {
       const { data } = await PostsRepository.getProductDetail();
+      this.productAll = data;
+    },
+    async createOrder(payload) {
+      const { data } = await PostsRepository.createOrder(payload);
+      this.bill = data;
+    },
+    async updateProductDetail(id,payload) {
+      const { data } = await PostsRepository.updateProductDetail(id,payload);
       this.productAll = data;
     },
   },

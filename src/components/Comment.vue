@@ -1,6 +1,7 @@
 <template>
     <div class="comment-user">
         <!-- {{allComment.length > 1 ? 'replies' : 'reply'}} -->
+        <!-- {{date.getDay()}} -->
         <span key="comment-nested-reply-to">{{allComment.length}} bình luận </span>
         <span class="change-status-comment" @click="showAllComment" v-if="isStatusComment && allComment.length > listComment.length && allComment.length >5">- Hiển thị tất cả</span>
         <span class="change-status-comment" @click="filterComment" v-if="!isStatusComment && allComment.length >5">- Thu gọn lại</span>
@@ -23,11 +24,13 @@
             <a-list-item slot="renderItem" slot-scope="item" style="display: block">
                 <div style="display: flex; align-items: center; justify-content: space-between">
                     <a-comment
-                        :author="item.nameUser"
-                        :avatar="item.avatar"
+                        :author="listAccount.filter(account=> account.id == item.userId)[0].fullname"
+                        :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
                         :content="item.content"
-                        :datetime="item.time.slice(0,10)"
+                        :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
                     />
+                    <!-- {{item.item}}-{{date.}} -->
+                    <!-- date.slice(8,10) == item.time.slice(8,10)  && date.slice(5,7) - item.time.slice(5,7) < 3 ? (ate.slice(5,7) - item.time.slice(5,7) + ' ngày trước') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4) -->
                     <div class="edit-comment">
                         <span v-if="item.userId == infoUser.id" @click="onDeleteComment(item.id)">Xóa </span>
                         <span v-if="item.userId == infoUser.id && !isEditComment" @click="onEditComment(item.id, item.content)">Chỉnh sửa</span>
@@ -127,13 +130,16 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 idUser1:  '',
                 listComment: [],
                 isEditComment: false,
-                idEditComment: ''
+                idEditComment: '',
+                listAccount: [],
+                date: new Date()
             };
         },
         created(){
             this.$bus.on('infoUser', value => {
                 this.infoUser = value
             })
+            this.getAccount()
         },
         mounted(){},
         watch:{
@@ -150,9 +156,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 this.comments = {
                     productId: this.id,
                     userId: this.infoUser.id,
-                    nameUser: this.infoUser.fullname,
                     content: this.value,
-                    avatar: this.infoUser.avatar,
                     time: time,
                 };
                 if(this.infoUser.id){
@@ -193,9 +197,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 this.comments = {
                     productId: this.id,
                     userId: this.infoUser.id,
-                    nameUser: this.infoUser.fullname,
                     content: this.value1,
-                    avatar: this.infoUser.avatar,
                     time: time,
                 };
                 this.updateCommentProductId(id, this.comments)
@@ -228,6 +230,10 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             async updateCommentProductId(id, content){
                 const {data} = await PostsRepository.updateCommentProductId(id, content);
                 this.comments = data
+            },
+            async getAccount(){
+                const {data} = await PostsRepository.getAccount();
+                this.listAccount = data
             },
         },
     }

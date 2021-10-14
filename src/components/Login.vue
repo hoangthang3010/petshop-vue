@@ -103,8 +103,8 @@ export default {
                             `Chào ${this.username}`,
                             duration: 2,
                             style: {
-                                marginTop: `75px`,
-                                marginBottom: '-50px'
+                                top: `75px`,
+                                marginBottom: '10px'
                             },
                         }),
                         sessionStorage.setItem('id', this.users[i].id)
@@ -119,7 +119,7 @@ export default {
                 //             duration: 2,
                 //             style: {
                 //                 marginTop: `75px`,
-                //                 marginBottom: '-50px'
+                //                 marginBottom: '10px'
                 //             },
                 //         }),
                 //         this.checkUser = i
@@ -134,7 +134,7 @@ export default {
                 //             duration: 2,
                 //             style: {
                 //                 marginTop: `75px`,
-                //                 marginBottom: '-50px'
+                //                 marginBottom: '10px'
                 //             },
                 //         }),
                 //         this.checkUser = i
@@ -149,8 +149,8 @@ export default {
                     'Vui lòng nhập lại tên đăng nhập/email hoặc mật khẩu',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
             }       

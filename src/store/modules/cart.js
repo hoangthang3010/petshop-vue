@@ -64,8 +64,8 @@ const cart = {
                         style: {
                             width: '400px',
                             marginLeft: `${380 - 400}px`,
-                            marginTop: `75px`,
-                            marginBottom: '-50px'
+                            top: `75px`,
+                            marginBottom: '10px'
                         },
                         key,
                         onClose: close,
@@ -102,8 +102,8 @@ const cart = {
                             style: {
                                 width: '450px',
                                 marginLeft: `${380 - 450}px`,
-                                marginTop: `75px`,
-                                marginBottom: '-50px'
+                                top: `75px`,
+                                marginBottom: '10px'
                             },
                             key,
                             onClose: close,
@@ -137,8 +137,8 @@ const cart = {
                         style: {
                             width: '400px',
                             marginLeft: `${380 - 400}px`,
-                            marginTop: `75px`,
-                            marginBottom: '-50px'
+                            top: `75px`,
+                            marginBottom: '10px'
                         },
                         key,
                         onClose: close,
@@ -186,6 +186,17 @@ const cart = {
             // state.selectedRows = state.selectedRows.filter(item => item.id !== state.product[key].id)
             // if(state.selectedRowKeys.length === state.product.length) state.selectedRowKeys.pop()
             // state.productDel = state.product[key]
+            notification.success({ 
+                message: 'Xóa sản phẩm khỏi giỏ hàng thành công', 
+                description: '',
+                style: {
+                    width: '400px',
+                    marginLeft: `${380 - 400}px`,
+                    top: `75px`,
+                    marginBottom: '10px' 
+                },
+                duration: 2,
+            })  
             for(let i = 0; i< state.product.length; i++){
                     return state.product.splice(key, 1)
             }

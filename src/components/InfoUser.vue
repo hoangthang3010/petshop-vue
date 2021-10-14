@@ -3,7 +3,7 @@
         <div class="infouser__body">
             <div class="infouser__body__left col-3">
                 <div class="infouser__body__left__profile">
-                    <img style="padding: 0" class="col-2" :src="user.avatar" alt="Ảnh đại diện"/>
+                    <img style="padding: 0; border-radius: 50%; height: 45px" class="col-2" :src="user.avatar" alt="Ảnh đại diện"/>
                     <div class="col-9">
                         <h4>{{user.fullname}}</h4>
                         <p style="cursor: pointer" @click="editProfile">Sửa hồ sơ</p>
@@ -220,8 +220,8 @@ export default {
                     '',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
             }
@@ -232,8 +232,8 @@ export default {
                     '',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
             }
@@ -247,8 +247,8 @@ export default {
                     '',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
                 this.isEditPofile = false
@@ -290,8 +290,8 @@ export default {
                     '',
                     duration: 3,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });  
                 this.oldPassword =''
@@ -305,8 +305,8 @@ export default {
                     '',
                     duration: 3,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
                 this.oldPassword =''
@@ -320,8 +320,8 @@ export default {
                     '',
                     duration: 3,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
                 this.oldPassword =''
@@ -335,8 +335,8 @@ export default {
                     'Mật khẩu này trùng mật khẩu cũ',
                     duration: 3,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
                 this.oldPassword =''
@@ -351,8 +351,8 @@ export default {
                     '',
                     duration: 3,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
                 this.fetchUpdateAccount()

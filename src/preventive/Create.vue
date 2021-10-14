@@ -143,8 +143,8 @@ export default {
                     'Bạn đã quay lại trang đăng nhập.',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
             }
@@ -155,8 +155,8 @@ export default {
                     'Vui lòng nhập lại.',
                     duration: 2,
                     style: {
-                        marginTop: `75px`,
-                        marginBottom: '-50px'
+                        top: `75px`,
+                        marginBottom: '10px'
                     },
                 });
             }

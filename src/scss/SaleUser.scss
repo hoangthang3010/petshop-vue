@@ -1,0 +1,69 @@
+.sale-user{
+    .sale-unconfirmed{
+        // background-color: rgb(253, 253, 253);
+        h5{
+            font-family: arial;
+            padding: 8px 6px;
+            // border-bottom: 2px solid orange;
+            background-color: orange;
+            color: white;
+            border-top-left-radius: 2qpx;
+            border-bottom-left-radius: 2qpx;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        >div{
+            display: flex;
+            margin-bottom: 10px;
+            padding: 0 6px;
+            .left-bill{
+                padding: 10px;
+                border: 1px solid rgb(237, 237, 237);
+                // border-left: 1px solid rgb(237, 237, 237);
+                // border-right: 1px solid rgb(237, 237, 237);
+                >div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                    >div{
+                        img{
+                            padding: 4px;
+                            border: 1px solid rgb(245, 245, 245);
+                            max-height: 80px;
+                            height: 80px;
+                            width: 80px;
+                        }
+                        &:first-child{
+                            height: 80px;
+                            width: 80px
+                        }
+                        &:nth-child(2){
+                            width: 60%;
+                            padding: 0 20px;
+                        }
+                    }
+                }
+                .total-bill{
+                    display: flex;
+                    justify-content: end;
+                }
+            }
+        }
+        .empty{
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(106, 106, 106);
+        }
+    }
+    .count-product{
+        text-align: end;
+    }
+    .title-right-bill{
+        font-weight: bold;
+    }
+}
