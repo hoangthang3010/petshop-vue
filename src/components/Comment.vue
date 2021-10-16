@@ -2,14 +2,16 @@
     <div class="comment-user">
         <!-- {{allComment.length > 1 ? 'replies' : 'reply'}} -->
         <!-- {{date.getDay()}} -->
+        {{allCommentq}}
         <span key="comment-nested-reply-to">{{allComment.length}} bình luận </span>
-        <span class="change-status-comment" @click="showAllComment" v-if="isStatusComment && allComment.length > listComment.length && allComment.length >5">- Hiển thị tất cả</span>
+        <span class="change-status-comment" @click="showAllComment" v-if="isStatusComment && allComment.length >5">- Hiển thị tất cả</span>
         <span class="change-status-comment" @click="filterComment" v-if="!isStatusComment && allComment.length >5">- Thu gọn lại</span>
         <hr/>
         <!-- <span @click="showAllComment" key="comment-nested-reply-to">{{comments.length}} {{comments.length > 1 ? 'replies' : 'reply'}}</span> -->
+        <!-- listComment.length > 0 ? listComment : (allComment.length > 5 ? allComment.slice(this.allComment.length-5) : allComment) -->
         <a-list
             v-if="allComment.length && infoUser"
-            :data-source="listComment.length > 0 ? listComment : (allComment.length > 5 ? allComment.slice(this.allComment.length-5) : allComment)"
+            :data-source="comment"
             :header="``"
             item-layout="horizontal"
         >
@@ -100,7 +102,8 @@ import moment from 'moment';
 import {RepositoryFactory} from '../api/RepositoryFactory';
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
     export default {
-        props: ['allComment', 'id'],
+        props: ['id'],
+        // 'allComment', q
         data() {
             return {
                 isStatusComment: true,
@@ -132,7 +135,8 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 isEditComment: false,
                 idEditComment: '',
                 listAccount: [],
-                date: new Date()
+                date: new Date(),
+                allComment: []
             };
         },
         created(){
@@ -140,11 +144,18 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 this.infoUser = value
             })
             this.getAccount()
+            this.fetchCommentProduct()
         },
         mounted(){},
         watch:{
             comments(){
             }
+        },
+        computed:{
+          comment(){
+              if(this.isStatusComment && this.allComment.length>5) return this.allComment.slice(this.allComment.length-5)
+              else return this.allComment
+          }  
         },
         methods: {
             handleSubmit() {
@@ -181,11 +192,12 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             },
             filterComment(){
                 this.isStatusComment = !this.isStatusComment
-                this.listComment = this.allComment.slice(this.allComment.length-5)
+                
             },
             onDeleteComment(id){
                 this.deteleCommentProductId(id)
                 this.$emit('handleDeleteComment');
+            this.fetchCommentProduct()
             },
             onEditComment(id, content){
                 this.value1 = content
@@ -205,6 +217,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                     this.isEditComment = false
                 }, 500);
                 this.$emit('handleEditComment');
+            this.fetchCommentProduct()
                 // this.$notification['success']({
                 //     message: 'Bạn đã chỉnh sửa bình luận',
                 //     duration: 2,
@@ -234,6 +247,10 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             async getAccount(){
                 const {data} = await PostsRepository.getAccount();
                 this.listAccount = data
+            },
+            async fetchCommentProduct(){
+                const {data} = await PostsRepository.getCommentProduct();
+                this.allComment = data.filter(item => item.productId == this.$route.params.id)
             },
         },
     }

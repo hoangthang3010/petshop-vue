@@ -293,6 +293,7 @@
       "productId": 2,
       "star": 5,
       "userId": 3,
+      "time": "2021-10-15T16:12:51.544Z",
       "id": 10
     },
     {
@@ -346,6 +347,13 @@
       "userId": 3,
       "time": "2021-10-14T15:07:27.699Z",
       "id": 19
+    },
+    {
+      "productId": 16,
+      "star": 5,
+      "userId": 3,
+      "time": "2021-10-15T08:20:52.922Z",
+      "id": 20
     }
   ],
   "commentProduct": [
@@ -397,20 +405,6 @@
       "content": "tuyệt lắm",
       "time": "2021-10-12T10:12:14.731Z",
       "id": 14
-    },
-    {
-      "productId": 1,
-      "userId": 3,
-      "content": "tuyệt",
-      "time": "2021-10-13T15:38:19.780Z",
-      "id": 15
-    },
-    {
-      "productId": 1,
-      "userId": 3,
-      "content": "tuyệt vời",
-      "time": "2021-10-14T16:10:36.988Z",
-      "id": 16
     }
   ],
   "productDetail": [
@@ -868,7 +862,7 @@
       "type_product": "food",
       "product_amount": 101,
       "count": 1,
-      "quantity_sold": -1
+      "quantity_sold": 1
     },
     {
       "id": 31,
@@ -881,7 +875,7 @@
       "type_product": "food",
       "product_amount": 101,
       "count": 1,
-      "quantity_sold": -1
+      "quantity_sold": 1
     },
     {
       "id": 32,

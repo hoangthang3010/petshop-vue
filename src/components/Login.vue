@@ -96,7 +96,7 @@ export default {
                         this.$bus.emit('increaseCounter', this.users[i].fullname),
                         this.checkUser = i,
                         this.isShowLogin ? this.$router.push("") : this.$router.push("/info_user"),
-                        this.$emit('isShowLogin'),
+                        this.$emit('isShowLogin', this.users[i].id),
                         this.$notification['success']({
                             message: 'Đăng nhập thành công',
                             description:

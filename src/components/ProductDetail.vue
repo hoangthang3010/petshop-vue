@@ -1,6 +1,6 @@
 <template>
     <div class="productD">
-        <div class="card-group"  v-if="productDetailId.length!==0">
+        <div class="card-group" v-if="productDetailId.length!==0">
             <div class="col-9 productD__left" style="padding-bottom: 40px">
                 <div class="productD__left__top">
                     <div class="col-6 productD__left__top__image">
@@ -211,6 +211,10 @@
                         </div>
                     </VueSlickCarousel>
                 </div>
+                <!-- <div class="productD__left__sale itemproduct__item__right" style="width: 100%; margin-top: 20px;">
+                    <p style="font-size: 14px; font-weight: bold">Sản phẩm bán chạy</p>
+                    <ProductSelling :productDetail="productDetail"/>
+                </div> -->
             </div>
             <div class="col-3 productD__right">
                 <div class="productD__right__product">
@@ -218,9 +222,10 @@
                     <!-- <span class="productD__right__product__title">Sản phẩm</span> -->
                     <!-- </div> -->
                     <div  class="productD__right__product__body">
-                        <h2>Sản phẩm</h2>
+                        <h4>Sản phẩm</h4>
                         <MultiLevelMenu/>
                     </div>
+                     <ProductSelling @routerProduct="routerProduct" :productDetail="productDetail"/>
                 </div>
                 <div class="productD__right">
 
@@ -229,13 +234,14 @@
         </div>
         <div class="modal-login" v-if="isShowLogin">
             <div class="display-modal-login" @click="isShowLogin = !isShowLogin"></div>
-            <Login :isShowLogin = "isShowLogin" @isShowLogin ="isShowLogin =!isShowLogin"/>
+            <Login :isShowLogin = "isShowLogin" @isShowLogin ="ShowLogin"/>
         </div>
     </div>
 </template>
 <script>
 import { mapMutations, mapGetters } from 'vuex'
 import MultiLevelMenu from '../components/MultiLevelMenu.vue'
+import ProductSelling from '../components/ProductSelling.vue'
 import Comment from '../components/Comment.vue'
 import '../scss/ProductDetail.scss'
 import Login from './Login.vue'
@@ -249,7 +255,7 @@ import {RepositoryFactory} from '../api/RepositoryFactory';
 const PostsRepository = RepositoryFactory.communicationAPI('posts')
 export default {
     name: "ProductDetail",
-    components: {MultiLevelMenu, CardItems, VueSlickCarousel, Login, Comment},
+    components: {MultiLevelMenu, CardItems, VueSlickCarousel, Login, Comment, ProductSelling},
     data() {
         return{ 
             productDetail: [],
@@ -288,7 +294,10 @@ export default {
                 "pauseOnFocus": true,
                 "pauseOnHover": true,
                 "touchMove": true
-            }
+            },
+            loading: false,
+            error: null,
+            post: null
         }
     },
     computed: {
@@ -301,6 +310,7 @@ export default {
         this.fetchRateProduct()
         this.fetchCommentProduct()
         this.userRateProduct()
+        this.fetchAccountID(sessionStorage.getItem('id'))
         this.id = Number(this.$route.params.id)
         window.scrollTo(0,0)
     },
@@ -322,23 +332,22 @@ export default {
         }
     },
     updated(){
-        if(this.id != this.$route.params.id){
-            window.scrollTo(0,0),
-            this.fetchRateProduct()
-            this.fetchCommentProduct()
-            this.$forceUpdate()
-            this.userRateProduct()
-        }
+        // if(this.id != this.$route.params.id){
+        //     window.scrollTo(0,0),
+        //     this.fetchRateProduct()
+        //     this.fetchCommentProduct()
+        //     this.$forceUpdate()
+        //     this.userRateProduct()
+        // }
         //      window.scrollTo(0,0)
-            this.id = Number(this.$route.params.id),
-            this.fetchAccountID(),
-            this.idUser= sessionStorage.getItem('id')
-            this.checkUserRate = this.totalRate.map(item =>{ //kiểm tra xem bạn đã đánh giá sản phẩm này chưa
-                        return item.userId;
-                    }).indexOf(Number(sessionStorage.getItem('id')));
-                    // console.log(this.checkUserRate);
-                    // console.log(this.totalRate);
-            // this.checkUserRate = this.totalRate.filter(item => item.productId == this.id && item.userId == this.idUser)
+        this.id = Number(this.$route.params.id),
+        this.idUser= sessionStorage.getItem('id')
+        this.checkUserRate = this.totalRate.map(item =>{ //kiểm tra xem bạn đã đánh giá sản phẩm này chưa
+                    return item.userId;
+                }).indexOf(Number(sessionStorage.getItem('id')));
+                // console.log(this.checkUserRate);
+                // console.log(this.totalRate);
+        // this.checkUserRate = this.totalRate.filter(item => item.productId == this.id && item.userId == this.idUser)
     },
     watch: {
         followData(){
@@ -355,7 +364,7 @@ export default {
         // ADD_TO_CARD(id, title, price, count){
         //     let detail = Object.assign({id},{title}, {price}, {count});
         //     console.log(detail);
-        // },
+        // }
         handleCount(){
             if (!this.count || this.count == 0 || this.count % 1 !== 0) 
                 return(
@@ -370,6 +379,10 @@ export default {
                 return(
                     this.count = Number(this.count)
                 )
+        },
+        ShowLogin(idUser){
+            this.isShowLogin = !this.isShowLogin
+            this.fetchAccountID(idUser)
         },
         onReRate(){
             this.isShowRate = false
@@ -468,8 +481,8 @@ export default {
             this.followData = data
             // this.$forceUpdate()
         },
-        async fetchAccountID(){
-            const {data} = await PostsRepository.getAccountId(this.idUser);
+        async fetchAccountID(idUser){
+            const {data} = await PostsRepository.getAccountId(idUser);
             this.infoUser = data
             this.$bus.emit('infoUser', this.infoUser)
         },
