@@ -24,13 +24,37 @@
             <span style="display: none">{{infoUser}}</span>
             <!-- , index -->
             <a-list-item slot="renderItem" slot-scope="item" style="display: block">
-                <div style="display: flex; align-items: center; justify-content: space-between">
+                <div style="display: flex; align-items: baseline; justify-content: space-between">
                     <a-comment
-                        :author="listAccount.filter(account=> account.id == item.userId)[0].fullname"
+                        style="width: 85%"
+                        :author="item.userId == infoUser.id ? 'Bạn' :listAccount.filter(account=> account.id == item.userId)[0].fullname"
                         :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
                         :content="item.content"
-                        :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
-                    />
+                        :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.getMonth() == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
+                    >
+                        <span slot="actions">Trả lời</span>
+                        <a-list
+                        v-show="item.reply"
+                            class="comment-list"
+                            item-layout="horizontal"
+                            :data-source="item.reply"
+                        >
+                            <a-list-item slot="renderItem" slot-scope="item">
+                                <a-comment
+                                    :author="item.userId == infoUser.id ? 'Bạn' :listAccount.filter(account=> account.id == item.userId)[0].fullname"
+                                    :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
+                                    :content="item.content"
+                                    :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.getMonth() == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
+                                >
+                                    <span slot="actions">Trả lời</span>
+                                </a-comment>
+                                <div class="edit-comment">
+                                    <span v-if="item.userId == infoUser.id" @click="onDeleteComment(item.id)">Xóa </span>
+                                    <span v-if="item.userId == infoUser.id && !isEditComment" @click="onEditComment(item.id, item.content)">Chỉnh sửa</span>
+                                </div>
+                            </a-list-item>
+                        </a-list>
+                    </a-comment>
                     <!-- {{item.item}}-{{date.}} -->
                     <!-- date.slice(8,10) == item.time.slice(8,10)  && date.slice(5,7) - item.time.slice(5,7) < 3 ? (ate.slice(5,7) - item.time.slice(5,7) + ' ngày trước') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4) -->
                     <div class="edit-comment">
@@ -62,6 +86,7 @@
                         </a-button>
                     </a-form-item>
                 </div>
+                                <!-- {{item.reply}} -->
                     <!-- :datetime="item.datetime == moment().fromNow() ? item.datetime:item.datetime.fromNow()" -->
             </a-list-item>
             <!-- .fromNow() -->
@@ -178,6 +203,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                     this.submitting = false;
                 }, 1000);
                 this.$emit('handleComment');
+                this.fetchCommentProduct()
 
             },
             handleChange(e) {
@@ -197,7 +223,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             onDeleteComment(id){
                 this.deteleCommentProductId(id)
                 this.$emit('handleDeleteComment');
-            this.fetchCommentProduct()
+                this.fetchCommentProduct()
             },
             onEditComment(id, content){
                 this.value1 = content
@@ -217,7 +243,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                     this.isEditComment = false
                 }, 500);
                 this.$emit('handleEditComment');
-            this.fetchCommentProduct()
+                this.fetchCommentProduct()
                 // this.$notification['success']({
                 //     message: 'Bạn đã chỉnh sửa bình luận',
                 //     duration: 2,
