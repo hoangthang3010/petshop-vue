@@ -1,8 +1,6 @@
 <template>
     <div class="comment-user">
         <!-- {{allComment.length > 1 ? 'replies' : 'reply'}} -->
-        <!-- {{date.getDay()}} -->
-        {{allCommentq}}
         <span key="comment-nested-reply-to">{{allComment.length}} bình luận </span>
         <span class="change-status-comment" @click="showAllComment" v-if="isStatusComment && allComment.length >5">- Hiển thị tất cả</span>
         <span class="change-status-comment" @click="filterComment" v-if="!isStatusComment && allComment.length >5">- Thu gọn lại</span>
@@ -11,7 +9,7 @@
         <!-- listComment.length > 0 ? listComment : (allComment.length > 5 ? allComment.slice(this.allComment.length-5) : allComment) -->
         <a-list
             v-if="allComment.length && infoUser"
-            :data-source="comment"
+            :data-source="comment ? comment : commentFilter"
             :header="``"
             item-layout="horizontal"
         >
@@ -27,21 +25,21 @@
                 <div style="display: flex; align-items: baseline; justify-content: space-between">
                     <a-comment
                         style="width: 85%"
-                        :author="item.userId == infoUser.id ? 'Bạn' :listAccount.filter(account=> account.id == item.userId)[0].fullname"
+                        :author="item.userId == infoUser.id ? 'Bạn' : item.userId == 1 ? 'Quản trị viên': listAccount.filter(account=> account.id == item.userId)[0].fullname"
                         :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
                         :content="item.content"
                         :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.getMonth() == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
                     >
                         <span slot="actions">Trả lời</span>
                         <a-list
-                        v-show="item.reply"
+                            v-show="item.reply && item.reply.length > 0"
                             class="comment-list"
                             item-layout="horizontal"
                             :data-source="item.reply"
                         >
                             <a-list-item slot="renderItem" slot-scope="item">
                                 <a-comment
-                                    :author="item.userId == infoUser.id ? 'Bạn' :listAccount.filter(account=> account.id == item.userId)[0].fullname"
+                                    :author="item.userId == infoUser.id ? 'Bạn' : item.userId == 1 ? 'Quản trị viên':listAccount.filter(account=> account.id == item.userId)[0].fullname"
                                     :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
                                     :content="item.content"
                                     :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.getMonth() == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
@@ -72,7 +70,7 @@
                             html-type="submit" 
                             :loading="submitting" 
                             type="primary" 
-                            @click="handleEditComment(item.id, item.content)"
+                            @click="handleEditComment(item.id, item)"
                         >
                             Cập nhật
                         </a-button>
@@ -151,6 +149,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 //     datetime: moment().subtract(2, 'days'),
                 //     },],
                 comments: {},
+                commentFilter: [],
                 submitting: false,
                 value: '',
                 value1: '',
@@ -169,7 +168,9 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 this.infoUser = value
             })
             this.getAccount()
-            this.fetchCommentProduct()
+            setTimeout(() => {
+                this.fetchCommentProduct()
+            }, 2000);
         },
         mounted(){},
         watch:{
@@ -194,6 +195,7 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                     userId: this.infoUser.id,
                     content: this.value,
                     time: time,
+                    reply: []
                 };
                 if(this.infoUser.id){
                     this.commentProduct()
@@ -230,13 +232,14 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 this.isEditComment = true
                 this.idEditComment = id
             },
-            handleEditComment(id){
+            handleEditComment(id, item){
                 let time = new Date()
                 this.comments = {
                     productId: this.id,
                     userId: this.infoUser.id,
                     content: this.value1,
                     time: time,
+                    reply: item.reply
                 };
                 this.updateCommentProductId(id, this.comments)
                 setTimeout(() => {
@@ -277,6 +280,11 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             async fetchCommentProduct(){
                 const {data} = await PostsRepository.getCommentProduct();
                 this.allComment = data.filter(item => item.productId == this.$route.params.id)
+                const a = data.filter(item => item.productId == this.$route.params.id)
+                if (this.allComment > 5){
+                    this.commentFilter = a.slice(this.commentFilter.length-5)
+                }
+                else this.commentFilter = a
             },
         },
     }
