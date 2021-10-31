@@ -163,14 +163,12 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
                 allComment: []
             };
         },
-        created(){
+        async created(){
             this.$bus.on('infoUser', value => {
                 this.infoUser = value
             })
-            this.getAccount()
-            setTimeout(() => {
-                this.fetchCommentProduct()
-            }, 2000);
+            await this.getAccount()
+            this.fetchCommentProduct()
         },
         mounted(){},
         watch:{

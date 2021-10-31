@@ -233,6 +233,8 @@ export default {
             birthday: this.birthday.text,
             sex: this.sex.text,
             password: this.password.text,
+            role: "user",
+            status: "activate",
             avatar: "https://www.unmc.edu/cihc/_images/faculty/default.jpg"
         }
         // console.log(this.time);
