@@ -2,7 +2,7 @@
     <div class="itemproduct">
         <div class="itemproduct__title"
             @click="product.display=!product.display">
-            <span class="product__title__name">{{product.title}}</span>
+            <span class="product__title__name">{{product.titleType}}</span>
         </div>
         <div 
             class="itemproduct__item" 
@@ -12,7 +12,7 @@
         >
             <div class="itemproduct__item__left col-2">
                 <ul>
-                    <li>{{item.title}}</li>
+                    <li>{{item.titleTypeDetail}}</li>
                     
                     <!-- <div style="display:none">
                         {{

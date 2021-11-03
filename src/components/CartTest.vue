@@ -200,7 +200,7 @@ const columns = [
     title: "Sản phẩm",
     key: "title",
     scopedSlots: { customRender: "nameproduct" },
-    width: "54%",
+    width: "50%",
   },
   {
     title: "Số lượng",

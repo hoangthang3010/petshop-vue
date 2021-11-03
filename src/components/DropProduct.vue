@@ -17,7 +17,7 @@
                     @mouseleave="onHandleDisShowDrop1(key)"
                 >
                     <router-link style="color: black" :to ="`/product/${item.name}`">
-                        {{item.title}}
+                        {{item.titleType}}
                         <p 
                             class="dropproduct__drop__item__box__icon" 
                             v-if="item.type.length>1"
@@ -37,7 +37,7 @@
                     @mouseenter="onHandleShowDrop2(key)"
                 >
                     <router-link style="color: black;" :to ="`/product/${name}/${item.name}`">
-                        {{item.title}}
+                        {{item.titleTypeDetail}}
                     </router-link>
                 </div>
             </div>
