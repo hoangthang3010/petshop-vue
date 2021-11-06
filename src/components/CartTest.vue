@@ -239,7 +239,8 @@ export default {
             bill: [],
             isShowBill: false,
             address: '',
-            numberphone: ''
+            numberphone: '',
+            allWarehouse: []
         };
     },
     filters: {
@@ -250,6 +251,7 @@ export default {
     },
     created() {
         this.getProductDetail();
+        this.getWarehouse()
         if (this.product.length > 0) window.scrollTo(0, 130);
         else window.scrollTo(0, 0);
     },
@@ -336,6 +338,7 @@ export default {
         let b = Object.assign(this.bill,{"typePay": "cash"})
         // console.log(b);
         this.createOrder(b)
+
         this.productAll.forEach(item =>{
           this.listProductOrder.forEach(elem =>{
             if(item.id == elem.idProduct){
@@ -350,10 +353,26 @@ export default {
             }
           })
         })
+        this.allWarehouse.forEach(item => {
+          this.listProductOrder.forEach(elem =>{
+            if(item.idProduct == elem.idProduct){
+                const b = {
+                    ...item,
+                    listExportGoods: item.listExportGoods.concat({
+                        id: [...Array(30)].map(() => Math.random().toString(36)[2]).join(''),
+                        count: Number(elem.amount),
+                        time: new Date()
+                    })
+                }
+                this.updateWarehouseId(item.id, b)
+            }
+          })
+        })
+
         this.selectedRows = [];
         this.selectedRowKeys = [];
         this.onPayBill1(a);
-        this.$router.push("/info_user")
+        this.$router.push("/info_user/order")
       }
       else{
         this.$notification['error']({
@@ -420,10 +439,26 @@ export default {
                 }
               })
             })
+            this.allWarehouse.forEach(item => {
+              this.listProductOrder.forEach(elem =>{
+                if(item.idProduct == elem.idProduct){
+                    const b = {
+                        ...item,
+                        listExportGoods: item.listExportGoods.concat({
+                            id: [...Array(30)].map(() => Math.random().toString(36)[2]).join(''),
+                            count: Number(elem.amount),
+                            time: new Date()
+                        })
+                    }
+                    this.updateWarehouseId(item.id, b)
+                }
+              })
+            })
+            
             this.onPayBill1(this.selectedRows);
             this.selectedRows = [];
             this.selectedRowKeys = []
-            this.$router.push("/info_user")
+            this.$router.push("/info_user/order")
           },
           onError: err => {
             console.log(err);
@@ -442,6 +477,14 @@ export default {
     async updateProductDetail(id,payload) {
       const { data } = await PostsRepository.updateProductDetail(id,payload);
       this.productAll = data;
+    },
+    async getWarehouse(){
+        const {data} = await PostsRepository.getWarehouse();
+        this.allWarehouse = data
+    },
+    async updateWarehouseId(id, payload){
+        const {data} = await PostsRepository.updateWarehouseId(id, payload);
+        this.allWarehouse = data
     },
   },
 };

@@ -1,5 +1,6 @@
 <template>
-    <div class="productD">
+    <div class="productD" :key="key">
+        {{key}}
         <div class="card-group" v-if="productDetailId.length!==0">
             <div class="col-9 productD__left" style="padding-bottom: 40px">
                 <div class="productD__left__top">
@@ -225,7 +226,8 @@
                         <h4>Sản phẩm</h4>
                         <MultiLevelMenu/>
                     </div>
-                     <ProductSelling @routerProduct="routerProduct" :productDetail="productDetail"/>
+                    <!-- @routerProduct="routerProduct"  -->
+                     <ProductSelling :productDetail="productDetail"/>
                 </div>
                 <div class="productD__right">
 
@@ -297,7 +299,8 @@ export default {
             },
             loading: false,
             error: null,
-            post: null
+            post: null,
+            key: ''
         }
     },
     computed: {
@@ -357,6 +360,13 @@ export default {
             this.idUser= sessionStorage.getItem('id')
             // this.$forceUpdate()
         },
+        $route(){
+            this.userRateProduct()
+            this.fetchRateProduct()
+            this.fetchCommentProduct()
+            this.getProductDetailId()
+            window.scrollTo(0,0)
+        }
     },
     mounted(){},
     methods: {

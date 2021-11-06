@@ -5,7 +5,8 @@
     <!-- <router-view name='header'/>
     <router-view name='header-menu'/> -->
     <BackToTop/>
-    <router-view  :key="$route.fullPath"/>
+      <!-- :key="$route.fullPath" -->
+    <router-view/>
     {{children}}
     <Footer/>
   </div>

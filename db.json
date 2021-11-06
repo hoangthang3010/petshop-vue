@@ -257,6 +257,13 @@
         }
       ],
       "time": "2021-11-02T03:48:17.866Z"
+    },
+    {
+      "titleType": "Nước",
+      "name": "water",
+      "time": "2021-11-06T15:48:17.426Z",
+      "type": [],
+      "id": 3
     }
   ],
   "warehouse": [
@@ -300,6 +307,21 @@
         {
           "count": 2,
           "time": "2021-11-01T13:56:49.962Z"
+        },
+        {
+          "id": "jf82q1qsx4cuzt493y4wm9agyf6ocu",
+          "count": null,
+          "time": "2021-11-06T12:07:52.712Z"
+        },
+        {
+          "id": "3mj329tbfd62v0drv0ikz27sez8ogr",
+          "count": 7,
+          "time": "2021-11-06T12:59:11.573Z"
+        },
+        {
+          "id": "3m65iv8burr8elx65g7gnj2w1srh1c",
+          "count": 7,
+          "time": "2021-11-06T15:15:21.024Z"
         }
       ]
     },
@@ -331,6 +353,326 @@
           "time": "2021-11-01T13:56:49.962Z"
         }
       ]
+    },
+    {
+      "idProduct": 2,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [
+        {
+          "id": "ddq2ggu3926u0kmtskgspf12ebx517",
+          "count": "123",
+          "time": "2021-11-03T18:17:24.800Z"
+        }
+      ],
+      "listExportGoods": [
+        {
+          "id": "716qpxopgf68di5wn6kqmt6i5lsptn",
+          "count": null,
+          "time": "2021-11-06T12:07:52.714Z"
+        },
+        {
+          "id": "jhnw7k3xt7r3yoeee6edramagnn3ap",
+          "count": 4,
+          "time": "2021-11-06T12:59:11.574Z"
+        },
+        {
+          "id": "170zhz7pjfd5bwufscdl8l92t2x9s6",
+          "count": 1,
+          "time": "2021-11-06T15:15:21.024Z"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "idProduct": 3,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "anfznv4x5oyk3ec1849n0igs5kbj8q",
+          "count": 11,
+          "time": "2021-11-06T12:45:32.830Z"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "idProduct": 4,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "jmdgntt30iqnh0d0jxx1w9maucxfft",
+          "count": 1,
+          "time": "2021-11-06T12:45:32.831Z"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "idProduct": 5,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "6mf8nq1hnnv1x2r31yklfqg2h80mns",
+          "count": 1,
+          "time": "2021-11-06T12:45:32.831Z"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "idProduct": 6,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 7
+    },
+    {
+      "idProduct": 7,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 8
+    },
+    {
+      "idProduct": 8,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 9
+    },
+    {
+      "idProduct": 9,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 10
+    },
+    {
+      "idProduct": 11,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 11
+    },
+    {
+      "idProduct": 12,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 12
+    },
+    {
+      "idProduct": 13,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 13
+    },
+    {
+      "idProduct": 14,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 14
+    },
+    {
+      "idProduct": 15,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 15
+    },
+    {
+      "idProduct": 16,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 16
+    },
+    {
+      "idProduct": 17,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 17
+    },
+    {
+      "idProduct": 18,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 18
+    },
+    {
+      "idProduct": 19,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 19
+    },
+    {
+      "idProduct": 20,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 20
+    },
+    {
+      "idProduct": 21,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 21
+    },
+    {
+      "idProduct": 22,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 22
+    },
+    {
+      "idProduct": 23,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 23
+    },
+    {
+      "idProduct": 24,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 24
+    },
+    {
+      "idProduct": 25,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 25
+    },
+    {
+      "idProduct": 26,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 26
+    },
+    {
+      "idProduct": 27,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 27
+    },
+    {
+      "idProduct": 28,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 28
+    },
+    {
+      "idProduct": 29,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 29
+    },
+    {
+      "idProduct": 30,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 30
+    },
+    {
+      "idProduct": 31,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 31
+    },
+    {
+      "idProduct": 32,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 32
+    },
+    {
+      "idProduct": 33,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 33
+    },
+    {
+      "idProduct": 34,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 34
+    },
+    {
+      "idProduct": 35,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 35
+    },
+    {
+      "idProduct": 36,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 36
+    },
+    {
+      "idProduct": 37,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 37
+    },
+    {
+      "idProduct": 38,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 38
+    },
+    {
+      "idProduct": 39,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 39
+    },
+    {
+      "idProduct": 40,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 40
+    },
+    {
+      "idProduct": 41,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 41
+    },
+    {
+      "idProduct": 42,
+      "time": "2021-11-03T18:15:25.500Z",
+      "listImportGoods": [],
+      "listExportGoods": [],
+      "id": 42
     }
   ],
   "race": [
@@ -412,10 +754,7 @@
       "id": 6
     },
     {
-      "id": 7,
-      "productId": 1,
-      "userId": 2,
-      "star": 5
+      "id": 7
     },
     {
       "productId": 1,
@@ -472,6 +811,13 @@
       "userId": 8,
       "id": 18,
       "time": "2021-10-25T16:32:55.980Z"
+    },
+    {
+      "productId": 2,
+      "star": 5,
+      "userId": 2,
+      "time": "2021-11-06T15:04:43.371Z",
+      "id": 19
     }
   ],
   "commentProduct": [

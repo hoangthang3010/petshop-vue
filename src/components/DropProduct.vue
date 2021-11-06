@@ -28,7 +28,7 @@
             </div>
             <div
                     :style="`boxShadow: ${id1 !== null ?  '-1px 0px 3px #888888' : 'none'}`"
-                    class="dropproduct__drop__right" v-if="id !==null"
+                    class="dropproduct__drop__right" v-if="id !==null && product[id].type.length > 0"
             >
                 <div
                     class="dropproduct__drop__right__box  dropright"

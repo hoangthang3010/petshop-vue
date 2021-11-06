@@ -7,8 +7,18 @@
 <!-- 790 -->
   <div class="sliderhomepage">
     <ul class="sliderhomepage__slides" :style="{left:-width*current+'px', width: slides.length*895+'px'}">
-      <li class="sliderhomepage__slides__li" v-for="(slide,i) in slides" :key="i">
-        <img class="sliderhomepage__slides__li__image" :src="slide" alt="">
+      <li class="sliderhomepage__slides__li" 
+        v-for="(slide,i) in slides" 
+        :key="i" 
+        @mouseenter="onHoverSlide(i)" 
+        @mouseleave="onLeaveSlide()"
+      >
+        <img 
+            class="sliderhomepage__slides__li__image" 
+            :src="slide.image" 
+            :alt="slide.content"
+            @click="onGoDetailProuct(slide)"
+        >
       </li>
     </ul>
     <!-- <ul class="bullets">
@@ -32,20 +42,23 @@
 
 <script>
 import '../scss/SliderHomepage1.scss'
+import { RepositoryFactory } from "../api/RepositoryFactory";
+const PostsRepository = RepositoryFactory.communicationAPI("posts");
 export default {
     name: "SliderHomepage1",
     // el:'#slider',
     data() {
         return{       
-        slides: [
-        'https://jandpet.com.vn/wp-content/uploads/2018/06/giam-gia-10-03-03-1400x754.jpg',
-        'https://jandpet.com.vn/wp-content/uploads/2018/06/shop-my-dinh-333-03-01-1400x754.jpg',     
-        'https://jandpet.com.vn/wp-content/uploads/2018/06/shop-da-nang-02-02-1400x755.jpg'
-        ],
-        current: 0,
-        width: 895,
-        timer: 0,
-        visible: false
+            slides: [
+            'https://jandpet.com.vn/wp-content/uploads/2018/06/giam-gia-10-03-03-1400x754.jpg',
+            'https://jandpet.com.vn/wp-content/uploads/2018/06/shop-my-dinh-333-03-01-1400x754.jpg',     
+            'https://jandpet.com.vn/wp-content/uploads/2018/06/shop-da-nang-02-02-1400x755.jpg'
+            ],
+            current: 0,
+            width: 895,
+            timer: 0,
+            visible: false,
+            productAll: []
         }
     },
     methods: {
@@ -54,6 +67,18 @@ export default {
         },
         onHandleDisShow(){
             this.visible = false
+        },
+        onHoverSlide(){
+            clearInterval(this.timer);
+        },
+        onLeaveSlide(){
+            this.play();
+        },
+        onGoDetailProuct(item){
+            console.log(item);
+            const a = this.productAll.filter(elem => elem.id == item.idProduct)
+            // console.log(a);
+            this.$router.push(`/purchase/${a[0].type}/${a[0].detail}/${item.idProduct}`)
         },
         nextSlide: function() {
             this.current++;
@@ -80,10 +105,20 @@ export default {
             this.timer = setInterval(function() {
                 app.nextSlide();
             }, 2000);
-        }
+        },
+        async getSlide(){
+            const {data} = await PostsRepository.getSlide();
+            this.slides = data
+        },
+        async getProductDetail() {
+            const { data } = await PostsRepository.getProductDetail();
+            this.productAll = data;
+        },
     },
     created: function() {
         this.play();
+        this.getSlide()
+        this.getProductDetail()
     }
 }
 </script>

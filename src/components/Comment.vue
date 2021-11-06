@@ -171,8 +171,10 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             this.fetchCommentProduct()
         },
         mounted(){},
-        watch:{
-            comments(){
+        watch: {
+            async $route(){
+                await this.getAccount()
+                this.fetchCommentProduct()
             }
         },
         computed:{

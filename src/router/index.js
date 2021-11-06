@@ -28,7 +28,8 @@ export const routes = [
     { path: '/product/:id1/:id', name: 'product', component: Product },
     { path: '/slide', name: 'slide', component: SlideHomepage1 },
     { path: '/user_login', name: 'userlogin', component: Login },
-    { path: '/info_user', name: 'infouser', component: InfoUser },
+    { path: '/info_user', redirect: '/info_user/profile'},
+    { path: '/info_user/:type', name: 'infouser', component: InfoUser },
     // { path: '/register_user', name: 'register', component: Register },
     { path: '/create_account_user', name: 'createaccountuser', component: CreateAccountUser },
     { path: '/:admin', name: 'admin', component: Dashboard}

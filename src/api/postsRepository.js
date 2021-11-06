@@ -5,6 +5,10 @@ const productDetail = "/productDetail"
 const rateProduct = "/rateProduct"
 const commentProduct = "/commentProduct"
 const orderProduct = "/orderProduct"
+const race = "/race"
+const slide = "/slides"
+const typeProduct = "/productAll"
+const warehouse = "/warehouse"
 export default {
     getAccount(){
         return Repository.get(`${account}`);
@@ -68,6 +72,54 @@ export default {
     },
     updateOrderId(idOrderProduct, payload){
         return Repository.put(`${orderProduct}/${idOrderProduct}`, payload)
+    },
+    getRace(){
+        return Repository.get( `${race}`)
+    }, 
+    createRace(payload){
+        return Repository.post( `${race}`, payload)
+    },
+    deteleRace(idRace){
+        return Repository.delete(`${race}/${idRace}`)
+    },
+    updateRaceId(idRace, payload){
+        return Repository.put(`${race}/${idRace}`, payload)
+    },
+    getSlide(){
+        return Repository.get( `${slide}`)
+    }, 
+    createSlide(payload){
+        return Repository.post( `${slide}`, payload)
+    },
+    deteleSlide(idSlide){
+        return Repository.delete(`${slide}/${idSlide}`)
+    },
+    updateSlideId(idSlide, payload){
+        return Repository.put(`${slide}/${idSlide}`, payload)
+    },
+    getTypeProduct(){
+        return Repository.get( `${typeProduct}`)
+    }, 
+    createTypeProduct(payload){
+        return Repository.post( `${typeProduct}`, payload)
+    },
+    deteleTypeProduct(idTypeProduct){
+        return Repository.delete(`${typeProduct}/${idTypeProduct}`)
+    },
+    updateTypeProductId(idTypeProduct, payload){
+        return Repository.put(`${typeProduct}/${idTypeProduct}`, payload)
+    },
+    getWarehouse(){
+        return Repository.get( `${warehouse}`)
+    }, 
+    createWarehouse(payload){
+        return Repository.post( `${warehouse}`, payload)
+    },
+    deteleWarehouse(idTypeProduct){
+        return Repository.delete(`${warehouse}/${idTypeProduct}`)
+    },
+    updateWarehouseId(idTypeProduct, payload){
+        return Repository.put(`${warehouse}/${idTypeProduct}`, payload)
     },
 
 }

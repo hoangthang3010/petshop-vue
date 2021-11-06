@@ -6,7 +6,8 @@
                     <img style="padding: 0; border-radius: 50%; height: 45px" class="col-2" :src="user.avatar" alt="Ảnh đại diện"/>
                     <div class="col-9">
                         <h4>{{user.fullname}}</h4>
-                        <p style="cursor: pointer" @click="editProfile">Sửa hồ sơ</p>
+                        <!-- :disabled="showRight !=''"  -->
+                        <a style="cursor: pointer" @click="editProfile">Sửa hồ sơ</a>
                     </div>
                 </div>
                 <hr/>
@@ -127,7 +128,7 @@
                     @click="handleCancelEditProfile"
                 >Hủy</button>
             </div>
-            <SaleUser v-if="showRight === 'sale'"/>
+            <SaleUser v-if="showRight === 'order'"/>
             <NotificationUser v-if="showRight === 'notification'"/>
             <div class="infouser__body__right col-9" v-if="showRight === 'forget'">
                 <div class="infouser__body__right__title">
@@ -180,7 +181,7 @@ export default {
             allAccount: [],
             checkUsername: 0,
             checkEmail: 0,
-            showRight: 'profile',
+            showRight:  this.$route.params.type,
             oldPassword: '',
             password: '',
             rePassword: '',
@@ -258,25 +259,30 @@ export default {
         },
         showProfile(){
             this.showRight = 'profile'
+            this.$router.push('/info_user/profile')
             this.isEditPofile = false
             window.scrollTo(0,0)
         },
         editProfile(){
             this.showRight = 'profile'
+            this.$router.push('/info_user/profile')
             this.isEditPofile = true
             window.scrollTo(0,0)
         },
         showSale(){
             console.log(123);
-            this.showRight = 'sale'
+            this.showRight = 'order'
+            this.$router.push('/info_user/order')
             window.scrollTo(0,0)
         },
         forget(){
             this.showRight = 'forget'
+            this.$router.push('/info_user/forget')
             window.scrollTo(0,0)
         },
         showNotification(){
             this.showRight = 'notification'
+            this.$router.push('/info_user/notification')
             window.scrollTo(0,0)
         },
         change(){
