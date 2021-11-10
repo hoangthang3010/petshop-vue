@@ -28,8 +28,9 @@
                         :author="item.userId == infoUser.id ? 'Bạn' : item.userId == 1 ? 'Quản trị viên': listAccount.filter(account=> account.id == item.userId)[0].fullname"
                         :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
                         :content="item.content"
-                        :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.getMonth() == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
+                        :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.toJSON().slice(5,7) == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
                     >
+                    <!-- date.getMonth() -->
                         <span slot="actions">Trả lời</span>
                         <a-list
                             v-show="item.reply && item.reply.length > 0"
@@ -42,7 +43,7 @@
                                     :author="item.userId == infoUser.id ? 'Bạn' : item.userId == 1 ? 'Quản trị viên':listAccount.filter(account=> account.id == item.userId)[0].fullname"
                                     :avatar="listAccount.filter(account=> account.id == item.userId)[0].avatar"
                                     :content="item.content"
-                                    :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.getMonth() == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
+                                    :datetime="date.getDate() - Number(item.time.slice(8,10)) < 4 && date.toJSON().slice(5,7) == Number(item.time.slice(5,7)) ? (date.getDate() - item.time.slice(8,10) > 0 ? date.getDate() - item.time.slice(8,10) + ' ngày trước' : 'Hôm nay') : item.time.slice(8,10)+'-'+item.time.slice(5,7)+'-'+item.time.slice(0,4)"
                                 >
                                     <span slot="actions">Trả lời</span>
                                 </a-comment>
@@ -170,7 +171,13 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
             await this.getAccount()
             this.fetchCommentProduct()
         },
-        mounted(){},
+        mounted(){
+            setTimeout(() => {
+                document.querySelectorAll('.ant-comment-avatar > img').forEach(e =>{
+                    e.setAttribute("alt","Ảnh đại diện");
+                })
+            }, 2000);
+        },
         watch: {
             async $route(){
                 await this.getAccount()
@@ -179,7 +186,14 @@ const PostsRepository = RepositoryFactory.communicationAPI('posts')
         },
         computed:{
           comment(){
-              if(this.isStatusComment && this.allComment.length>5) return this.allComment.slice(this.allComment.length-5)
+              if(this.isStatusComment && this.allComment.length>5){
+                  return (
+                    this.allComment.slice(this.allComment.length-5),
+                    document.querySelectorAll('.ant-comment-avatar > img').forEach(e =>{
+                        e.setAttribute("alt","Ảnh đại diện");
+                    })
+                  )
+              }
               else return this.allComment
           }  
         },

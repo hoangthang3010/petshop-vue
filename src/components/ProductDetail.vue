@@ -107,7 +107,8 @@
                     <div class="productD__left__rate__box">
                         <div class="col-3 productD__left__rate__box__left">
                             <span>SAO TRUNG BÌNH</span>
-                            <a-rate class="rate-tb" v-model="totalStar" />
+                            <!-- {{totalStar}} -->
+                            <a-rate class="rate-tb" v-model="totalStar"  allow-half/>
                             <!-- <p>{{totalStar}}</p> -->
                             <div>
                             </div>
@@ -117,38 +118,43 @@
                                 <ul>
                                     <li class="row">
                                         <span class="col-2">5 sao</span>
-                                        <span class="col-7">
+                                        <!-- <span class="col-7">
                                             <span class="ratio-star" :style="`width: ${fiveStar.length*100/totalRate.length ? fiveStar.length*100/totalRate.length : 0}%`"></span>
-                                        </span>
+                                        </span> -->
+                                        <a-progress style="width: 58%" :show-info="false" :percent="fiveStar.length*100/totalRate.length ? fiveStar.length*100/totalRate.length : 0" status="active" />
                                         <span class="col-3">{{fiveStar.length}} đánh giá</span>
                                     </li>
                                     <li class="row">
                                         <span class="col-2">4 sao</span>
-                                        <span class="col-7">
+                                        <a-progress style="width: 58%" :show-info="false" :percent="fourStar.length*100/totalRate.length ? fourStar.length*100/totalRate.length : 0" status="active" />
+                                        <!-- <span class="col-7">
                                             <span class="ratio-star" :style="`width: ${fourStar.length*100/totalRate.length ? fourStar.length*100/totalRate.length : 0}%`"></span>
-                                        </span>
+                                        </span> -->
                                          <!-- > 0 ? fourStar.length : 0 -->
                                         <span class="col-3">{{fourStar.length}} đánh giá</span>
                                     </li>
                                     <li class="row">
                                         <span class="col-2">3 sao</span>
-                                        <span class="col-7">
+                                        <a-progress style="width: 58%" :show-info="false" :percent="threeStar.length*100/totalRate.length ? threeStar.length*100/totalRate.length : 0" status="active" />
+                                        <!-- <span class="col-7">
                                             <span class="ratio-star" :style="`width: ${threeStar.length*100/totalRate.length ? threeStar.length*100/totalRate.length : 0}%`"></span>
-                                        </span>
+                                        </span> -->
                                         <span class="col-3">{{threeStar.length}} đánh giá</span>
                                     </li>
                                     <li class="row">
                                         <span class="col-2">2 sao</span>
-                                        <span class="col-7">
+                                        <a-progress style="width: 58%" :show-info="false" :percent="twoStar.length*100/totalRate.length ? twoStar.length*100/totalRate.length : 0" status="active" />
+                                        <!-- <span class="col-7">
                                             <span class="ratio-star" :style="`width: ${twoStar.length*100/totalRate.length ? twoStar.length*100/totalRate.length : 0}%`"></span>
-                                        </span>
+                                        </span> -->
                                         <span class="col-3">{{twoStar.length}} đánh giá</span>
                                     </li>
                                     <li class="row">
                                         <span class="col-2">1 sao</span>
-                                        <span class="col-7">
+                                        <a-progress style="width: 58%" :show-info="false" :percent="oneStar.length*100/totalRate.length ? oneStar.length*100/totalRate.length : 0" status="active" />
+                                        <!-- <span class="col-7">
                                             <span class="ratio-star" :style="`width: ${oneStar.length*100/totalRate.length ? oneStar.length*100/totalRate.length : 0}%`"></span>
-                                        </span>
+                                        </span> -->
                                          <!-- > 0 ? oneStar.length : 0 -->
                                         <span class="col-3">{{oneStar.length}} đánh giá</span>
                                     </li>

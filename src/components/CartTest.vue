@@ -125,12 +125,35 @@
               {{ productDel ? delSelectedRow : getTotal | filterPrice }} ₫
             </p>
           </div>
+          <div class="cart__right__money__provisional" style="padding-top: 8px">
+            <p class="cart__right__money__provisional__left col-8">Phí giao hàng
+              <a-icon type="info-circle" style="margin-left: 8px; position: relative;"
+                @mouseenter="tooltip = !tooltip"
+                @mouseleave="tooltip = !tooltip"
+              />
+              <span 
+                v-show="tooltip" 
+                style="
+                font-size: 10px;
+                position: absolute;
+                top: 30px;
+                left: 20%;
+                background-color: black;
+                color: white;
+                padding: 6px;
+                border-radius: 3px"
+              >Free đơn hàng trên 500.000đ</span>
+            </p>
+            <p class="cart__right__money__provisional__right col-4">
+               {{ getTotal >= 500000 ? '0 ₫' : '30000 ₫' | filterPrice }}
+            </p>
+          </div>
           <!-- {{productDel}} -->
           <div class="cart__right__money__total">
             <span class="cart__right__money__total__left col-6">Tổng</span>
             <span class="cart__right__money__total__right col-6"
               >{{
-                productDel ? delSelectedRow : getTotal | filterPrice
+                productDel ? delSelectedRow : (getTotal >= 500000 ? getTotal : (getTotal == 0 ? getTotal : getTotal + 30000)) | filterPrice
               }}
               ₫</span
             >
@@ -154,7 +177,7 @@
               </div>
             </div>
             <hr/>
-            <p style="text-align: right">Tổng: {{getTotal | filterPrice}} đ</p>
+            <p style="text-align: right">Tổng: {{(getTotal > 500000 ? getTotal : (getTotal == 0 ? getTotal : getTotal + 30000)) | filterPrice}} đ</p>
           </div>
           <div class="box-left col-6">
             <div>
@@ -240,7 +263,9 @@ export default {
             isShowBill: false,
             address: '',
             numberphone: '',
-            allWarehouse: []
+            allWarehouse: [],
+            user: [],
+            tooltip: false
         };
     },
     filters: {
@@ -252,6 +277,7 @@ export default {
     created() {
         this.getProductDetail();
         this.getWarehouse()
+        this.fetchAccountId()
         if (this.product.length > 0) window.scrollTo(0, 130);
         else window.scrollTo(0, 0);
     },
@@ -368,10 +394,18 @@ export default {
             }
           })
         })
+        if(!this.user.address){
+          const a = {
+            ...this.user,
+            address: this.address
+          }
+          this.fetchUpdateAccount(this.idUser, a)
+        }
 
         this.selectedRows = [];
         this.selectedRowKeys = [];
         this.onPayBill1(a);
+        this.fetchAccountId()
         this.$router.push("/info_user/order")
       }
       else{
@@ -454,10 +488,18 @@ export default {
                 }
               })
             })
+            if(!this.user.address){
+              const a = {
+                ...this.user,
+                address: this.address
+              }
+              this.fetchUpdateAccount(this.idUser, a)
+            }
             
             this.onPayBill1(this.selectedRows);
             this.selectedRows = [];
             this.selectedRowKeys = []
+            this.fetchAccountId()
             this.$router.push("/info_user/order")
           },
           onError: err => {
@@ -485,6 +527,16 @@ export default {
     async updateWarehouseId(id, payload){
         const {data} = await PostsRepository.updateWarehouseId(id, payload);
         this.allWarehouse = data
+    },
+    async fetchAccountId(){
+        const {data} = await PostsRepository.getAccountId(this.idUser);
+        this.user = data
+        this.address = data.address
+        this.numberphone = data.phonenumber
+    },
+    async fetchUpdateAccount(id, payload){
+        const {data} = await PostsRepository.updateAccount(id, payload);
+        this.user = data
     },
   },
 };

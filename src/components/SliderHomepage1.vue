@@ -1,12 +1,12 @@
 <template>
-<div 
+<div
     id="slider" 
     @mouseenter ="onHandleShow()"
     @mouseleave ="onHandleDisShow()"
 >  
 <!-- 790 -->
-  <div class="sliderhomepage">
-    <ul class="sliderhomepage__slides" :style="{left:-width*current+'px', width: slides.length*895+'px'}">
+  <div class="sliderhomepage" style="width: 595px">
+    <ul class="sliderhomepage__slides" :style="{left:-width*current+'px', width: slides.length*595+'px'}">
       <li class="sliderhomepage__slides__li" 
         v-for="(slide,i) in slides" 
         :key="i" 
@@ -55,7 +55,7 @@ export default {
             'https://jandpet.com.vn/wp-content/uploads/2018/06/shop-da-nang-02-02-1400x755.jpg'
             ],
             current: 0,
-            width: 895,
+            width: 595,
             timer: 0,
             visible: false,
             productAll: []

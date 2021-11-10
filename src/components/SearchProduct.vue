@@ -7,6 +7,9 @@
       placeholder="Tìm kiếm sản phẩm..."
       v-model="searchQuery"
     />
+    <a-icon type="info-circle"/>
+    <a-icon type="close" />
+    <!-- <a-icon v-if="searchQuery" type="close" @click="searchQuery = ''"/> -->
     <i v-if="searchQuery" class="fas fa-times-circle icon-x" alt="x" @click="searchQuery = ''"></i>
     <div
       v-if="productAll.length > resultQuery.length  && resultQuery.length>0"
@@ -15,7 +18,7 @@
     >
         <div
           class="version-type"
-          v-for="(item, key) in productAll.length > resultQuery.length  && resultQuery.slice(0,5)"
+          v-for="(item, key) in isShowFull ? resultQuery : (productAll.length > resultQuery.length  && resultQuery.slice(0,5))"
           :key="key"
           @click="onClickProduct(item.type, item.detail, item.id)"
         >
@@ -25,7 +28,8 @@
             <p>{{ item.title }}</p>
           </div>
       </div>
-      <div v-if="resultQuery.length>5" style="padding: 5px 10px">Xem thêm...</div>
+      <!-- onShowFullProductSearch -->
+      <div v-if="resultQuery.length>5 && !isShowFull" @click="isShowFull = true" style="padding: 5px 10px">Xem thêm...</div>
     </div>
     <div v-if="searchQuery" @click="searchQuery = ''" class="overlay"></div>
   </div>
@@ -48,7 +52,8 @@ export default {
                 {title:"Auxiliares Services",uri:"bbbb.com",category:"b",icon:null},
                 {title:"Basic Skills",uri:"cccc.com",category:"c",icon:null},
                 {title:"Board of Trustees",uri:"dddd.com",category:"d",icon:null}
-            ]
+            ],
+            isShowFull: false
         }
     },
     created(){
@@ -67,10 +72,19 @@ export default {
           }
         }
     },
+    watch: {
+      searchQuery(){
+        this.isShowFull = false
+      }
+    },
     methods: {
+      // onShowFullProductSearch(){
+
+      // }
       async fetch(){
         const {data} = await PostsRepository.getProductDetail();
         this.productAll = data
+        this.productAllBackup = data
 
         console.log(data);
         console.log(this.productAll);

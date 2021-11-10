@@ -10,7 +10,7 @@
             <router-link style="text-decoration: none" to="/product/all">
               <li class="header__bottom__menu__ul__li">SẢN PHẨM</li>
             </router-link>
-            <router-link style="text-decoration: none" to="/panigation">
+            <router-link style="text-decoration: none" to="/news">
               <li class="header__bottom__menu__ul__li">TIN TỨC</li>
             </router-link>
             <router-link style="text-decoration: none" to="/test">

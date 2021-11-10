@@ -7,7 +7,8 @@ import Login from '../components/Login.vue'
 import InfoUser from '../components/InfoUser.vue'
 // import Register from '../components/CreateAccountUser.vue'
 import CreateAccountUser from '../components/CreateAccountUser.vue'
-import Dashboard from '../demo/dashboard.vue'
+import News from '../components/News.vue'
+// import Dashboard from '../demo/dashboard.vue'
 // import Header from '../layout/Header'
 // import HeaderMenu from '../layout/HeaderMenu'
 
@@ -30,9 +31,10 @@ export const routes = [
     { path: '/user_login', name: 'userlogin', component: Login },
     { path: '/info_user', redirect: '/info_user/profile'},
     { path: '/info_user/:type', name: 'infouser', component: InfoUser },
+    { path: '/news', name: 'news', component: News },
     // { path: '/register_user', name: 'register', component: Register },
     { path: '/create_account_user', name: 'createaccountuser', component: CreateAccountUser },
-    { path: '/:admin', name: 'admin', component: Dashboard}
+    // { path: '/:admin', name: 'admin', component: Dashboard}
     // { path: '/admin', name: 'admin', components:{
     //     default: Dashboard,
     //     'hed'

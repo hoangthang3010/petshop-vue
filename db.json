@@ -16,13 +16,14 @@
       "email": "hoangthang301098@gmail.com",
       "phonenumber": "0969851742",
       "birthday": "1998-10-30",
-      "sex": "1",
+      "sex": "0",
       "password": "12345",
       "role": "user",
       "status": "deactivate",
       "avatar": "https://www.unmc.edu/cihc/_images/faculty/default.jpg",
       "id": 2,
-      "time": "2021-11-01T14:32:32.727Z"
+      "time": "2021-11-01T14:32:32.727Z",
+      "address": "56b, phố Viên,  phường Cổ Nhuế 2,Bắc Từ Liêm, Hà Nội"
     },
     {
       "fullname": "Hoàng Minh Thắng",
@@ -300,6 +301,21 @@
         {
           "count": 2,
           "time": "2021-11-01T13:56:49.962Z"
+        },
+        {
+          "id": "odwycptcv27pmkarxnyn3y8609ao75",
+          "count": 3,
+          "time": "2021-11-09T10:08:50.302Z"
+        },
+        {
+          "id": "v6j7iscyng55geb6ng62gr5v2hbr8m",
+          "count": 2,
+          "time": "2021-11-09T10:10:21.385Z"
+        },
+        {
+          "id": "zwlmtf36w4i76pheoyjs60x00nun6c",
+          "count": 4,
+          "time": "2021-11-09T10:11:58.074Z"
         }
       ]
     },
@@ -342,35 +358,85 @@
           "time": "2021-11-03T18:17:24.800Z"
         }
       ],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "e6p9bu68txzuxl7dwr0zvzkixbsjpt",
+          "count": 3,
+          "time": "2021-11-09T10:08:50.303Z"
+        },
+        {
+          "id": "icafdpro530nxbwor7rk8czm98pwxz",
+          "count": 4,
+          "time": "2021-11-09T10:10:21.386Z"
+        },
+        {
+          "id": "r4smkfvrbz28i502rsmcc9610srynk",
+          "count": 1,
+          "time": "2021-11-09T10:11:58.076Z"
+        }
+      ],
       "id": 3
     },
     {
       "idProduct": 3,
       "time": "2021-11-03T18:15:25.500Z",
       "listImportGoods": [],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "702dsjx1b6306za42zo5ongawhzct3",
+          "count": 1,
+          "time": "2021-11-09T10:35:38.802Z"
+        },
+        {
+          "id": "2up14ehlkbzb5kiz3lne3es1nzgmcw",
+          "count": 6,
+          "time": "2021-11-09T10:35:59.062Z"
+        }
+      ],
       "id": 4
     },
     {
       "idProduct": 4,
       "time": "2021-11-03T18:15:25.500Z",
       "listImportGoods": [],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "fuvpbpttgzjni2hqzwcdtp67w1l8oz",
+          "count": 1,
+          "time": "2021-11-09T10:35:38.803Z"
+        },
+        {
+          "id": "mzwg14u42s0u8ov3ih0erhsowglbm7",
+          "count": 2,
+          "time": "2021-11-09T10:35:59.062Z"
+        }
+      ],
       "id": 5
     },
     {
       "idProduct": 5,
       "time": "2021-11-03T18:15:25.500Z",
       "listImportGoods": [],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "ak71g3n4bphekvjpu7rpsh5xsi1y2h",
+          "count": 1,
+          "time": "2021-11-09T10:35:38.803Z"
+        }
+      ],
       "id": 6
     },
     {
       "idProduct": 6,
       "time": "2021-11-03T18:15:25.500Z",
       "listImportGoods": [],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "6y283pfpkvsedceg6snm55hm65bk2h",
+          "count": 1,
+          "time": "2021-11-09T10:35:38.803Z"
+        }
+      ],
       "id": 7
     },
     {
@@ -698,10 +764,7 @@
       "id": 6
     },
     {
-      "id": 7,
-      "productId": 1,
-      "userId": 2,
-      "star": 5
+      "id": 7
     },
     {
       "productId": 1,
@@ -758,6 +821,13 @@
       "userId": 8,
       "id": 18,
       "time": "2021-10-25T16:32:55.980Z"
+    },
+    {
+      "productId": 2,
+      "star": 5,
+      "userId": 2,
+      "time": "2021-11-10T03:11:53.143Z",
+      "id": 19
     }
   ],
   "commentProduct": [
@@ -922,9 +992,9 @@
       "sale": 20,
       "type_product": "medicine",
       "detail": "medicine_dog",
-      "product_amount": 104,
+      "product_amount": 99,
       "count": 1,
-      "quantity_sold": 0,
+      "quantity_sold": 5,
       "time": "2021-11-02T04:48:49.570Z",
       "describe": [
         {
@@ -994,9 +1064,9 @@
       "sale": 0,
       "type_product": "medicine",
       "detail": "medicine_dog",
-      "product_amount": 102,
+      "product_amount": 101,
       "count": 1,
-      "quantity_sold": 4
+      "quantity_sold": 5
     },
     {
       "id": 5,
@@ -1007,9 +1077,9 @@
       "sale": 0,
       "type_product": "medicine",
       "detail": "medicine_dog",
-      "product_amount": 99,
+      "product_amount": 100,
       "count": 1,
-      "quantity_sold": 19
+      "quantity_sold": 18
     },
     {
       "id": 6,
@@ -1020,9 +1090,9 @@
       "sale": 20,
       "type_product": "medicine",
       "detail": "medicine_dog",
-      "product_amount": 100,
+      "product_amount": 101,
       "count": 1,
-      "quantity_sold": 0
+      "quantity_sold": -1
     },
     {
       "id": 7,
@@ -1737,6 +1807,28 @@
       "numberphone": "23423",
       "typePay": "paypal",
       "id": 7
+    },
+    {
+      "idUser": "2",
+      "statusOrder": "unconfirmed",
+      "listProductOrder": [
+        {
+          "idProduct": 3,
+          "price": 180000,
+          "amount": 6
+        },
+        {
+          "idProduct": 4,
+          "price": 250000,
+          "amount": 2
+        }
+      ],
+      "total": 1580000,
+      "dateOrder": "2021-11-09T10:35:58.938Z",
+      "address": "sdfsdfsdfsdfsdfsdfsdfsđfsdf",
+      "numberphone": "0969851742",
+      "typePay": "cash",
+      "id": 8
     }
   ],
   "user": [

@@ -38,4 +38,9 @@
             }
         }
     }
+    iframe:not(.md-image){
+        height: 100%;
+    }
+    iframe{
+    }
 }

@@ -3,7 +3,7 @@
         <div class="infouser__body">
             <div class="infouser__body__left col-3">
                 <div class="infouser__body__left__profile">
-                    <img style="padding: 0; border-radius: 50%; height: 45px" class="col-2" :src="user.avatar" alt="Ảnh đại diện"/>
+                    <img style="padding: 0; border-radius: 50%; height: 45px; max-width: 45px" class="col-2" :src="user.avatar" alt="Ảnh đại diện"/>
                     <div class="col-9">
                         <h4>{{user.fullname}}</h4>
                         <!-- :disabled="showRight !=''"  -->
@@ -95,11 +95,19 @@
                                 <!-- <span v-else>{{user.birthday}}</span> -->
                             </td>
                         </tr>
+                        <tr class="infouser__body__right__bottom__info row">
+                            <td class="infouser__body__right__bottom__info__ileft col-3">Địa chỉ</td>
+                            <td class="infouser__body__right__bottom__info__iright col-9">
+                                <input :disabled="!isEditPofile" v-model="user.address" class="infouser__body__right__bottom__info__iright--input" type="text">
+                                <!-- <span v-else>{{user.birthday}}</span> -->
+                            </td>
+                        </tr>
                     </div>
                     <div class="infouser__body__right__bottom__image col-4">
                         <!-- <div class="infouser__body__right__bottom__"> -->
                             <div class="infouser__body__right__bottom__image__avatar">
-                                <img :src="previewImage ? previewImage : user.avatar" alt="sdfsdf">
+                                <!-- <img :src="previewImage ? previewImage : user.avatar" alt="sdfsdf"> -->
+                                <img :src="previewImage" alt="Ảnh đại diện">
                             </div>
                             <div v-if="changeAvatar && isEditPofile">
                                 <span 
@@ -389,6 +397,8 @@ export default {
         async fetchAccountId(){
             const {data} = await PostsRepository.getAccountId(this.id);
             this.user = data
+            const a = {...data}
+            this.previewImage = a.avatar
         },
         async fetchUpdateAccount(){
             const {data} = await PostsRepository.updateAccount(this.id, this.user);
