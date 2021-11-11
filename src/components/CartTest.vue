@@ -145,7 +145,7 @@
               >Free đơn hàng trên 500.000đ</span>
             </p>
             <p class="cart__right__money__provisional__right col-4">
-               {{ getTotal >= 500000 ? '0 ₫' : '30000 ₫' | filterPrice }}
+               {{ getTotal == 0 || getTotal >= 500000 ? '0 ₫' : '30000 ₫' | filterPrice }}
             </p>
           </div>
           <!-- {{productDel}} -->

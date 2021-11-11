@@ -1,6 +1,6 @@
 <template>
     <div class="product">
-        <div class="product__left col-3">
+        <div class="product__left col-3" :key="$route.params.id">
             <!-- <p @click="filterAll('')">Tất cả</p>
             <p @click="filterType('food_cat')">Đồ ăn cho mèo</p> -->
             <div class="product__left__filterprice">
@@ -54,6 +54,9 @@
             <hr />
         </div>
         <div class="product__right col-9" v-if="productAll.length !=0">
+            <div v-show="text" style="margin-bottom: 8px">
+                <span style="font-size: 15px; font-weight: bold">Tìm kiếm: </span>từ khóa '{{text}}'
+            </div>
             <!-- <div 
                 class="product__right__item col-3"
                 v-for="(item, key) in productAll" 
@@ -69,9 +72,16 @@
                 <p class="product__right__item__price" :title="item.price">{{item.price | filterPrice}}đ</p>
             </div> -->
             <!-- <Panigation :productAll ="productAll"/> -->
-            <Pagination :productAll ="productAll"/>
+            <Pagination :productAll ="productAll" style="margin: 0px !important; justify-content: center;"/>
         </div>
-        <div v-else>Không có sản phẩm tương ứng</div>
+        <div v-else style="width:100%">
+            <div v-show="text" style="margin-bottom: 8px">
+                <span style="font-size: 15px; font-weight: bold">Tìm kiếm: </span>từ khóa '{{text}}'
+            </div>
+            <div style="height: 100%;  display: flex">
+                <span style="margin: auto">Không có sản phẩm tương ứng</span> 
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -95,6 +105,7 @@ export default {
             productAll: [],
             productAll1: [],
             name: this.$route.params.id,
+            text: this.$route.params.id.slice(12,this.$route.params.id.length),
             repriceMax: 0,
             repriceMin: 0,
             sort: 'default',
@@ -173,6 +184,74 @@ export default {
             }
         },
     },
+    watch:{
+        // name(){
+        //     this.text = ''
+        // },
+        $route(){
+            this.name = this.$route.params.id,
+            this.text = this.$route.params.id.slice(12,this.$route.params.id.length)
+            axios.get(`${API_URL}/productDetail`)
+            .then(response => { 
+                this.productDetail = response.data
+                if(this.text){
+                    this.productAll = response.data.filter((item)=>{
+                        return this.text.toLowerCase().split(' ').every(v => item.title.toLowerCase().includes(v))
+                    })
+                    this.productAll1= this.productAll
+                    let min = this.productAll[0].price
+                    let max = 0
+                    for (let i = 0; i < this.productAll.length; i++){
+                        if (max < this.productAll[i].price)
+                            max = this.productAll[i].price;
+                    }
+                    for (let i = 0; i < this.productAll.length; i++){
+                        if (min > this.productAll[i].price)
+                            min = this.productAll[i].price;
+                    }
+                    this.repriceMin = min
+                    this.repriceMax = max
+                }
+                // else
+                else if (this.$route.params.id === 'all'){
+                    this.productAll = response.data
+                    this.productAll1= response.data
+                    let min = this.productDetail[0].price
+                    let max = 0
+                    for (let i = 0; i < this.productDetail.length; i++){
+                        if (max < this.productDetail[i].price)
+                            max = this.productDetail[i].price;
+                    }
+                    for (let i = 0; i < this.productDetail.length; i++){
+                        if (min > this.productDetail[i].price)
+                            min = this.productDetail[i].price;
+                    }
+                    this.repriceMin = min
+                    this.repriceMax = max
+                }
+                else if(!this.text){
+                    this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id || item.type_product == this.$route.params.id)
+                    this.productAll1= this.productAll
+                    let min = this.productAll[0].price
+                    let max = 0
+                    for (let i = 0; i < this.productAll.length; i++){
+                        if (max < this.productAll[i].price)
+                            max = this.productAll[i].price;
+                    }
+                    for (let i = 0; i < this.productAll.length; i++){
+                        if (min > this.productAll[i].price)
+                            min = this.productAll[i].price;
+                    }
+                    this.repriceMin = min
+                    this.repriceMax = max
+                }
+            })
+            .catch(error => {
+                console.log(error)
+                this.errored = true
+            })
+        }
+    },
     methods:{
         typeFilter: function(type){
             // console.log(type);
@@ -238,9 +317,28 @@ export default {
                 this.errored = true
             })
         axios.get(`${API_URL}/productDetail`)
-            .then(response => {
+            .then(response => { 
                 this.productDetail = response.data
-                if (this.$route.params.id === 'all'){
+                if(this.text){
+                    this.productAll = response.data.filter((item)=>{
+                        return this.text.toLowerCase().split(' ').every(v => item.title.toLowerCase().includes(v))
+                    })
+                    this.productAll1= this.productAll
+                    let min = this.productAll[0].price
+                    let max = 0
+                    for (let i = 0; i < this.productAll.length; i++){
+                        if (max < this.productAll[i].price)
+                            max = this.productAll[i].price;
+                    }
+                    for (let i = 0; i < this.productAll.length; i++){
+                        if (min > this.productAll[i].price)
+                            min = this.productAll[i].price;
+                    }
+                    this.repriceMin = min
+                    this.repriceMax = max
+                }
+                // else
+                else if (this.$route.params.id === 'all'){
                     this.productAll = response.data
                     this.productAll1= response.data
                     let min = this.productDetail[0].price
@@ -256,7 +354,7 @@ export default {
                     this.repriceMin = min
                     this.repriceMax = max
                 }
-                else{
+                else if(!this.text){
                     this.productAll = this.productDetail.filter((item) => item.detail == this.$route.params.id || item.type == this.$route.params.id || item.type_product == this.$route.params.id)
                     this.productAll1= this.productAll
                     let min = this.productAll[0].price

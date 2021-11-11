@@ -7,6 +7,7 @@ import Login from '../components/Login.vue'
 import InfoUser from '../components/InfoUser.vue'
 // import Register from '../components/CreateAccountUser.vue'
 import CreateAccountUser from '../components/CreateAccountUser.vue'
+import SearchPage from '../components/SearchPage.vue'
 import News from '../components/News.vue'
 // import Dashboard from '../demo/dashboard.vue'
 // import Header from '../layout/Header'
@@ -27,10 +28,12 @@ export const routes = [
     { path: '/product', name: 'product', component: Product },
     { path: '/product/:id', name: 'product', component: Product },
     { path: '/product/:id1/:id', name: 'product', component: Product },
+    { path: '/product/text_search/:text', name: 'product', component: Product },
     { path: '/slide', name: 'slide', component: SlideHomepage1 },
     { path: '/user_login', name: 'userlogin', component: Login },
     { path: '/info_user', redirect: '/info_user/profile'},
     { path: '/info_user/:type', name: 'infouser', component: InfoUser },
+    { path: '/searchpage/text_search=:text', name: 'news', component: SearchPage },
     { path: '/news', name: 'news', component: News },
     // { path: '/register_user', name: 'register', component: Register },
     { path: '/create_account_user', name: 'createaccountuser', component: CreateAccountUser },

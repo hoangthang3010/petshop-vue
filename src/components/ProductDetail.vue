@@ -388,7 +388,18 @@ export default {
                 )
             else if(this.count >= this.productDetailId.product_amount){
                 return(
-                    this.count = this.productDetailId.product_amount
+                    this.count = this.productDetailId.product_amount,
+                    
+                    this.$notification['error']({
+                        message: 'Thất bại',
+                        description:
+                        'Số lượng sản phẩm bạn nhập không đủ` ',
+                        duration: 2,
+                        style: {
+                            top: `75px`,
+                            marginBottom: '10px'
+                        },
+                    })
                 )
             }
             else 

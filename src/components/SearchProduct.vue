@@ -1,16 +1,19 @@
 <template>
   <div class="searchproduct">
-    <input
-      class="header__top__mid__search__item"
-      name="keyword"
-      type="text"
-      placeholder="Tìm kiếm sản phẩm..."
-      v-model="searchQuery"
-    />
-    <a-icon type="info-circle"/>
-    <a-icon type="close" />
-    <!-- <a-icon v-if="searchQuery" type="close" @click="searchQuery = ''"/> -->
-    <i v-if="searchQuery" class="fas fa-times-circle icon-x" alt="x" @click="searchQuery = ''"></i>
+    <form v-on:submit.prevent="onShowFull" style="position: relative; z-index: 100">
+      <input
+        class="header__top__mid__search__item"
+        name="text_search"
+        type="text"
+        placeholder="Tìm kiếm sản phẩm..."
+        v-model="searchQuery"
+        style="padding-left: 8px; padding-right: 60px;"
+      />
+      <a-icon type="search" class="icon-x"  @click="onShowFull" style="font-size: 20px; top: -10px"/>
+      <a-icon v-if="searchQuery" type="close" class="icon-x" style="right: 35px; top: 2px" @click="searchQuery = ''"/>
+    </form>    
+    <!-- <i v-if="searchQuery" class="fas fa-times-circle icon-x" alt="x" @click="searchQuery = ''"></i> -->
+
     <div
       v-if="productAll.length > resultQuery.length  && resultQuery.length>0"
       class="drop_search"
@@ -29,7 +32,8 @@
           </div>
       </div>
       <!-- onShowFullProductSearch -->
-      <div v-if="resultQuery.length>5 && !isShowFull" @click="isShowFull = true" style="padding: 5px 10px">Xem thêm...</div>
+      <!-- isShowFull = true -->
+      <div v-if="resultQuery.length>5 && !isShowFull" @click="onShowFull" style="padding: 5px 10px">Xem thêm...</div>
     </div>
     <div v-if="searchQuery" @click="searchQuery = ''" class="overlay"></div>
   </div>
@@ -78,6 +82,14 @@ export default {
       }
     },
     methods: {
+      onShowFull(){
+        // const a = [1,2,3,4]
+        // console.log(this.resultQuery);
+                        // this.$bus.emit('increaseCounter', this.users[i].fullname),
+        this.$bus.emit('resultQuery', this.resultQuery),
+        this.$router.push(`/product/text_search=${this.searchQuery}`)
+        this.searchQuery = ''
+      },
       // onShowFullProductSearch(){
 
       // }
@@ -90,7 +102,7 @@ export default {
         console.log(this.productAll);
       },
       onClickProduct(type, detail, id){
-        this.$router.push(`/purchase/${type}/${detail}/${id-1}`)
+        this.$router.push(`/purchase/${type}/${detail}/${id}`)
         this.searchQuery = ''
       }
     },
