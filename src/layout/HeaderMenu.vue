@@ -13,7 +13,7 @@
             <router-link style="text-decoration: none" to="/news">
               <li class="header__bottom__menu__ul__li">TIN TỨC</li>
             </router-link>
-            <router-link style="text-decoration: none" to="/test">
+            <router-link style="text-decoration: none" to="/searchpage">
               <li class="header__bottom__menu__ul__li">LIÊN HỆ</li>
             </router-link>
             <li class="header__bottom__menu__ul__li">VIDEO</li>

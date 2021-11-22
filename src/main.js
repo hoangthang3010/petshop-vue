@@ -26,6 +26,9 @@ import firebase from "firebase";
 // Vue.use(DatePicker);
 import JwPagination from 'jw-vue-pagination';
 import VueFbCustomerChat from 'vue-fb-customer-chat'
+import CKEditor from '@ckeditor/ckeditor5-vue2';
+
+Vue.use( CKEditor );
  
 Vue.use(VueFbCustomerChat, {
   page_id: 101051212340029, //  change 'null' to your Facebook Page ID,

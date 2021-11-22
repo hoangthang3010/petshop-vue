@@ -4,7 +4,7 @@
       <input
         class="header__top__mid__search__item"
         name="text_search"
-        type="text"
+        type="search"
         placeholder="Tìm kiếm sản phẩm..."
         v-model="searchQuery"
         style="padding-left: 8px; padding-right: 60px;"
