@@ -1,0 +1,20 @@
+.news-detail{
+    .left{
+        >h1{
+            font-weight: bold;
+        }
+        >p{
+            font-size: 12px;
+            color: rgb(153, 153, 153);
+        }
+    }
+    .content-detail{
+        margin-top: 20px;
+        font-family: italic !important;
+    }
+    .product-selling{
+        >div{
+            margin-bottom: 20px;
+        }
+    }
+}

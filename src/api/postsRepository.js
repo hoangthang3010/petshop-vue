@@ -9,6 +9,7 @@ const race = "/race"
 const slide = "/slides"
 const typeProduct = "/productAll"
 const warehouse = "/warehouse"
+const news = "/news"
 export default {
     getAccount(){
         return Repository.get(`${account}`);
@@ -120,6 +121,18 @@ export default {
     },
     updateWarehouseId(idTypeProduct, payload){
         return Repository.put(`${warehouse}/${idTypeProduct}`, payload)
+    },
+    getNews(){
+        return Repository.get( `${news}`)
+    }, 
+    createNews(payload){
+        return Repository.post( `${news}`, payload)
+    },
+    deleteNews(idTypeProduct){
+        return Repository.delete(`${news}/${idTypeProduct}`)
+    },
+    updateNewsId(idTypeProduct, payload){
+        return Repository.put(`${news}/${idTypeProduct}`, payload)
     },
 
 }

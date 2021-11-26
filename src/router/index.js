@@ -8,7 +8,8 @@ import InfoUser from '../components/InfoUser.vue'
 // import Register from '../components/CreateAccountUser.vue'
 import CreateAccountUser from '../components/CreateAccountUser.vue'
 import SearchPage from '../components/SearchPage.vue'
-import News from '../components/News.vue'
+import NewsDetail from '../components/NewsDetail.vue'
+import News from '../main/News.vue'
 // import Dashboard from '../demo/dashboard.vue'
 // import Header from '../layout/Header'
 // import HeaderMenu from '../layout/HeaderMenu'
@@ -35,6 +36,7 @@ export const routes = [
     { path: '/info_user/:type', name: 'infouser', component: InfoUser },
     // { path: '/searchpage/text_search=:text', name: 'news', component: SearchPage },
     { path: '/searchpage', name: 'news', component: SearchPage },
+    { path: '/newsdetail/:id', name: 'newsdetail', component: NewsDetail },
     { path: '/news', name: 'news', component: News },
     // { path: '/register_user', name: 'register', component: Register },
     { path: '/create_account_user', name: 'createaccountuser', component: CreateAccountUser },

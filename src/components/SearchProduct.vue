@@ -57,7 +57,8 @@ export default {
                 {title:"Basic Skills",uri:"cccc.com",category:"c",icon:null},
                 {title:"Board of Trustees",uri:"dddd.com",category:"d",icon:null}
             ],
-            isShowFull: false
+            isShowFull: false,
+            thumbnails: []
         }
     },
     created(){
