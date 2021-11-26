@@ -1,5 +1,5 @@
 <template>
-  <div class="carditem">
+  <div class="carditem" v-show="item.id">
     <!-- <div class="carditem_"> -->
     <span v-if="item.sale" class="carditem__sale">
       <p class="carditem__sale--text">{{ item.sale }}%</p>

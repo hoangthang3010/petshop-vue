@@ -10,7 +10,9 @@
                                 <img :src="item.content.slice(item.content.indexOf('src') + 5,item.content.indexOf('alt=')-2)" alt="">
                             </div>
                             <div class="col-7">
-                                <h5>{{item.title}}</h5>
+                                <router-link :to="`newsdetail/${item.id}`">
+                                    <h5>{{item.title}}</h5>
+                                </router-link>
                                 <div class="content" v-html="item.content.slice(item.content.indexOf('p>')+2,item.content.indexOf('/p>')-1)"></div>
                             </div>
                         </div>

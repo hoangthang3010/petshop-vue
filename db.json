@@ -102,6 +102,20 @@
       "status": "activate",
       "avatar": "https://www.unmc.edu/cihc/_images/faculty/default.jpg",
       "id": 9
+    },
+    {
+      "fullname": "Hoàng",
+      "username": "hoanghoang",
+      "email": "thangminhhoang@gmail.com",
+      "phonenumber": "0969855755",
+      "birthday": "2005-05-11",
+      "sex": "0",
+      "password": "1234",
+      "role": "user",
+      "status": "activate",
+      "avatar": "https://www.unmc.edu/cihc/_images/faculty/default.jpg",
+      "id": 10,
+      "address": "tòa CMC, 11 Duy Tân"
     }
   ],
   "slider": [
@@ -375,6 +389,11 @@
           "id": "r4smkfvrbz28i502rsmcc9610srynk",
           "count": 1,
           "time": "2021-11-09T10:11:58.076Z"
+        },
+        {
+          "id": "748wdckxrkzsqksbwppj9qespe5eiw",
+          "count": 1,
+          "time": "2021-11-26T13:46:32.967Z"
         }
       ],
       "id": 3
@@ -655,14 +674,31 @@
       "idProduct": 38,
       "time": "2021-11-03T18:15:25.500Z",
       "listImportGoods": [],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "6lo4uvbs0h6fyalovjvxqs76tu798k",
+          "count": 4,
+          "time": "2021-11-26T13:45:17.904Z"
+        },
+        {
+          "id": "yzfaph9yacl79gvxl9xvw1uaedv4il",
+          "count": 1,
+          "time": "2021-11-26T13:46:32.968Z"
+        }
+      ],
       "id": 38
     },
     {
       "idProduct": 39,
       "time": "2021-11-03T18:15:25.500Z",
       "listImportGoods": [],
-      "listExportGoods": [],
+      "listExportGoods": [
+        {
+          "id": "fdmmh01kk7bhh8qrpv7rga7u0g7sun",
+          "count": 1,
+          "time": "2021-11-26T13:45:17.905Z"
+        }
+      ],
       "id": 39
     },
     {
@@ -830,6 +866,13 @@
       "userId": 2,
       "time": "2021-11-10T03:11:53.143Z",
       "id": 19
+    },
+    {
+      "productId": 9,
+      "star": 3,
+      "userId": 2,
+      "time": "2021-11-26T14:02:31.165Z",
+      "id": 20
     }
   ],
   "commentProduct": [
@@ -901,8 +944,8 @@
   "productDetail": [
     {
       "type": "cat",
-      "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp chó mèo ngon miệng",
-      "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
+      "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp mèo ngon miệng",
+      "image": "https://jandpet.com.vn/wp-content/uploads/2020/04/99-300x300.jpg",
       "price": 225000,
       "sale": 20,
       "type_product": "medicine",
@@ -979,16 +1022,16 @@
       "sale": 40,
       "type_product": "medicine",
       "detail": "medicine_cat",
-      "product_amount": 97,
+      "product_amount": 96,
       "count": 1,
-      "quantity_sold": 3,
+      "quantity_sold": 4,
       "function": "",
       "quality_index": "",
       "main_ingredient": ""
     },
     {
       "type": "dog",
-      "title": "Canxi Delice – Thuốc viên bổ xung canxi và giúp chó mèo ngon miệng",
+      "title": "Thuốc viên bổ xung canxi và giúp chó ngon miệng",
       "image": "https://jandpet.com.vn/wp-content/uploads/2018/06/ANH-DAI-DIEN-JPET-11-400x400.jpg",
       "price": 225000,
       "sale": 20,
@@ -1565,9 +1608,9 @@
       "sale": 0,
       "detail": "food_dog",
       "type_product": "food",
-      "product_amount": 100,
+      "product_amount": 99,
       "count": 1,
-      "quantity_sold": 0,
+      "quantity_sold": 1,
       "describe": [
         {
           "name": "function",
@@ -1831,6 +1874,28 @@
       "numberphone": "0969851742",
       "typePay": "cash",
       "id": 8
+    },
+    {
+      "idUser": "10",
+      "statusOrder": "unconfirmed",
+      "listProductOrder": [
+        {
+          "idProduct": 2,
+          "price": 180000,
+          "amount": 1
+        },
+        {
+          "idProduct": 38,
+          "price": 380000,
+          "amount": 1
+        }
+      ],
+      "total": 560000,
+      "dateOrder": "2021-11-26T13:45:46.809Z",
+      "address": "tòa CMC, 11 Duy Tân",
+      "numberphone": "0969855755",
+      "typePay": "paypal",
+      "id": 10
     }
   ],
   "news": [
