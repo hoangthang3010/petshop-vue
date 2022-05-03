@@ -165,6 +165,7 @@ export default {
                     let user = result.user;
                         console.log(token) // Token
                         console.log(user.photoURL) // User that was authenticated
+                        console.log(user);
                         this.$bus.emit('increaseCounter', user.displayName)
                     })
                     .then(() => {
